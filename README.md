@@ -22,10 +22,10 @@ Then start using class methods to make calls to the Atrium API for data. See the
 from atriumclient import AtriumClient
 
 # Configure AtriumClient
-atriumClient = AtriumClient(ENVIRONMENT, YOUR_MX_API_KEY, YOUR_MX_CLIENT_ID);
+atriumClient = AtriumClient(ENVIRONMENT, YOUR_MX_API_KEY, YOUR_MX_CLIENT_ID)
 
 # Now begin making Atrium calls
-atriumClient.createUser("UniqueID", "", ""); # Create a user, etc...
+atriumClient.createUser("UniqueID", "", "") # Create a user, etc...
 ```
 
 

@@ -167,7 +167,13 @@ class AtriumClient:
     # Required Parameters: userGUID, memberGUID, answersMFA
     # Optional Parameters: None
     def resumeMemberAggregation(self, userGUID, memberGUID, answers):
-        return self.makeRequest("PUT", "/users/{0}/members/{1}/resume".format(userGUID, memberGUID), answers)
+        inner = {}
+        inner["challenges"] = answers
+        outer = {}
+        outer["member"] = inner
+        body = json.dumps(outer)
+
+        return self.makeRequest("PUT", "/users/{0}/members/{1}/resume".format(userGUID, memberGUID), body)
 
     # Required Parameters: userGUID, memberGUID
     # Optional Parameters: pageNumber, recordsPerPage

@@ -66,13 +66,8 @@ def checkJobStatus(atriumClient, userGUID, memberGUID):
             credPair["guid"] = challenge["guid"]
             credPair["value"] = ans
             challenges.append(credPair)
-        inner = {}
-        inner["challenges"] = challenges
-        outer = {}
-        outer["member"] = inner
-        answer = json.dumps(outer)
 
-        atriumClient.resumeMemberAggregation(userGUID, memberGUID, answer)
+        atriumClient.resumeMemberAggregation(userGUID, memberGUID, challenges)
 
         checkJobStatus(atriumClient, userGUID, memberGUID)
     elif code == "REJECTED":
