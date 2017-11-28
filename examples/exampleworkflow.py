@@ -2,130 +2,110 @@ import sys
 import json
 import time
 import datetime
+sys.path.append("..")
 
-from atriumclient import AtriumClient
+from atrium import AtriumClient
 
-def checkJobStatus(atriumClient, userGUID, memberGUID):
+def checkJobStatus(atriumClient, counter, userGUID, memberGUID):
     print("\n2 second delay...")
     time.sleep(2)
 
-    aggregationResponse = atriumClient.readMemberAggregationStatus(userGUID, memberGUID)
+    member = atriumClient.readMemberAggregationStatus(userGUID, memberGUID)
+    status = member.status
 
-    parsedJSON = json.loads(aggregationResponse)
-    code = parsedJSON["member"]["status"]
+    print("\nJOB STATUS: " + status)
 
-    print("\nJOB STATUS: " + code)
-
-    if code == "COMPLETED":
+    if status == "COMPLETED":
         readAggregationData(atriumClient, userGUID, memberGUID)
-    elif code == "HALTED" or code == "FAILED":
+    elif status in ["HALTED", "FAILED"]:
         currentTime = datetime.datetime.now().isoformat()[:19] + "+00:00"
 
-        statusResponse = atriumClient.readMemberAggregationStatus(userGUID, memberGUID)
-        parsedJSON = json.loads(statusResponse)
-        lastSuccessTime = parsedJSON["member"]["successfully_aggregated_at"]
+        member = atriumClient.readMemberAggregationStatus(userGUID, memberGUID)
+        lastSuccessTime = member.successfully_aggregated_at
 
         # Check if last successful aggregation over 3 days aggregation
-        if not lastSuccessTime == None and (abs(currentTime[8:10] - lastSuccessTime[8:10]) > 3 or abs(currentTime[5:7] - lastSuccessTime[5:7]) > 0 or abs(currentTime[0:4] - lastSuccessTime[0:4]) > 0):
+        if lastSuccessTime != None and (abs(currentTime[8:10] - lastSuccessTime[8:10]) > 3 or abs(currentTime[5:7] - lastSuccessTime[5:7]) > 0 or abs(currentTime[0:4] - lastSuccessTime[0:4]) > 0):
             print("\nClient should contact MX Support to resolve issue.")
         else:
             print("\nAn update is currently unavailable. Please try again tomorrow")
-    elif code == "CREATED" or code == "UPDATED" or code == "RESUMED" or code == "CONNECTED" or code == "DEGRADED" or code == "DELAYED" or code == "INITIATED" or code == "REQUESTED" or code == "AUTHENTICATED" or code == "RECEIVED" or code == "TRANSFERRED":
-        checkJobStatus(atriumClient, userGUID, memberGUID)
-    elif code == "PREVENTED" or code == "DENIED" or code == "IMPAIRED":
-        readMemberData = atriumClient.readMember(userGUID, memberGUID)
-        parsedJSON = json.loads(readMemberData)
-        institutionCode = parsedJSON["member"]["institution_code"]
+    elif status in ["CREATED", "UPDATED", "RESUMED", "CONNECTED", "DEGRADED", "DELAYED", "INITIATED", "REQUESTED", "AUTHENTICATED", "RECEIVED", "TRANSFERRED"]:
+        checkJobStatus(atriumClient, counter, userGUID, memberGUID)
+    elif status in ["PREVENTED", "DENIED", "IMPAIRED"]:
+        member = atriumClient.readMember(userGUID, memberGUID)
+        institutionCode = member.institution_code
 
         print("\nPlease update credentials")
-        requiredCredentials = atriumClient.readInstitutionCredentials(institutionCode, "", "")
-        parsedJSON = json.loads(requiredCredentials)
-        JSONArray = parsedJSON["credentials"]
-        credentials = []
-        for credential in JSONArray:
-            print("\nPlease enter in " + credential["label"] + ":")
+        credentials = atriumClient.readInstitutionCredentials(institutionCode)
+        updatedCredentials = []
+        for credential in credentials:
+            print("\nPlease enter in " + credential.label + ":")
             cred = sys.stdin.readline().strip()
             credPair = {}
-            credPair["guid"] = credential["guid"]
+            credPair["guid"] = credential.guid
             credPair["value"] = cred
-            credentials.append(credPair)
+            updatedCredentials.append(credPair)
 
-        atriumClient.updateMember(userGUID, memberGUID, credentials, "", "")
+        atriumClient.updateMember(userGUID, memberGUID, credentials = updatedCredentials)
 
-        checkJobStatus(atriumClient, userGUID, memberGUID)
-    elif code == "CHALLENGED":
+        checkJobStatus(atriumClient, counter, userGUID, memberGUID)
+    elif status == "CHALLENGED":
         print ("\nPlease answer the following challenges:")
-        challengeResponse = atriumClient.listMemberMFAChallenges(userGUID, memberGUID, "", "")
-        parsedJSON = json.loads(challengeResponse)
-        JSONArray = parsedJSON["challenges"]
-        challenges = []
-        for challenge in JSONArray:
-            print(challenge["label"] + ":")
+        challenges = atriumClient.listMemberMFAChallenges(userGUID, memberGUID)
+        updatedChallenges = []
+        for challenge in challenges:
+            print(challenge.label + ":")
             ans = sys.stdin.readline().strip()
             credPair = {}
-            credPair["guid"] = challenge["guid"]
+            credPair["guid"] = challenge.guid
             credPair["value"] = ans
-            challenges.append(credPair)
+            updatedChallenges.append(credPair)
 
-        atriumClient.resumeMemberAggregation(userGUID, memberGUID, challenges)
+        atriumClient.resumeMemberAggregation(userGUID, memberGUID, updatedChallenges)
 
-        checkJobStatus(atriumClient, userGUID, memberGUID)
-    elif code == "REJECTED":
+        checkJobStatus(atriumClient, counter, userGUID, memberGUID)
+    elif status == "REJECTED":
         atriumClient.aggregateMember(userGUID, memberGUID)
 
-        checkJobStatus(atriumClient, userGUID, memberGUID)
-    elif code == "EXPIRED":
+        checkJobStatus(atriumClient, counter, userGUID, memberGUID)
+    elif status == "EXPIRED":
         print("\nUser did not answer MFA in time. Please try again tomorrow.")
-    elif code == "LOCKED":
+    elif status == "LOCKED":
         print("\nUser's account is locked at FI")
-    elif code == "IMPEDED":
+    elif status == "IMPEDED":
         print("\nUser's attention is required at FI website in order for aggregation to complete")
-    elif code == "DISCONTINUED":
+    elif status == "DISCONTINUED":
         print("\nConnection to institution is no longer available.")
-    elif code == "CLOSED" or code == "DISABLED":
+    elif status in ["CLOSED", "DISABLED"]:
         print("\nAggregation is purposely turned off for this user.")
-    elif code == "TERMINATED" or code == "ABORTED" or code == "STOPPED" or code == "THROTTLED" or code == "SUSPENDED" or code == "ERRORED":
+    elif status in ["TERMINATED", "ABORTED", "STOPPED", "THROTTLED", "SUSPENDED", "ERRORED"]:
         # Check JobStatus() an additional 2 times to see if status changed
         if counter < 3:
             counter = counter + 1
-            checkJobStatus(atriumClient, userGUID, memberGUID)
+            checkJobStatus(atriumClient, counter, userGUID, memberGUID)
         else:
             print("\nAn update is currently unavailable. Please try again tomorrow and contact support if unsuccessful after 3 days.")
-            counter = 0
     else:
-        print(code)
+        print(status)
 
 def readAggregationData(atriumClient, userGUID, memberGUID):
     atriumClient.readMember(userGUID, memberGUID)
 
-    print("\n* Listing All Member Accounts *")
-    accountsResponse = atriumClient.listMemberAccounts(userGUID, memberGUID, "", "")
-    parsedJSON = json.loads(accountsResponse)
-    JSONArray = parsedJSON["accounts"]
-    for item in JSONArray:
-        print("Type: " + str(item["type"]) + "\tName: " + str(item["name"]) + "\tAvailable Balance: " + str(item["available_balance"]) + "\tAvailable Credit: " + str(item["available_credit"]))
-
-    print("\n* Listing All Member Transactions *")
-    transactionsResponse = atriumClient.listMemberTransactions(userGUID, memberGUID, "", "", "", "")
-    parsedJSON = json.loads(transactionsResponse)
-    JSONArray = parsedJSON["transactions"]
-    for item in JSONArray:
-        print("Date: " + str(item["date"]) + "\tDescription: " + str(item["description"]) + "\tAmount: " + str(item["amount"]))
+    print("\n* Listing all member accounts and transactions *")
+    accounts = atriumClient.listMemberAccounts(userGUID, memberGUID)
+    for account in accounts:
+        print("Type: " + account.type + "\tName: " + account.name + "\tAvailable Balance: " + str(
+            account.available_balance) + "\tAvailable Credit: " + str(account.available_credit))
+        print("Transactions")
+        transactions = atriumClient.listAccountTransactions(userGUID, account.guid)
+        for transaction in transactions:
+            print("\tDate: " + transaction.date + "\tDescription: " + transaction.description + "\tAmount: " + str(
+                transaction.amount))
+        print("\n")
 
 
-# Main #
+atriumClient = AtriumClient("vestibule.mx.com", "YOUR_MX_API_KEY", "YOUR_MX_CLIENT_ID")
+
 counter = 0
-
-
-if len(sys.argv) < 4 or len(sys.argv) > 4:
-    print("\nIncorrect usage. Correct usage is: python ExampleWorkflow.py YOUR_DESIRED_ENVIRONMENT YOUR_MX_API_KEY YOUR_MX_CLIENT_ID")
-    sys.exit(0)
-
-atriumClient = AtriumClient(sys.argv[1], sys.argv[2], sys.argv[3])
-
-userGUID = ""
-memberGUID = ""
-endUserPresent = ""
 
 print("Please enter in user GUID. If not yet created just press enter key: ")
 userGUID = sys.stdin.readline().strip()
@@ -136,58 +116,57 @@ memberGUID = sys.stdin.readline().strip()
 print("\nPlease enter in if end user is present (true or false): ")
 endUserPresent = sys.stdin.readline().strip()
 
-
-if userGUID == "" and not memberGUID == "":
+if userGUID == "" and memberGUID != "":
     print("\nMust include user GUID when member GUID is entered.")
     sys.exit(0)
 
 if userGUID == "" and endUserPresent == "true":
-    print("\n* NEW USER CREATION *")
+    print("\n* Creating user *")
 
-    print("\nPlease enter in an unique id: ")
+    print("\nPlease enter in an unique id for new user: ")
     identifier = sys.stdin.readline().strip()
 
-    userResponse = atriumClient.createUser(identifier, "", "")
-    parsedJSON = json.loads(userResponse)
-    userGUID = parsedJSON["user"]["guid"]
+    user = atriumClient.createUser(identifier = identifier)
+    userGUID = user.guid
 
-if not memberGUID == "" and endUserPresent == "true":
+    print("\nCreated user: " + userGUID)
+
+if memberGUID != "" and endUserPresent == "true":
     atriumClient.aggregateMember(userGUID, memberGUID)
-    checkJobStatus(atriumClient, userGUID, memberGUID)
-elif not memberGUID == "":
+    checkJobStatus(atriumClient, counter, userGUID, memberGUID)
+elif memberGUID != "":
     readAggregationData(atriumClient, userGUID, memberGUID)
 elif endUserPresent == "true":
-    print ("\n* NEW MEMBER CREATION *")
+    print ("\n* Creating member *")
 
-    print("Please enter in a keyword to search for an institution: ")
-    institution = sys.stdin.readline().strip()
-    institutions = atriumClient.listInstitutions(institution, "", "")
-
-    parsedJSON = json.loads(institutions)
-    JSONArray = parsedJSON["institutions"]
-    for item in JSONArray:
-        print(item["name"] + " : institution code = " + item["code"])
+    print ("\n* Listing top 15 institutions *")
+    institutions = atriumClient.listInstitutions()
+    for institution in institutions:
+        print(institution.name + " : institution code = " + institution.code)
 
     print("\nPlease enter in desired institution code: ")
     institutionCode = sys.stdin.readline().strip()
 
-    requiredCredentials = atriumClient.readInstitutionCredentials(institutionCode, "", "")
-    parsedJSON = json.loads(requiredCredentials)
-    JSONArray = parsedJSON["credentials"]
-    credentials = []
-    for credential in JSONArray:
-        print("\nPlease enter in " + credential["label"] + ":")
+    credentials = atriumClient.readInstitutionCredentials(institutionCode)
+    updatedCredentials = []
+    for credential in credentials:
+        print("\nPlease enter in " + credential.label + ":")
         cred = sys.stdin.readline().strip()
         credPair = {}
-        credPair["guid"] = credential["guid"]
+        credPair["guid"] = credential.guid
         credPair["value"] = cred
-        credentials.append(credPair)
+        updatedCredentials.append(credPair)
 
-    memberResponse = atriumClient.createMember(userGUID, credentials, institutionCode, "", "")
+    member = atriumClient.createMember(userGUID, updatedCredentials, institutionCode)
+    memberGUID = member.guid
 
-    parsedJSON = json.loads(memberResponse)
-    memberGUID = parsedJSON["member"]["guid"]
-    checkJobStatus(atriumClient, userGUID, memberGUID)
+    print("\nCreated member: " + memberGUID)
+
+    checkJobStatus(atriumClient, counter, userGUID, memberGUID)
 else:
     print("\nEnd user must be present to create a new member")
     sys.exit(0)
+
+print("\n* Deleting test user *")
+atriumClient.deleteUser(userGUID)
+print("Deleted user: " + userGUID)

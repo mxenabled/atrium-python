@@ -4,16 +4,15 @@ A Python wrapper for the [MX Atrium API](https://atrium.mx.com). In order to mak
 
 ### Usage
 
-Add the `atriumclient.py` file to your source code's directory and import into your source code file with the following
+Add the `atrium` module to your source code's directory and import into your source code file with the following
 ```python
 from atriumclient import AtriumClient
 ```
 
 Then configure your instance with the following. (The `ENVIRONMENT` will be either `vestibule.mx.com` for the development environment or `atrium.mx.com` for the production environment.)
 ```python
-atriumClient = AtriumClient(ENVIRONMENT, YOUR_MX_API_KEY, YOUR_MX_CLIENT_ID);
+atriumClient = AtriumClient("ENVIRONMENT", "YOUR_MX_API_KEY", "YOUR_MX_CLIENT_ID")
 ```
-
 
 Then start using class methods to make calls to the Atrium API for data. See the full [Atrium documentation](https://atrium.mx.com/documentation) for more details.
 
@@ -22,22 +21,16 @@ Then start using class methods to make calls to the Atrium API for data. See the
 from atriumclient import AtriumClient
 
 # Configure AtriumClient
-atriumClient = AtriumClient(ENVIRONMENT, YOUR_MX_API_KEY, YOUR_MX_CLIENT_ID)
+atriumClient = AtriumClient("ENVIRONMENT", "YOUR_MX_API_KEY", "YOUR_MX_CLIENT_ID")
 
 # Now begin making Atrium calls
-atriumClient.createUser("UniqueID", "", "") # Create a user, etc...
+atriumClient.createUser(identifier = "UniqueID") # Create a user, etc...
 ```
 
 
-### Suggested Atrium Workflow
+### Examples
 
-In the `/examples` directory is a suggested Atrium workflow in a simple command line program.
-
-Navigate to the `/examples` directory. This directory contains the following files:
-
-* exampleworkflow.py - An example showing a suggested workflow for Atrium
-* atriumclient.py - Wrapper class for Atrium
-
-##### Run example workflow program with the following command
-
-`$ python exampleworkflow.py ENVIRONMENT YOUR_MX_API_KEY YOUR_MX_CLIENT_ID`
+The `/examples` directory contains various workflows and code snippets. You will first need to modify the line shown below in each example with the environment, YOUR-MX-API-KEY, and YOUR-MX-CLIENT-ID before running.
+```python
+atriumClient = AtriumClient("ENVIRONMENT", "YOUR_MX_API_KEY", "YOUR_MX_CLIENT_ID")
+```
