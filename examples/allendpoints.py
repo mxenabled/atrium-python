@@ -40,22 +40,18 @@ for credential in credentials:
     print credential.guid
 
 print "\n************************** Create Member **************************"
-# Create credential JSON object
-credentialOne = {}
-credentialOne["guid"] = "CRD-9f61fb4c-912c-bd1e-b175-ccc7f0275cc1"
-credentialOne["value"] = "test_atrium1"
+credentials = [
+    {
+        "guid": "CRD-9f61fb4c-912c-bd1e-b175-ccc7f0275cc1",
+        "value": "test_atrium1"
+    },
+    {
+        "guid": "CRD-e3d7ea81-aac7-05e9-fbdd-4b493c6e474d",
+        "value": "challenge1"
+    }
+]
 
-# Create another credential JSON object
-credentialTwo = {}
-credentialTwo["guid"] = "CRD-e3d7ea81-aac7-05e9-fbdd-4b493c6e474d"
-credentialTwo["value"] = "challenge1"
-
-# Create credential array from credential JSON Objects
-credentialArray = []
-credentialArray.append(credentialOne)
-credentialArray.append(credentialTwo)
-
-member = atriumClient.createMember(userGUID, credentialArray, "mxbank")
+member = atriumClient.createMember(userGUID, credentials, "mxbank")
 print member.guid
 memberGUID = member.guid
 
@@ -64,22 +60,18 @@ member = atriumClient.readMember(userGUID, memberGUID)
 print member.guid
 
 print "\n************************** Update Member **************************"
-# Create credential JSON object
-credentialOne = {}
-credentialOne["guid"] = "CRD-9f61fb4c-912c-bd1e-b175-ccc7f0275cc1"
-credentialOne["value"] = "test_atrium"
+credentials = [
+    {
+        "guid": "CRD-9f61fb4c-912c-bd1e-b175-ccc7f0275cc1",
+        "value": "test_atrium"
+    },
+    {
+        "guid": "CRD-e3d7ea81-aac7-05e9-fbdd-4b493c6e474d",
+        "value": "challenge"
+    }
+]
 
-# Create another credential JSON object
-credentialTwo = {}
-credentialTwo["guid"] = "CRD-e3d7ea81-aac7-05e9-fbdd-4b493c6e474d"
-credentialTwo["value"] = "challenge"
-
-# Create credential array from credential JSON Objects
-credentialArray = []
-credentialArray.append(credentialOne)
-credentialArray.append(credentialTwo)
-
-member = atriumClient.updateMember(userGUID, memberGUID, credentials = credentialArray, metadata = "{\"credentials_last_refreshed_at\": \"2015-10-16\"}")
+member = atriumClient.updateMember(userGUID, memberGUID, credentials = credentials, metadata = "{\"credentials_last_refreshed_at\": \"2015-10-16\"}")
 print member.guid
 
 print "\n************************** List Members **************************"
@@ -104,16 +96,14 @@ for challenge in challenges:
     challengeGUID = challenge.guid
 
 print "\n************************** Resume Aggregation **************************"
-# Create credential JSON object
-credentialOne = {}
-credentialOne["guid"] = challengeGUID
-credentialOne["value"] = "correct"
+credentials = [
+    {
+        "guid": challengeGUID,
+        "value": "correct"
+    }
+]
 
-# Create credential array from credential JSON Objects
-credentialArray = []
-credentialArray.append(credentialOne)
-
-member = atriumClient.resumeMemberAggregation(userGUID, memberGUID, credentialArray)
+member = atriumClient.resumeMemberAggregation(userGUID, memberGUID, credentials)
 print member.status
 
 print "\n************************** List Member Credentials **************************"

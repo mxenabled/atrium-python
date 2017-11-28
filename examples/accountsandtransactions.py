@@ -12,19 +12,18 @@ user = atriumClient.createUser()
 userGUID = user.guid
 print("Created user: " + userGUID)
 
-credentialOne = {}
-credentialOne["guid"] = "CRD-9f61fb4c-912c-bd1e-b175-ccc7f0275cc1"
-credentialOne["value"] = "test_atrium"
+credentials = [
+    {
+        "guid": "CRD-9f61fb4c-912c-bd1e-b175-ccc7f0275cc1",
+        "value": "test_atrium"
+    },
+    {
+        "guid": "CRD-e3d7ea81-aac7-05e9-fbdd-4b493c6e474d",
+        "value": "password"
+    }
+]
 
-credentialTwo = {}
-credentialTwo["guid"] = "CRD-e3d7ea81-aac7-05e9-fbdd-4b493c6e474d"
-credentialTwo["value"] = "password"
-
-credentialArray = []
-credentialArray.append(credentialOne)
-credentialArray.append(credentialTwo)
-
-member = atriumClient.createMember(userGUID, credentialArray, "mxbank")
+member = atriumClient.createMember(userGUID, credentials, "mxbank")
 
 memberGUID = member.guid
 print("Created member: " + memberGUID)

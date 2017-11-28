@@ -13,19 +13,18 @@ user = atriumClient.createUser()
 userGUID = user.guid
 print("Created user: " + userGUID)
 
-credentialOne = {}
-credentialOne["guid"] = "CRD-9f61fb4c-912c-bd1e-b175-ccc7f0275cc1"
-credentialOne["value"] = "test_atrium"
+credentials = [
+    {
+        "guid": "CRD-9f61fb4c-912c-bd1e-b175-ccc7f0275cc1",
+        "value": "test_atrium"
+    },
+    {
+        "guid": "CRD-e3d7ea81-aac7-05e9-fbdd-4b493c6e474d",
+        "value": "challenge"
+    }
+]
 
-credentialTwo = {}
-credentialTwo["guid"] = "CRD-e3d7ea81-aac7-05e9-fbdd-4b493c6e474d"
-credentialTwo["value"] = "challenge"
-
-credentialArray = []
-credentialArray.append(credentialOne)
-credentialArray.append(credentialTwo)
-
-member = atriumClient.createMember(userGUID, credentialArray, "mxbank")
+member = atriumClient.createMember(userGUID, credentials, "mxbank")
 
 memberGUID = member.guid
 print("Created member: " + memberGUID)
@@ -43,12 +42,12 @@ challenges = atriumClient.listMemberMFAChallenges(userGUID, memberGUID)
 for challenge in challenges:
     print challenge.label
 
-credential = {}
-credential["guid"] = challenges[0].guid
-credential["value"] = "correct"
-responses = []
-responses.append(credential)
-
+responses = [
+    {
+        "guid": challenges[0].guid,
+        "value": "correct"
+    }
+]
 
 print("\n* MFA answered correctly, resuming aggregation *")
 atriumClient.resumeMemberAggregation(userGUID, memberGUID, responses)

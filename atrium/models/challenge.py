@@ -7,8 +7,7 @@ class Challenge:
     type = None
 
     def __init__(self, response):
-        parsedJSON = json.loads(response)
-        self.field_name = parsedJSON["field_name"]
-        self.guid = parsedJSON["guid"]
-        self.label = parsedJSON["label"]
-        self.type = parsedJSON["type"]
+        self.field_name = response["field_name"]
+        self.guid = response["guid"]
+        self.label = response["label"]
+        self.type = response["type"]

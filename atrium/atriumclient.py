@@ -34,16 +34,15 @@ class AtriumClient:
             inner["metadata"] = metadata
         outer = {}
         outer["user"] = inner
-        body = json.dumps(outer)
 
-        response = self.makeRequest("POST", "/users", body)
-        return User(json.dumps(json.loads(response)["user"]))
+        response = self.makeRequest("POST", "/users", outer)
+        return User(json.loads(response)["user"])
 
     # Required Parameters: userGUID
     # Optional Parameters: None
     def readUser(self, userGUID):
         response = self.makeRequest("GET", "/users/{0}".format(userGUID), "")
-        return User(json.dumps(json.loads(response)["user"]))
+        return User(json.loads(response)["user"])
 
     # Required Parameters: userGuid
     # Optional Parameters: identifier, is_disabled, metadata
@@ -57,10 +56,9 @@ class AtriumClient:
             inner["metadata"] = metadata
         outer = {}
         outer["user"] = inner
-        body = json.dumps(outer)
 
-        response = self.makeRequest("PUT", "/users/{0}".format(userGUID), body)
-        return User(json.dumps(json.loads(response)["user"]))
+        response = self.makeRequest("PUT", "/users/{0}".format(userGUID), outer)
+        return User(json.loads(response)["user"])
 
     # Required Parameters: None
     # Optional Parameters: page, records_per_page
@@ -72,7 +70,7 @@ class AtriumClient:
         JSONArray = parsedJSON["users"]
         users = []
         for user in JSONArray:
-            users.append(User(json.dumps(user)))
+            users.append(User(user))
         return users
 
     # Required Parameters: userGUID
@@ -93,14 +91,14 @@ class AtriumClient:
         JSONArray = parsedJSON["institutions"]
         institutions = []
         for institution in JSONArray:
-            institutions.append(Institution(json.dumps(institution)))
+            institutions.append(Institution(institution))
         return institutions
 
     # Required Parameters: institutionCode
     # Optional Parameters: None
     def readInstitution(self, institutionCode):
         response = self.makeRequest("GET", "/institutions/{0}".format(institutionCode), "")
-        return Institution(json.dumps(json.loads(response)["institution"]))
+        return Institution(json.loads(response)["institution"])
 
     # Required Parameters: institutionCode
     # Optional Parameters: page, records_per_page
@@ -112,7 +110,7 @@ class AtriumClient:
         JSONArray = parsedJSON["credentials"]
         credentials = []
         for credential in JSONArray:
-            credentials.append(Credential(json.dumps(credential)))
+            credentials.append(Credential(credential))
         return credentials
 
 
@@ -130,16 +128,15 @@ class AtriumClient:
             inner["metadata"] = metadata
         outer = {}
         outer["member"] = inner
-        body = json.dumps(outer)
 
-        response = self.makeRequest("POST", "/users/{0}/members".format(userGUID), body)
-        return Member(json.dumps(json.loads(response)["member"]))
+        response = self.makeRequest("POST", "/users/{0}/members".format(userGUID), outer)
+        return Member(json.loads(response)["member"])
 
     # Required Parameters: userGUID, memberGUID
     # Optional Parameters: None
     def readMember(self, userGUID, memberGUID):
         response = self.makeRequest("GET", "/users/{0}/members/{1}".format(userGUID, memberGUID), "")
-        return Member(json.dumps(json.loads(response)["member"]))
+        return Member(json.loads(response)["member"])
 
     # Required Parameters: userGUID, memberGUID
     # Optional Parameters: credentials, identifier, metadata
@@ -153,10 +150,9 @@ class AtriumClient:
             inner["metadata"] = metadata
         outer = {}
         outer["member"] = inner
-        body = json.dumps(outer)
 
-        response = self.makeRequest("PUT", "/users/{0}/members/{1}".format(userGUID, memberGUID), body)
-        return Member(json.dumps(json.loads(response)["member"]))
+        response = self.makeRequest("PUT", "/users/{0}/members/{1}".format(userGUID, memberGUID), outer)
+        return Member(json.loads(response)["member"])
 
     # Required Parameters: userGUID, memberGUID
     # Optional Parameters: None
@@ -173,20 +169,20 @@ class AtriumClient:
         JSONArray = parsedJSON["members"]
         members = []
         for member in JSONArray:
-            members.append(Member(json.dumps(member)))
+            members.append(Member(member))
         return members
 
     # Required Parameters: userGUID, memberGUID
     # Optional Parameters: None
     def aggregateMember(self, userGUID, memberGUID):
         response = self.makeRequest("POST", "/users/{0}/members/{1}/aggregate".format(userGUID, memberGUID), "")
-        return Member(json.dumps(json.loads(response)["member"]))
+        return Member(json.loads(response)["member"])
 
     # Required Parameters:  userGUID, memberGUID
     # Optional Parameters: None
     def readMemberAggregationStatus(self, userGUID, memberGUID):
         response = self.makeRequest("GET", "/users/{0}/members/{1}/status".format(userGUID, memberGUID), "")
-        return Member(json.dumps(json.loads(response)["member"]))
+        return Member(json.loads(response)["member"])
 
     # Required Parameters: userGUID, memberGUID
     # Optional Parameters: page, records_per_page
@@ -198,7 +194,7 @@ class AtriumClient:
         JSONArray = parsedJSON["challenges"]
         challenges = []
         for challenge in JSONArray:
-            challenges.append(Challenge(json.dumps(challenge)))
+            challenges.append(Challenge(challenge))
         return challenges
 
     # Required Parameters: userGUID, memberGUID, answersMFA
@@ -208,10 +204,9 @@ class AtriumClient:
         inner["challenges"] = answers
         outer = {}
         outer["member"] = inner
-        body = json.dumps(outer)
 
-        response = self.makeRequest("PUT", "/users/{0}/members/{1}/resume".format(userGUID, memberGUID), body)
-        return Member(json.dumps(json.loads(response)["member"]))
+        response = self.makeRequest("PUT", "/users/{0}/members/{1}/resume".format(userGUID, memberGUID), outer)
+        return Member(json.loads(response)["member"])
 
     # Required Parameters: userGUID, memberGUID
     # Optional Parameters: page, records_per_page
@@ -223,7 +218,7 @@ class AtriumClient:
         JSONArray = parsedJSON["credentials"]
         credentials = []
         for credential in JSONArray:
-            credentials.append(Credential(json.dumps(credential)))
+            credentials.append(Credential(credential))
         return credentials
 
     # Required Parameters: userGUID, memberGUID
@@ -236,7 +231,7 @@ class AtriumClient:
         JSONArray = parsedJSON["accounts"]
         accounts = []
         for account in JSONArray:
-            accounts.append(Account(json.dumps(account)))
+            accounts.append(Account(account))
         return accounts
 
     # Required Parameters: userGUID, memberGUID
@@ -249,7 +244,7 @@ class AtriumClient:
         JSONArray = parsedJSON["transactions"]
         transactions = []
         for transaction in JSONArray:
-            transactions.append(Transaction(json.dumps(transaction)))
+            transactions.append(Transaction(transaction))
         return transactions
 
 
@@ -259,7 +254,7 @@ class AtriumClient:
     # Optional Parameters: None
     def readAccount(self, userGUID, accountGUID):
         response = self.makeRequest("GET", "/users/{0}/accounts/{1}".format(userGUID, accountGUID), "")
-        return Account(json.dumps(json.loads(response)["account"]))
+        return Account(json.loads(response)["account"])
 
     # Required Parameters: userGUID
     # Optional Parameters: page, records_per_page
@@ -271,7 +266,7 @@ class AtriumClient:
         JSONArray = parsedJSON["accounts"]
         accounts = []
         for account in JSONArray:
-            accounts.append(Account(json.dumps(account)))
+            accounts.append(Account(account))
         return accounts
 
     # Required Parameters: userGUID, accountGUID
@@ -284,7 +279,7 @@ class AtriumClient:
         JSONArray = parsedJSON["transactions"]
         transactions = []
         for transaction in JSONArray:
-            transactions.append(Transaction(json.dumps(transaction)))
+            transactions.append(Transaction(transaction))
         return transactions
 
 
@@ -294,7 +289,7 @@ class AtriumClient:
     # Optional Parameters: None
     def readTransaction(self, userGUID, transactionGUID):
         response = self.makeRequest("GET", "/users/{0}/transactions/{1}".format(userGUID, transactionGUID), "")
-        return Transaction(json.dumps(json.loads(response)["transaction"]))
+        return Transaction(json.loads(response)["transaction"])
 
     # Required Parameters: userGUID
     # Optional Parameters: from_date, to_date, page, records_per_page
@@ -306,7 +301,7 @@ class AtriumClient:
         JSONArray = parsedJSON["transactions"]
         transactions = []
         for transaction in JSONArray:
-            transactions.append(Transaction(json.dumps(transaction)))
+            transactions.append(Transaction(transaction))
         return transactions
 
 
@@ -316,7 +311,7 @@ class AtriumClient:
     # Optional Parameters: None
     def createWidget(self, userGUID):
         response = self.makeRequest("POST", "/users/{0}/connect_widget_url".format(userGUID), "")
-        return Connect(json.dumps(json.loads(response)["user"]))
+        return Connect(json.loads(response)["user"])
 
 
     # CLIENT
@@ -324,6 +319,7 @@ class AtriumClient:
     # Required Parameters: mode, endpoint, body
     # Optional Parameters: None
     def makeRequest(self, mode, endpoint, body):
+        body = json.dumps(body)
         conn = HTTPSConnection(self.environment)
         headers = { "Accept" : "application/vnd.mx.atrium.v1+json", "Content-Type" : "application/json", "MX-API-Key" : self.mxAPIKEY, "MX-Client-ID" : self.mxCLIENTID }
         conn.request(mode, endpoint, body, headers)

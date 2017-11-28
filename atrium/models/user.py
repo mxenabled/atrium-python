@@ -7,8 +7,7 @@ class User:
     metadata = None
 
     def __init__(self, response):
-        parsedJSON = json.loads(response)
-        self.guid = parsedJSON["guid"]
-        self.identifier = parsedJSON["identifier"]
-        self.is_disabled = parsedJSON["is_disabled"]
-        self.metadata = parsedJSON["metadata"]
+        self.guid = response["guid"]
+        self.identifier = response["identifier"]
+        self.is_disabled = response["is_disabled"]
+        self.metadata = response["metadata"]

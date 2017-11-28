@@ -8,9 +8,8 @@ class Institution:
     medium_logo_url = None
 
     def __init__(self, response):
-        parsedJSON = json.loads(response)
-        self.code = parsedJSON["code"]
-        self.name = parsedJSON["name"]
-        self.url = parsedJSON["url"]
-        self.small_logo_url = parsedJSON["small_logo_url"]
-        self.medium_logo_url = parsedJSON["medium_logo_url"]
+        self.code = response["code"]
+        self.name = response["name"]
+        self.url = response["url"]
+        self.small_logo_url = response["small_logo_url"]
+        self.medium_logo_url = response["medium_logo_url"]

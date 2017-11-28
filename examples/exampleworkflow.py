@@ -17,7 +17,7 @@ def checkJobStatus(atriumClient, counter, userGUID, memberGUID):
 
     if status == "COMPLETED":
         readAggregationData(atriumClient, userGUID, memberGUID)
-    elif status == "HALTED" or status == "FAILED":
+    elif status in ["HALTED", "FAILED"]:
         currentTime = datetime.datetime.now().isoformat()[:19] + "+00:00"
 
         member = atriumClient.readMemberAggregationStatus(userGUID, memberGUID)
@@ -28,9 +28,9 @@ def checkJobStatus(atriumClient, counter, userGUID, memberGUID):
             print("\nClient should contact MX Support to resolve issue.")
         else:
             print("\nAn update is currently unavailable. Please try again tomorrow")
-    elif status == "CREATED" or status == "UPDATED" or status == "RESUMED" or status == "CONNECTED" or status == "DEGRADED" or status == "DELAYED" or status == "INITIATED" or status == "REQUESTED" or status == "AUTHENTICATED" or status == "RECEIVED" or status == "TRANSFERRED":
+    elif status in ["CREATED", "UPDATED", "RESUMED", "CONNECTED", "DEGRADED", "DELAYED", "INITIATED", "REQUESTED", "AUTHENTICATED", "RECEIVED", "TRANSFERRED"]:
         checkJobStatus(atriumClient, counter, userGUID, memberGUID)
-    elif status == "PREVENTED" or status == "DENIED" or status == "IMPAIRED":
+    elif status in ["PREVENTED", "DENIED", "IMPAIRED"]:
         member = atriumClient.readMember(userGUID, memberGUID)
         institutionCode = member.institution_code
 
@@ -75,9 +75,9 @@ def checkJobStatus(atriumClient, counter, userGUID, memberGUID):
         print("\nUser's attention is required at FI website in order for aggregation to complete")
     elif status == "DISCONTINUED":
         print("\nConnection to institution is no longer available.")
-    elif status == "CLOSED" or status == "DISABLED":
+    elif status in ["CLOSED", "DISABLED"]:
         print("\nAggregation is purposely turned off for this user.")
-    elif status == "TERMINATED" or status == "ABORTED" or status == "STOPPED" or status == "THROTTLED" or status == "SUSPENDED" or status == "ERRORED":
+    elif status in ["TERMINATED", "ABORTED", "STOPPED", "THROTTLED", "SUSPENDED", "ERRORED"]:
         # Check JobStatus() an additional 2 times to see if status changed
         if counter < 3:
             counter = counter + 1
@@ -104,6 +104,7 @@ def readAggregationData(atriumClient, userGUID, memberGUID):
 
 
 atriumClient = AtriumClient("vestibule.mx.com", "YOUR_MX_API_KEY", "YOUR_MX_CLIENT_ID")
+
 counter = 0
 
 print("Please enter in user GUID. If not yet created just press enter key: ")
