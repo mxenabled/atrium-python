@@ -8,7 +8,7 @@ from atrium import AtriumClient
 atriumClient = AtriumClient("vestibule.mx.com", "YOUR_MX_API_KEY", "YOUR_MX_CLIENT_ID")
 
 print "\n************************** Create User **************************"
-user = atriumClient.createUser(metadata = "{\"first_name\": \"Steven\"}")
+user = atriumClient.createUser(identifier = "unique_id", metadata = "{\"first_name\": \"Steven\"}")
 print user.__dict__
 print json.dumps(user.__dict__)
 userGUID = user.guid
