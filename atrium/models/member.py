@@ -5,6 +5,7 @@ class Member:
     guid = None
     identifier = None
     institution_code = None
+    is_being_aggregated = None
     metadata = None
     name = None
     status = None
@@ -23,6 +24,8 @@ class Member:
             self.identifier = response["identifier"]
         if "institution_code" in response:
             self.institution_code = response["institution_code"]
+        if "is_being_aggregated" in response:
+            self.is_being_aggregated = response["is_being_aggregated"]
         if "metadata" in response:
             self.metadata = response["metadata"]
         if "name" in response:
