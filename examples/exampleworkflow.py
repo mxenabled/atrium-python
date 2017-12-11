@@ -166,7 +166,3 @@ elif endUserPresent == "true":
 else:
     print("\nEnd user must be present to create a new member")
     sys.exit(0)
-
-print("\n* Deleting test user *")
-atriumClient.deleteUser(userGUID)
-print("Deleted user: " + userGUID)
