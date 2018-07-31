@@ -1,5 +1,3 @@
-import json
-
 class AccountNumber:
     account_guid = None
     account_number = None
