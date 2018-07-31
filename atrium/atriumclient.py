@@ -247,6 +247,18 @@ class AtriumClient:
             transactions.append(Transaction(transaction))
         return transactions
 
+    # Required Parameters: userGUID, memberGUID
+    # Optional Parameters: None
+    def verifyMember(self, userGUID, memberGUID):
+        response = self.makeRequest("POST", "/users/{0}/members/{1}/verify".format(userGUID, memberGUID), "")
+        return Member(json.loads(response)["member"])
+
+    # Required Parameters: userGUID, memberGUID
+    # Optional Parameters: None
+    def identifyMember(self, userGUID, memberGUID):
+        response = self.makeRequest("POST", "/users/{0}/members/{1}/identify".format(userGUID, memberGUID), "")
+        return Member(json.loads(response)["member"])
+
 
     # ACCOUNT
 
@@ -303,6 +315,38 @@ class AtriumClient:
         for transaction in JSONArray:
             transactions.append(Transaction(transaction))
         return transactions
+
+
+    # ACCOUNT NUMBER
+
+    # Required Parameters: userGUID, memberGUID
+    # Optional Parameters: page, records_per_page
+    def listAccountNumbers(self, userGUID, memberGUID, page = "", records_per_page = ""):
+        params = self.optionalParameters("", "", "", page, records_per_page)
+
+        response = self.makeRequest("GET", "/users/{0}/members/{1}/account_numbers{2}".format(userGUID, memberGUID, params), "")
+        parsedJSON = json.loads(response)
+        JSONArray = parsedJSON["account_numbers"]
+        account_numbers = []
+        for account_number in JSONArray:
+            account_numbers.append(AccountNumber(account_number))
+        return account_numbers
+
+
+    # ACCOUNT OWNER
+
+    # Required Parameters: userGUID, memberGUID
+    # Optional Parameters: page, records_per_page
+    def listAccountOwners(self, userGUID, memberGUID, page = "", records_per_page = ""):
+        params = self.optionalParameters("", "", "", page, records_per_page)
+
+        response = self.makeRequest("GET", "/users/{0}/members/{1}/account_owners{2}".format(userGUID, memberGUID, params), "")
+        parsedJSON = json.loads(response)
+        JSONArray = parsedJSON["account_owners"]
+        account_owners = []
+        for account_owner in JSONArray:
+            account_owners.append(AccountOwner(account_owner))
+        return account_owners
 
 
     # CONNECT WIDGET
