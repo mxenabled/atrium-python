@@ -1,5 +1,3 @@
-import json
-
 class AccountOwner:
     address = None
     account_guid = None
