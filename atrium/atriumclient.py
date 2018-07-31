@@ -320,11 +320,9 @@ class AtriumClient:
     # ACCOUNT NUMBER
 
     # Required Parameters: userGUID, memberGUID
-    # Optional Parameters: page, records_per_page
-    def listAccountNumbers(self, userGUID, memberGUID, page = "", records_per_page = ""):
-        params = self.optionalParameters("", "", "", page, records_per_page)
-
-        response = self.makeRequest("GET", "/users/{0}/members/{1}/account_numbers{2}".format(userGUID, memberGUID, params), "")
+    # Optional Parameters: None
+    def listAccountNumbers(self, userGUID, memberGUID):
+        response = self.makeRequest("GET", "/users/{0}/members/{1}/account_numbers".format(userGUID, memberGUID), "")
         parsedJSON = json.loads(response)
         JSONArray = parsedJSON["account_numbers"]
         account_numbers = []
@@ -336,11 +334,9 @@ class AtriumClient:
     # ACCOUNT OWNER
 
     # Required Parameters: userGUID, memberGUID
-    # Optional Parameters: page, records_per_page
-    def listAccountOwners(self, userGUID, memberGUID, page = "", records_per_page = ""):
-        params = self.optionalParameters("", "", "", page, records_per_page)
-
-        response = self.makeRequest("GET", "/users/{0}/members/{1}/account_owners{2}".format(userGUID, memberGUID, params), "")
+    # Optional Parameters: None
+    def listAccountOwners(self, userGUID, memberGUID):
+        response = self.makeRequest("GET", "/users/{0}/members/{1}/account_owners".format(userGUID, memberGUID), "")
         parsedJSON = json.loads(response)
         JSONArray = parsedJSON["account_owners"]
         account_owners = []
