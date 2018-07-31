@@ -319,10 +319,14 @@ class AtriumClient:
 
     # ACCOUNT NUMBER
 
-    # Required Parameters: userGUID, memberGUID
+    # Required Parameters: userGUID, accountGUID or memberGUID
     # Optional Parameters: None
-    def listAccountNumbers(self, userGUID, memberGUID):
-        response = self.makeRequest("GET", "/users/{0}/members/{1}/account_numbers".format(userGUID, memberGUID), "")
+    def listAccountNumbers(self, userGUID, accountOrMemberGUID):
+        if accountOrMemberGUID[:3] == "ACT":
+            endpoint = "/users/{0}/accounts/{1}/account_numbers".format(userGUID, accountOrMemberGUID)
+        else:
+            endpoint = "/users/{0}/members/{1}/account_numbers".format(userGUID, accountOrMemberGUID)
+        response = self.makeRequest("GET", endpoint, "")
         parsedJSON = json.loads(response)
         JSONArray = parsedJSON["account_numbers"]
         account_numbers = []
