@@ -319,14 +319,21 @@ class AtriumClient:
 
     # ACCOUNT NUMBER
 
-    # Required Parameters: userGUID, accountGUID or memberGUID
+    # Required Parameters: userGUID, accountGUID
     # Optional Parameters: None
-    def listAccountNumbers(self, userGUID, accountOrMemberGUID):
-        if accountOrMemberGUID[:3] == "ACT":
-            endpoint = "/users/{0}/accounts/{1}/account_numbers".format(userGUID, accountOrMemberGUID)
-        else:
-            endpoint = "/users/{0}/members/{1}/account_numbers".format(userGUID, accountOrMemberGUID)
-        response = self.makeRequest("GET", endpoint, "")
+    def listAccountAccountNumbers(self, userGUID, accountGUID):
+        response = self.makeRequest("GET", "/users/{0}/accounts/{1}/account_numbers".format(userGUID, accountGUID), "")
+        parsedJSON = json.loads(response)
+        JSONArray = parsedJSON["account_numbers"]
+        account_numbers = []
+        for account_number in JSONArray:
+            account_numbers.append(AccountNumber(account_number))
+        return account_numbers
+
+    # Required Parameters: userGUID, memberGUID
+    # Optional Parameters: None
+    def listMemberAccountNumbers(self, userGUID, memberGUID):
+        response = self.makeRequest("GET", "/users/{0}/members/{1}/account_numbers".format(userGUID, memberGUID), "")
         parsedJSON = json.loads(response)
         JSONArray = parsedJSON["account_numbers"]
         account_numbers = []
@@ -339,7 +346,7 @@ class AtriumClient:
 
     # Required Parameters: userGUID, memberGUID
     # Optional Parameters: None
-    def listAccountOwners(self, userGUID, memberGUID):
+    def listMemberAccountOwners(self, userGUID, memberGUID):
         response = self.makeRequest("GET", "/users/{0}/members/{1}/account_owners".format(userGUID, memberGUID), "")
         parsedJSON = json.loads(response)
         JSONArray = parsedJSON["account_owners"]
