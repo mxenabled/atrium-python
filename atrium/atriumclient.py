@@ -247,6 +247,18 @@ class AtriumClient:
             transactions.append(Transaction(transaction))
         return transactions
 
+    # Required Parameters: userGUID, memberGUID
+    # Optional Parameters: None
+    def verifyMember(self, userGUID, memberGUID):
+        response = self.makeRequest("POST", "/users/{0}/members/{1}/verify".format(userGUID, memberGUID), "")
+        return Member(json.loads(response)["member"])
+
+    # Required Parameters: userGUID, memberGUID
+    # Optional Parameters: None
+    def identifyMember(self, userGUID, memberGUID):
+        response = self.makeRequest("POST", "/users/{0}/members/{1}/identify".format(userGUID, memberGUID), "")
+        return Member(json.loads(response)["member"])
+
 
     # ACCOUNT
 
@@ -303,6 +315,45 @@ class AtriumClient:
         for transaction in JSONArray:
             transactions.append(Transaction(transaction))
         return transactions
+
+
+    # ACCOUNT NUMBER
+
+    # Required Parameters: userGUID, accountGUID
+    # Optional Parameters: None
+    def listAccountAccountNumbers(self, userGUID, accountGUID):
+        response = self.makeRequest("GET", "/users/{0}/accounts/{1}/account_numbers".format(userGUID, accountGUID), "")
+        parsedJSON = json.loads(response)
+        JSONArray = parsedJSON["account_numbers"]
+        account_numbers = []
+        for account_number in JSONArray:
+            account_numbers.append(AccountNumber(account_number))
+        return account_numbers
+
+    # Required Parameters: userGUID, memberGUID
+    # Optional Parameters: None
+    def listMemberAccountNumbers(self, userGUID, memberGUID):
+        response = self.makeRequest("GET", "/users/{0}/members/{1}/account_numbers".format(userGUID, memberGUID), "")
+        parsedJSON = json.loads(response)
+        JSONArray = parsedJSON["account_numbers"]
+        account_numbers = []
+        for account_number in JSONArray:
+            account_numbers.append(AccountNumber(account_number))
+        return account_numbers
+
+
+    # ACCOUNT OWNER
+
+    # Required Parameters: userGUID, memberGUID
+    # Optional Parameters: None
+    def listMemberAccountOwners(self, userGUID, memberGUID):
+        response = self.makeRequest("GET", "/users/{0}/members/{1}/account_owners".format(userGUID, memberGUID), "")
+        parsedJSON = json.loads(response)
+        JSONArray = parsedJSON["account_owners"]
+        account_owners = []
+        for account_owner in JSONArray:
+            account_owners.append(AccountOwner(account_owner))
+        return account_owners
 
 
     # CONNECT WIDGET
