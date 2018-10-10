@@ -8,6 +8,7 @@ class Transaction:
     date = None
     description = None
     guid = None
+    id = None
     is_bill_pay = None
     is_direct_deposit = None
     is_expense = None
@@ -38,6 +39,7 @@ class Transaction:
         self.date = response["date"]
         self.description = response["description"]
         self.guid = response["guid"]
+        self.id = response["id"]
         self.is_bill_pay = response["is_bill_pay"]
         self.is_direct_deposit = response["is_direct_deposit"]
         self.is_expense = response["is_expense"]
