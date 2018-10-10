@@ -324,7 +324,7 @@ class AtriumClient:
     def categorizeAndDescribeTransactions(self, transactions):
         response = self.makeRequest("POST", "/categorize_and_describe", transactions)
         parsedJSON = json.loads(response)
-        transactions = [Transaction(t) for t in parsedJSON["transactions"]
+        transactions = [Transaction(t) for t in parsedJSON["transactions"]]
 
     # Required Parameters: userGUID, transactionGUID
     # Optional Parameters: None
