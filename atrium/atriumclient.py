@@ -297,6 +297,35 @@ class AtriumClient:
 
     # TRANSACTION
 
+    # Required Parameter: Dictionary of transactions in the form of:
+    # {
+    #     "transactions": [
+    #         {
+    #             "amount": 11.22,
+    #             "description": "BEER BAR 65000000764SALT LAKE C",
+    #             "id": "12",
+    #             "type": "DEBIT"
+    #         },
+    #         {
+    #             "amount": 21.33,
+    #             "description": "IN-N-OUT BURGER #239AMERICAN FO",
+    #             "id": "13",
+    #             "type": "DEBIT"
+    #         },
+    #         {
+    #             "amount": 1595.33,
+    #             "description": "ONLINE PAYMENT - THANK YOU",
+    #             "id": "14",
+    #             "type": "CREDIT"
+    #         }
+    #     ]
+    # } 
+    
+    def categorizeAndDescribeTransactions(self, transactions):
+        response = self.makeRequest("POST", "/categorize_and_describe", transactions)
+        parsedJSON = json.loads(response)
+        transactions = [Transaction(t) for t in parsedJSON["transactions"]]
+
     # Required Parameters: userGUID, transactionGUID
     # Optional Parameters: None
     def readTransaction(self, userGUID, transactionGUID):
