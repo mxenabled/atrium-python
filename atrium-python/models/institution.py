@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.institution_attributes import InstitutionAttributes  # noqa: F401,E501
+
 
 class Institution(object):
 
@@ -24,7 +26,7 @@ class Institution(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'institution': 'object'
+        'institution': 'InstitutionAttributes'
     }
 
     attribute_map = {
@@ -46,7 +48,7 @@ class Institution(object):
 
 
         :return: The institution of this Institution.  # noqa: E501
-        :rtype: object
+        :rtype: InstitutionAttributes
         """
         return self._institution
 
@@ -56,7 +58,7 @@ class Institution(object):
 
 
         :param institution: The institution of this Institution.  # noqa: E501
-        :type: object
+        :type: InstitutionAttributes
         """
 
         self._institution = institution

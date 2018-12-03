@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.credential_attributes import CredentialAttributes  # noqa: F401,E501
+
 
 class Credentials(object):
 
@@ -24,7 +26,7 @@ class Credentials(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'credentials': 'list[object]'
+        'credentials': 'list[CredentialAttributes]'
     }
 
     attribute_map = {
@@ -46,7 +48,7 @@ class Credentials(object):
 
 
         :return: The credentials of this Credentials.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[CredentialAttributes]
         """
         return self._credentials
 
@@ -56,7 +58,7 @@ class Credentials(object):
 
 
         :param credentials: The credentials of this Credentials.  # noqa: E501
-        :type: list[object]
+        :type: list[CredentialAttributes]
         """
 
         self._credentials = credentials

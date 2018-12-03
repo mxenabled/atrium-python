@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**credentials** | **list[object]** |  | 
+**credentials** | [**list[CredentialResponseAttributes]**](CredentialResponseAttributes.md) |  | 
 **identifier** | **str** |  | [optional] 
 **institution_code** | **str** |  | 
 **metadata** | **str** |  | [optional] 

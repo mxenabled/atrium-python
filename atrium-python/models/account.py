@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.account_attributes import AccountAttributes  # noqa: F401,E501
+
 
 class Account(object):
 
@@ -24,7 +26,7 @@ class Account(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'account': 'object'
+        'account': 'AccountAttributes'
     }
 
     attribute_map = {
@@ -46,7 +48,7 @@ class Account(object):
 
 
         :return: The account of this Account.  # noqa: E501
-        :rtype: object
+        :rtype: AccountAttributes
         """
         return self._account
 
@@ -56,7 +58,7 @@ class Account(object):
 
 
         :param account: The account of this Account.  # noqa: E501
-        :type: object
+        :type: AccountAttributes
         """
 
         self._account = account

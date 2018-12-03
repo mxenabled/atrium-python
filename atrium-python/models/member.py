@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.member_attributes import MemberAttributes  # noqa: F401,E501
+
 
 class Member(object):
 
@@ -24,7 +26,7 @@ class Member(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'member': 'object'
+        'member': 'MemberAttributes'
     }
 
     attribute_map = {
@@ -46,7 +48,7 @@ class Member(object):
 
 
         :return: The member of this Member.  # noqa: E501
-        :rtype: object
+        :rtype: MemberAttributes
         """
         return self._member
 
@@ -56,7 +58,7 @@ class Member(object):
 
 
         :param member: The member of this Member.  # noqa: E501
-        :type: object
+        :type: MemberAttributes
         """
 
         self._member = member

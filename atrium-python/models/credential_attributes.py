@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.credential_option_attributes import CredentialOptionAttributes  # noqa: F401,E501
+
 
 class CredentialAttributes(object):
 
@@ -27,7 +29,7 @@ class CredentialAttributes(object):
         'field_name': 'str',
         'guid': 'str',
         'label': 'str',
-        'options': 'list[object]',
+        'options': 'list[CredentialOptionAttributes]',
         'type': 'str'
     }
 
@@ -129,7 +131,7 @@ class CredentialAttributes(object):
 
 
         :return: The options of this CredentialAttributes.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[CredentialOptionAttributes]
         """
         return self._options
 
@@ -139,7 +141,7 @@ class CredentialAttributes(object):
 
 
         :param options: The options of this CredentialAttributes.  # noqa: E501
-        :type: list[object]
+        :type: list[CredentialOptionAttributes]
         """
 
         self._options = options

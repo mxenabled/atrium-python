@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.transaction_attributes import TransactionAttributes  # noqa: F401,E501
+
 
 class Transaction(object):
 
@@ -24,7 +26,7 @@ class Transaction(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'transaction': 'object'
+        'transaction': 'TransactionAttributes'
     }
 
     attribute_map = {
@@ -46,7 +48,7 @@ class Transaction(object):
 
 
         :return: The transaction of this Transaction.  # noqa: E501
-        :rtype: object
+        :rtype: TransactionAttributes
         """
         return self._transaction
 
@@ -56,7 +58,7 @@ class Transaction(object):
 
 
         :param transaction: The transaction of this Transaction.  # noqa: E501
-        :type: object
+        :type: TransactionAttributes
         """
 
         self._transaction = transaction

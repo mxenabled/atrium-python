@@ -13,7 +13,7 @@ import re  # noqa: F401
 import six
 
 
-class ChallengeAttributesOptions(object):
+class ChallengeOptionAttributes(object):
 
 
     """
@@ -36,7 +36,7 @@ class ChallengeAttributesOptions(object):
     }
 
     def __init__(self, image_data=None, label=None, value=None):  # noqa: E501
-        """ChallengeAttributesOptions - a model defined in Swagger"""  # noqa: E501
+        """ChallengeOptionAttributes - a model defined in Swagger"""  # noqa: E501
 
         self._image_data = None
         self._label = None
@@ -52,20 +52,20 @@ class ChallengeAttributesOptions(object):
 
     @property
     def image_data(self):
-        """Gets the image_data of this ChallengeAttributesOptions.  # noqa: E501
+        """Gets the image_data of this ChallengeOptionAttributes.  # noqa: E501
 
 
-        :return: The image_data of this ChallengeAttributesOptions.  # noqa: E501
+        :return: The image_data of this ChallengeOptionAttributes.  # noqa: E501
         :rtype: str
         """
         return self._image_data
 
     @image_data.setter
     def image_data(self, image_data):
-        """Sets the image_data of this ChallengeAttributesOptions.
+        """Sets the image_data of this ChallengeOptionAttributes.
 
 
-        :param image_data: The image_data of this ChallengeAttributesOptions.  # noqa: E501
+        :param image_data: The image_data of this ChallengeOptionAttributes.  # noqa: E501
         :type: str
         """
 
@@ -73,20 +73,20 @@ class ChallengeAttributesOptions(object):
 
     @property
     def label(self):
-        """Gets the label of this ChallengeAttributesOptions.  # noqa: E501
+        """Gets the label of this ChallengeOptionAttributes.  # noqa: E501
 
 
-        :return: The label of this ChallengeAttributesOptions.  # noqa: E501
+        :return: The label of this ChallengeOptionAttributes.  # noqa: E501
         :rtype: str
         """
         return self._label
 
     @label.setter
     def label(self, label):
-        """Sets the label of this ChallengeAttributesOptions.
+        """Sets the label of this ChallengeOptionAttributes.
 
 
-        :param label: The label of this ChallengeAttributesOptions.  # noqa: E501
+        :param label: The label of this ChallengeOptionAttributes.  # noqa: E501
         :type: str
         """
 
@@ -94,20 +94,20 @@ class ChallengeAttributesOptions(object):
 
     @property
     def value(self):
-        """Gets the value of this ChallengeAttributesOptions.  # noqa: E501
+        """Gets the value of this ChallengeOptionAttributes.  # noqa: E501
 
 
-        :return: The value of this ChallengeAttributesOptions.  # noqa: E501
+        :return: The value of this ChallengeOptionAttributes.  # noqa: E501
         :rtype: str
         """
         return self._value
 
     @value.setter
     def value(self, value):
-        """Sets the value of this ChallengeAttributesOptions.
+        """Sets the value of this ChallengeOptionAttributes.
 
 
-        :param value: The value of this ChallengeAttributesOptions.  # noqa: E501
+        :param value: The value of this ChallengeOptionAttributes.  # noqa: E501
         :type: str
         """
 
@@ -134,7 +134,7 @@ class ChallengeAttributesOptions(object):
                 ))
             else:
                 result[attr] = value
-        if issubclass(ChallengeAttributesOptions, dict):
+        if issubclass(ChallengeOptionAttributes, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -150,7 +150,7 @@ class ChallengeAttributesOptions(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ChallengeAttributesOptions):
+        if not isinstance(other, ChallengeOptionAttributes):
             return False
 
         return self.__dict__ == other.__dict__

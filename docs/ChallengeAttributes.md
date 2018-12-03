@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **guid** | **str** |  | [optional] 
 **image_data** | **str** |  | [optional] 
 **label** | **str** |  | [optional] 
-**options** | [**list[ChallengeAttributesOptions]**](ChallengeAttributesOptions.md) |  | [optional] 
+**options** | [**list[ChallengeOptionAttributes]**](ChallengeOptionAttributes.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,6 +12,9 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.institution_attributes import InstitutionAttributes  # noqa: F401,E501
+from atrium-python.models.pagination import Pagination  # noqa: F401,E501
+
 
 class Institutions(object):
 
@@ -24,8 +27,8 @@ class Institutions(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'institutions': 'list[object]',
-        'pagination': 'object'
+        'institutions': 'list[InstitutionAttributes]',
+        'pagination': 'Pagination'
     }
 
     attribute_map = {
@@ -51,7 +54,7 @@ class Institutions(object):
 
 
         :return: The institutions of this Institutions.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[InstitutionAttributes]
         """
         return self._institutions
 
@@ -61,7 +64,7 @@ class Institutions(object):
 
 
         :param institutions: The institutions of this Institutions.  # noqa: E501
-        :type: list[object]
+        :type: list[InstitutionAttributes]
         """
 
         self._institutions = institutions
@@ -72,7 +75,7 @@ class Institutions(object):
 
 
         :return: The pagination of this Institutions.  # noqa: E501
-        :rtype: object
+        :rtype: Pagination
         """
         return self._pagination
 
@@ -82,7 +85,7 @@ class Institutions(object):
 
 
         :param pagination: The pagination of this Institutions.  # noqa: E501
-        :type: object
+        :type: Pagination
         """
 
         self._pagination = pagination

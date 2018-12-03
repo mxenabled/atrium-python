@@ -1,4 +1,4 @@
-# ChallengeAttributesOptions
+# ChallengeOptionAttributes
 
 ## Properties
 Name | Type | Description | Notes

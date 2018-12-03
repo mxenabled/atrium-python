@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.connect_widget_attributes import ConnectWidgetAttributes  # noqa: F401,E501
+
 
 class ConnectWidget(object):
 
@@ -24,7 +26,7 @@ class ConnectWidget(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'user': 'object'
+        'user': 'ConnectWidgetAttributes'
     }
 
     attribute_map = {
@@ -46,7 +48,7 @@ class ConnectWidget(object):
 
 
         :return: The user of this ConnectWidget.  # noqa: E501
-        :rtype: object
+        :rtype: ConnectWidgetAttributes
         """
         return self._user
 
@@ -56,7 +58,7 @@ class ConnectWidget(object):
 
 
         :param user: The user of this ConnectWidget.  # noqa: E501
-        :type: object
+        :type: ConnectWidgetAttributes
         """
 
         self._user = user

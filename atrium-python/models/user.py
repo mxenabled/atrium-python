@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.user_attributes import UserAttributes  # noqa: F401,E501
+
 
 class User(object):
 
@@ -24,7 +26,7 @@ class User(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'user': 'object'
+        'user': 'UserAttributes'
     }
 
     attribute_map = {
@@ -46,7 +48,7 @@ class User(object):
 
 
         :return: The user of this User.  # noqa: E501
-        :rtype: object
+        :rtype: UserAttributes
         """
         return self._user
 
@@ -56,7 +58,7 @@ class User(object):
 
 
         :param user: The user of this User.  # noqa: E501
-        :type: object
+        :type: UserAttributes
         """
 
         self._user = user

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregated_at** | **str** |  | [optional] 
-**challenges** | **list[object]** |  | [optional] 
+**challenges** | [**list[ChallengeAttributes]**](ChallengeAttributes.md) |  | [optional] 
 **connection_status** | **str** |  | [optional] 
 **guid** | **bool** |  | [optional] 
 **has_processed_accounts** | **bool** |  | [optional] 

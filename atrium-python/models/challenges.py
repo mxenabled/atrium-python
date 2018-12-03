@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.challenge_attributes import ChallengeAttributes  # noqa: F401,E501
+
 
 class Challenges(object):
 
@@ -24,7 +26,7 @@ class Challenges(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'challenges': 'list[object]'
+        'challenges': 'list[ChallengeAttributes]'
     }
 
     attribute_map = {
@@ -46,7 +48,7 @@ class Challenges(object):
 
 
         :return: The challenges of this Challenges.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[ChallengeAttributes]
         """
         return self._challenges
 
@@ -56,7 +58,7 @@ class Challenges(object):
 
 
         :param challenges: The challenges of this Challenges.  # noqa: E501
-        :type: list[object]
+        :type: list[ChallengeAttributes]
         """
 
         self._challenges = challenges

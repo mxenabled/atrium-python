@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.transactions_cleanse_and_categorize_attributes import TransactionsCleanseAndCategorizeAttributes  # noqa: F401,E501
+
 
 class TransactionsCleanseAndCategorize(object):
 
@@ -24,7 +26,7 @@ class TransactionsCleanseAndCategorize(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'transactions': 'list[object]'
+        'transactions': 'list[TransactionsCleanseAndCategorizeAttributes]'
     }
 
     attribute_map = {
@@ -46,7 +48,7 @@ class TransactionsCleanseAndCategorize(object):
 
 
         :return: The transactions of this TransactionsCleanseAndCategorize.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[TransactionsCleanseAndCategorizeAttributes]
         """
         return self._transactions
 
@@ -56,7 +58,7 @@ class TransactionsCleanseAndCategorize(object):
 
 
         :param transactions: The transactions of this TransactionsCleanseAndCategorize.  # noqa: E501
-        :type: list[object]
+        :type: list[TransactionsCleanseAndCategorizeAttributes]
         """
 
         self._transactions = transactions

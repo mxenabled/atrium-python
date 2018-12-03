@@ -123,7 +123,7 @@ Class | Method | HTTP request | Description
  - [AccountOwners](docs/AccountOwners.md)
  - [Accounts](docs/Accounts.md)
  - [ChallengeAttributes](docs/ChallengeAttributes.md)
- - [ChallengeAttributesOptions](docs/ChallengeAttributesOptions.md)
+ - [ChallengeOptionAttributes](docs/ChallengeOptionAttributes.md)
  - [Challenges](docs/Challenges.md)
  - [ConnectWidget](docs/ConnectWidget.md)
  - [ConnectWidgetAttributes](docs/ConnectWidgetAttributes.md)

@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.credential_response_attributes import CredentialResponseAttributes  # noqa: F401,E501
+
 
 class MemberCreateRequestBodyAttributes(object):
 
@@ -24,7 +26,7 @@ class MemberCreateRequestBodyAttributes(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'credentials': 'list[object]',
+        'credentials': 'list[CredentialResponseAttributes]',
         'identifier': 'str',
         'institution_code': 'str',
         'metadata': 'str'
@@ -59,7 +61,7 @@ class MemberCreateRequestBodyAttributes(object):
 
 
         :return: The credentials of this MemberCreateRequestBodyAttributes.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[CredentialResponseAttributes]
         """
         return self._credentials
 
@@ -69,7 +71,7 @@ class MemberCreateRequestBodyAttributes(object):
 
 
         :param credentials: The credentials of this MemberCreateRequestBodyAttributes.  # noqa: E501
-        :type: list[object]
+        :type: list[CredentialResponseAttributes]
         """
         if credentials is None:
             raise ValueError("Invalid value for `credentials`, must not be `None`")  # noqa: E501

@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.challenge_attributes import ChallengeAttributes  # noqa: F401,E501
+
 
 class MemberConnectionStatusAttributes(object):
 
@@ -25,7 +27,7 @@ class MemberConnectionStatusAttributes(object):
     """
     mx_types = {
         'aggregated_at': 'str',
-        'challenges': 'list[object]',
+        'challenges': 'list[ChallengeAttributes]',
         'connection_status': 'str',
         'guid': 'bool',
         'has_processed_accounts': 'bool',
@@ -107,7 +109,7 @@ class MemberConnectionStatusAttributes(object):
 
 
         :return: The challenges of this MemberConnectionStatusAttributes.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[ChallengeAttributes]
         """
         return self._challenges
 
@@ -117,7 +119,7 @@ class MemberConnectionStatusAttributes(object):
 
 
         :param challenges: The challenges of this MemberConnectionStatusAttributes.  # noqa: E501
-        :type: list[object]
+        :type: list[ChallengeAttributes]
         """
 
         self._challenges = challenges

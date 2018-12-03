@@ -12,6 +12,8 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.credential_response_attributes import CredentialResponseAttributes  # noqa: F401,E501
+
 
 class MemberResumeRequestBodyAttributes(object):
 
@@ -24,7 +26,7 @@ class MemberResumeRequestBodyAttributes(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'challenges': 'list[object]'
+        'challenges': 'list[CredentialResponseAttributes]'
     }
 
     attribute_map = {
@@ -46,7 +48,7 @@ class MemberResumeRequestBodyAttributes(object):
 
 
         :return: The challenges of this MemberResumeRequestBodyAttributes.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[CredentialResponseAttributes]
         """
         return self._challenges
 
@@ -56,7 +58,7 @@ class MemberResumeRequestBodyAttributes(object):
 
 
         :param challenges: The challenges of this MemberResumeRequestBodyAttributes.  # noqa: E501
-        :type: list[object]
+        :type: list[CredentialResponseAttributes]
         """
 
         self._challenges = challenges

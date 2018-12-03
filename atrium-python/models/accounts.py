@@ -12,6 +12,9 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.account_attributes import AccountAttributes  # noqa: F401,E501
+from atrium-python.models.pagination import Pagination  # noqa: F401,E501
+
 
 class Accounts(object):
 
@@ -24,8 +27,8 @@ class Accounts(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'accounts': 'list[object]',
-        'pagination': 'object'
+        'accounts': 'list[AccountAttributes]',
+        'pagination': 'Pagination'
     }
 
     attribute_map = {
@@ -51,7 +54,7 @@ class Accounts(object):
 
 
         :return: The accounts of this Accounts.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[AccountAttributes]
         """
         return self._accounts
 
@@ -61,7 +64,7 @@ class Accounts(object):
 
 
         :param accounts: The accounts of this Accounts.  # noqa: E501
-        :type: list[object]
+        :type: list[AccountAttributes]
         """
 
         self._accounts = accounts
@@ -72,7 +75,7 @@ class Accounts(object):
 
 
         :return: The pagination of this Accounts.  # noqa: E501
-        :rtype: object
+        :rtype: Pagination
         """
         return self._pagination
 
@@ -82,7 +85,7 @@ class Accounts(object):
 
 
         :param pagination: The pagination of this Accounts.  # noqa: E501
-        :type: object
+        :type: Pagination
         """
 
         self._pagination = pagination

@@ -12,6 +12,9 @@ import re  # noqa: F401
 
 import six
 
+from atrium-python.models.pagination import Pagination  # noqa: F401,E501
+from atrium-python.models.transaction_attributes import TransactionAttributes  # noqa: F401,E501
+
 
 class Transactions(object):
 
@@ -24,8 +27,8 @@ class Transactions(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'transactions': 'list[object]',
-        'pagination': 'object'
+        'transactions': 'list[TransactionAttributes]',
+        'pagination': 'Pagination'
     }
 
     attribute_map = {
@@ -51,7 +54,7 @@ class Transactions(object):
 
 
         :return: The transactions of this Transactions.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[TransactionAttributes]
         """
         return self._transactions
 
@@ -61,7 +64,7 @@ class Transactions(object):
 
 
         :param transactions: The transactions of this Transactions.  # noqa: E501
-        :type: list[object]
+        :type: list[TransactionAttributes]
         """
 
         self._transactions = transactions
@@ -72,7 +75,7 @@ class Transactions(object):
 
 
         :return: The pagination of this Transactions.  # noqa: E501
-        :rtype: object
+        :rtype: Pagination
         """
         return self._pagination
 
@@ -82,7 +85,7 @@ class Transactions(object):
 
 
         :param pagination: The pagination of this Transactions.  # noqa: E501
-        :type: object
+        :type: Pagination
         """
 
         self._pagination = pagination

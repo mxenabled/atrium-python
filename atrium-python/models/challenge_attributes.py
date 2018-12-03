@@ -12,7 +12,7 @@ import re  # noqa: F401
 
 import six
 
-from atrium-python.models.challenge_attributes_options import ChallengeAttributesOptions  # noqa: F401,E501
+from atrium-python.models.challenge_option_attributes import ChallengeOptionAttributes  # noqa: F401,E501
 
 
 class ChallengeAttributes(object):
@@ -30,7 +30,7 @@ class ChallengeAttributes(object):
         'guid': 'str',
         'image_data': 'str',
         'label': 'str',
-        'options': 'list[ChallengeAttributesOptions]'
+        'options': 'list[ChallengeOptionAttributes]'
     }
 
     attribute_map = {
@@ -152,7 +152,7 @@ class ChallengeAttributes(object):
 
 
         :return: The options of this ChallengeAttributes.  # noqa: E501
-        :rtype: list[ChallengeAttributesOptions]
+        :rtype: list[ChallengeOptionAttributes]
         """
         return self._options
 
@@ -162,7 +162,7 @@ class ChallengeAttributes(object):
 
 
         :param options: The options of this ChallengeAttributes.  # noqa: E501
-        :type: list[ChallengeAttributesOptions]
+        :type: list[ChallengeOptionAttributes]
         """
 
         self._options = options

@@ -33,7 +33,7 @@ from atrium-python.models.account_owner_attributes import AccountOwnerAttributes
 from atrium-python.models.account_owners import AccountOwners
 from atrium-python.models.accounts import Accounts
 from atrium-python.models.challenge_attributes import ChallengeAttributes
-from atrium-python.models.challenge_attributes_options import ChallengeAttributesOptions
+from atrium-python.models.challenge_option_attributes import ChallengeOptionAttributes
 from atrium-python.models.challenges import Challenges
 from atrium-python.models.connect_widget import ConnectWidget
 from atrium-python.models.connect_widget_attributes import ConnectWidgetAttributes

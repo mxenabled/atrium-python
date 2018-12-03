@@ -12,12 +12,12 @@ from __future__ import absolute_import
 import unittest
 
 import atrium-python
-from atrium-python.models.challenge_attributes_options import ChallengeAttributesOptions  # noqa: E501
+from atrium-python.models.challenge_option_attributes import ChallengeOptionAttributes  # noqa: E501
 from atrium-python.rest import ApiException
 
 
-class TestChallengeAttributesOptions(unittest.TestCase):
-    """ChallengeAttributesOptions unit test stubs"""
+class TestChallengeOptionAttributes(unittest.TestCase):
+    """ChallengeOptionAttributes unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestChallengeAttributesOptions(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testChallengeAttributesOptions(self):
-        """Test ChallengeAttributesOptions"""
+    def testChallengeOptionAttributes(self):
+        """Test ChallengeOptionAttributes"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.challenge_attributes_options.ChallengeAttributesOptions()  # noqa: E501
+        # model = atrium-python.models.challenge_option_attributes.ChallengeOptionAttributes()  # noqa: E501
         pass
 
 
