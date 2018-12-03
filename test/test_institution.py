@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.institution import Institution  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.institution import Institution  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestInstitution(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestInstitution(unittest.TestCase):
     def testInstitution(self):
         """Test Institution"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.institution.Institution()  # noqa: E501
+        # model = atrium.models.institution.Institution()  # noqa: E501
         pass
 
 

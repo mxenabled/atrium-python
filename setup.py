@@ -9,7 +9,7 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "atrium-python"
+NAME = "atrium"
 VERSION = "2.0"
 # To install the library, run the following
 #
@@ -26,7 +26,7 @@ setup(
     description="MX API",
     author_email="",
     url="https://atrium.mx.com",
-    keywords=["Swagger", "MX API"],
+    keywords=["MX", "MX API"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,

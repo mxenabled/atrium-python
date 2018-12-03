@@ -1,4 +1,4 @@
-# atrium-python.ConnectWidgetApi
+# atrium.ConnectWidgetApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,25 +16,25 @@ This endpoint will return a URL for an embeddable version of MX Connect.
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.ConnectWidgetApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.ConnectWidgetApi(atrium.ApiClient(configuration))
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
-body = atrium-python.ConnectWidgetRequestBody() # ConnectWidgetRequestBody | Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials)
+body = atrium.ConnectWidgetRequestBody() # ConnectWidgetRequestBody | Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials)
 
 try:
     # Embedding in a website

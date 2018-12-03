@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.credential_response_attributes import CredentialResponseAttributes  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.credential_response_attributes import CredentialResponseAttributes  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestCredentialResponseAttributes(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestCredentialResponseAttributes(unittest.TestCase):
     def testCredentialResponseAttributes(self):
         """Test CredentialResponseAttributes"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.credential_response_attributes.CredentialResponseAttributes()  # noqa: E501
+        # model = atrium.models.credential_response_attributes.CredentialResponseAttributes()  # noqa: E501
         pass
 
 

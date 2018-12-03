@@ -1,4 +1,4 @@
-# atrium-python.AccountsApi
+# atrium.AccountsApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,23 +19,23 @@ This endpoint allows you to see every transaction that belongs to a specific acc
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.AccountsApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.AccountsApi(atrium.ApiClient(configuration))
 account_guid = 'account_guid_example' # str | The unique identifier for an `account`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 from_date = 'from_date_example' # str | Filter transactions from this date. (optional)
@@ -79,23 +79,23 @@ Use this endpoint to view information about every account that belongs to a user
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.AccountsApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.AccountsApi(atrium.ApiClient(configuration))
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 page = 12 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
@@ -133,23 +133,23 @@ Reading an account allows you to get information about a specific account that b
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.AccountsApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.AccountsApi(atrium.ApiClient(configuration))
 account_guid = 'account_guid_example' # str | The unique identifier for an `account`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -185,23 +185,23 @@ Reading an account allows you to get information about a specific account that b
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.AccountsApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.AccountsApi(atrium.ApiClient(configuration))
 account_guid = 'account_guid_example' # str | The unique identifier for an `account`.
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.

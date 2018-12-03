@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.user_update_request_body import UserUpdateRequestBody  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.user_update_request_body import UserUpdateRequestBody  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestUserUpdateRequestBody(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestUserUpdateRequestBody(unittest.TestCase):
     def testUserUpdateRequestBody(self):
         """Test UserUpdateRequestBody"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.user_update_request_body.UserUpdateRequestBody()  # noqa: E501
+        # model = atrium.models.user_update_request_body.UserUpdateRequestBody()  # noqa: E501
         pass
 
 

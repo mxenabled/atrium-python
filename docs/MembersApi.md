@@ -1,4 +1,4 @@
-# atrium-python.MembersApi
+# atrium.MembersApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,23 +27,23 @@ Calling this endpoint initiates an aggregation event for the member. This brings
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -79,25 +79,25 @@ This endpoint allows you to create a new member. Members are created with the re
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
-body = atrium-python.MemberCreateRequestBody() # MemberCreateRequestBody | Member object to be created with optional parameters (identifier and metadata) and required parameters (credentials and institution_code)
+body = atrium.MemberCreateRequestBody() # MemberCreateRequestBody | Member object to be created with optional parameters (identifier and metadata) and required parameters (credentials and institution_code)
 
 try:
     # Create member
@@ -131,23 +131,23 @@ Accessing this endpoint will permanently delete a member.
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -182,23 +182,23 @@ This endpoint returns an array with information about every account associated w
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 page = 12 # int | Specify current page. (optional)
@@ -238,23 +238,23 @@ This endpoint returns an array which contains information on every non-MFA crede
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -290,23 +290,23 @@ Use this endpoint for information on what multi-factor authentication challenges
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -342,23 +342,23 @@ Use this endpoint to get all transactions from all accounts associated with a sp
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 from_date = 'from_date_example' # str | Filter transactions from this date. (optional)
@@ -402,23 +402,23 @@ This endpoint returns an array which contains information on every member associ
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 page = 12 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
@@ -456,23 +456,23 @@ Use this endpoint to read the attributes of a specific member.
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -508,23 +508,23 @@ This endpoint provides the status of the member's most recent aggregation event.
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -560,26 +560,26 @@ This endpoint answers the challenges needed when a member has been challenged by
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
-body = atrium-python.MemberResumeRequestBody() # MemberResumeRequestBody | Member object with MFA challenge answers
+body = atrium.MemberResumeRequestBody() # MemberResumeRequestBody | Member object with MFA challenge answers
 
 try:
     # Resume aggregation from MFA
@@ -614,26 +614,26 @@ Use this endpoint to update a member's attributes. Only the credentials, identif
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.MembersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
-body = atrium-python.MemberUpdateRequestBody() # MemberUpdateRequestBody | Member object to be updated with optional parameters (credentials, identifier, metadata) (optional)
+body = atrium.MemberUpdateRequestBody() # MemberUpdateRequestBody | Member object to be updated with optional parameters (credentials, identifier, metadata) (optional)
 
 try:
     # Update member

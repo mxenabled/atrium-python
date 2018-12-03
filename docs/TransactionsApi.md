@@ -1,4 +1,4 @@
-# atrium-python.TransactionsApi
+# atrium.TransactionsApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,24 +18,24 @@ Use this endpoint to categorize, cleanse, and classify transactions. These trans
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.TransactionsApi(atrium-python.ApiClient(configuration))
-body = atrium-python.TransactionsCleanseAndCategorizeRequestBody() # TransactionsCleanseAndCategorizeRequestBody | User object to be created with optional parameters (amount, type) amd required parameters (description, identifier)
+api_instance = atrium.TransactionsApi(atrium.ApiClient(configuration))
+body = atrium.TransactionsCleanseAndCategorizeRequestBody() # TransactionsCleanseAndCategorizeRequestBody | User object to be created with optional parameters (amount, type) amd required parameters (description, identifier)
 
 try:
     # Categorize transactions
@@ -68,23 +68,23 @@ Use this endpoint to get all transactions that belong to a specific user, across
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.TransactionsApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.TransactionsApi(atrium.ApiClient(configuration))
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 page = 12 # int | Specify current page. (optional)
 from_date = 'from_date_example' # str | Filter transactions from this date. (optional)
@@ -126,23 +126,23 @@ This endpoint allows you to view information about a specific transaction that b
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.TransactionsApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.TransactionsApi(atrium.ApiClient(configuration))
 transaction_guid = 'transaction_guid_example' # str | The unique identifier for a `transaction`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 

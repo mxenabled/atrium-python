@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.member_create_request_body_attributes import MemberCreateRequestBodyAttributes  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.member_create_request_body_attributes import MemberCreateRequestBodyAttributes  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestMemberCreateRequestBodyAttributes(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestMemberCreateRequestBodyAttributes(unittest.TestCase):
     def testMemberCreateRequestBodyAttributes(self):
         """Test MemberCreateRequestBodyAttributes"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.member_create_request_body_attributes.MemberCreateRequestBodyAttributes()  # noqa: E501
+        # model = atrium.models.member_create_request_body_attributes.MemberCreateRequestBodyAttributes()  # noqa: E501
         pass
 
 

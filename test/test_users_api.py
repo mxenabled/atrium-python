@@ -11,16 +11,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.api.users_api import UsersApi  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.api.users_api import UsersApi  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestUsersApi(unittest.TestCase):
     """UsersApi unit test stubs"""
 
     def setUp(self):
-        self.api = atrium-python.api.users_api.UsersApi()  # noqa: E501
+        self.api = atrium.api.users_api.UsersApi()  # noqa: E501
 
     def tearDown(self):
         pass

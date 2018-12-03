@@ -1,4 +1,4 @@
-# atrium-python
+# atrium
 The MX Atrium API supports over 48,000 data connections to thousands of financial institutions. It provides secure access to your users' accounts and transactions with industry-leading cleansing, categorization, and classification.  Atrium is designed according to resource-oriented REST architecture and responds with JSON bodies and HTTP response codes.  Use Atrium's development environment, vestibule.mx.com, to quickly get up and running. The development environment limits are 100 users, 25 members per user, and access to the top 15 institutions. Contact MX to purchase production access. 
 
 ## Requirements.
@@ -15,7 +15,7 @@ pip install git+https://github.com/mxenabled/atrium-python.git
 
 Then import the package:
 ```python
-import atrium-python
+import atrium
 ```
 
 ### Setuptools
@@ -29,7 +29,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import atrium-python
+import atrium
 ```
 
 ## Example Usage
@@ -39,23 +39,23 @@ Please see `docs` directory for additional endpoint examples
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.AccountsApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.AccountsApi(atrium.ApiClient(configuration))
 account_guid = 'account_guid_example' # str | The unique identifier for an `account`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 from_date = 'from_date_example' # str | Filter transactions from this date. (optional)

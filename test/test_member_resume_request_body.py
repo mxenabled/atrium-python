@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.member_resume_request_body import MemberResumeRequestBody  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.member_resume_request_body import MemberResumeRequestBody  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestMemberResumeRequestBody(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestMemberResumeRequestBody(unittest.TestCase):
     def testMemberResumeRequestBody(self):
         """Test MemberResumeRequestBody"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.member_resume_request_body.MemberResumeRequestBody()  # noqa: E501
+        # model = atrium.models.member_resume_request_body.MemberResumeRequestBody()  # noqa: E501
         pass
 
 

@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.user_attributes import UserAttributes  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.user_attributes import UserAttributes  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestUserAttributes(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestUserAttributes(unittest.TestCase):
     def testUserAttributes(self):
         """Test UserAttributes"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.user_attributes.UserAttributes()  # noqa: E501
+        # model = atrium.models.user_attributes.UserAttributes()  # noqa: E501
         pass
 
 

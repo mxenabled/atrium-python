@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.transactions_cleanse_and_categorize import TransactionsCleanseAndCategorize  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.transactions_cleanse_and_categorize import TransactionsCleanseAndCategorize  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestTransactionsCleanseAndCategorize(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestTransactionsCleanseAndCategorize(unittest.TestCase):
     def testTransactionsCleanseAndCategorize(self):
         """Test TransactionsCleanseAndCategorize"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.transactions_cleanse_and_categorize.TransactionsCleanseAndCategorize()  # noqa: E501
+        # model = atrium.models.transactions_cleanse_and_categorize.TransactionsCleanseAndCategorize()  # noqa: E501
         pass
 
 

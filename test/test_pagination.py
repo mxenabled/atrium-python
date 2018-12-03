@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.pagination import Pagination  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.pagination import Pagination  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestPagination(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestPagination(unittest.TestCase):
     def testPagination(self):
         """Test Pagination"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.pagination.Pagination()  # noqa: E501
+        # model = atrium.models.pagination.Pagination()  # noqa: E501
         pass
 
 

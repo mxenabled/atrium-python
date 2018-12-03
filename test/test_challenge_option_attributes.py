@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.challenge_option_attributes import ChallengeOptionAttributes  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.challenge_option_attributes import ChallengeOptionAttributes  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestChallengeOptionAttributes(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestChallengeOptionAttributes(unittest.TestCase):
     def testChallengeOptionAttributes(self):
         """Test ChallengeOptionAttributes"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.challenge_option_attributes.ChallengeOptionAttributes()  # noqa: E501
+        # model = atrium.models.challenge_option_attributes.ChallengeOptionAttributes()  # noqa: E501
         pass
 
 

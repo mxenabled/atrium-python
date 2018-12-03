@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.member import Member  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.member import Member  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestMember(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestMember(unittest.TestCase):
     def testMember(self):
         """Test Member"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.member.Member()  # noqa: E501
+        # model = atrium.models.member.Member()  # noqa: E501
         pass
 
 

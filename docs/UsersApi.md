@@ -1,4 +1,4 @@
-# atrium-python.UsersApi
+# atrium.UsersApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,24 +20,24 @@ Call this endpoint to create a new user. Atrium will respond with the newly-crea
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.UsersApi(atrium-python.ApiClient(configuration))
-body = atrium-python.UserCreateRequestBody() # UserCreateRequestBody | User object to be created with optional parameters (identifier, is_disabled, metadata)
+api_instance = atrium.UsersApi(atrium.ApiClient(configuration))
+body = atrium.UserCreateRequestBody() # UserCreateRequestBody | User object to be created with optional parameters (identifier, is_disabled, metadata)
 
 try:
     # Create user
@@ -70,23 +70,23 @@ Calling this endpoint will permanently delete a user from Atrium. If successful,
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.UsersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.UsersApi(atrium.ApiClient(configuration))
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
 try:
@@ -119,23 +119,23 @@ Use this endpoint to list every user you've created in Atrium.
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.UsersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.UsersApi(atrium.ApiClient(configuration))
 page = 12 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
 
@@ -171,23 +171,23 @@ Use this endpoint to read the attributes of a specific user.
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.UsersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.UsersApi(atrium.ApiClient(configuration))
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
 try:
@@ -221,25 +221,25 @@ Use this endpoint to update the attributes of a specific user. Atrium will respo
 ```python
 from __future__ import print_function
 import time
-import atrium-python
-from atrium-python.rest import ApiException
+import atrium
+from atrium.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apiKey
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
 # Configure API key authorization: clientID
-configuration = atrium-python.Configuration()
+configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = atrium-python.UsersApi(atrium-python.ApiClient(configuration))
+api_instance = atrium.UsersApi(atrium.ApiClient(configuration))
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
-body = atrium-python.UserUpdateRequestBody() # UserUpdateRequestBody | User object to be updated with optional parameters (identifier, is_disabled, metadata) (optional)
+body = atrium.UserUpdateRequestBody() # UserUpdateRequestBody | User object to be updated with optional parameters (identifier, is_disabled, metadata) (optional)
 
 try:
     # Update user

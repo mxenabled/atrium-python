@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.connect_widget import ConnectWidget  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.connect_widget import ConnectWidget  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestConnectWidget(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestConnectWidget(unittest.TestCase):
     def testConnectWidget(self):
         """Test ConnectWidget"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.connect_widget.ConnectWidget()  # noqa: E501
+        # model = atrium.models.connect_widget.ConnectWidget()  # noqa: E501
         pass
 
 

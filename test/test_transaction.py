@@ -11,9 +11,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atrium-python
-from atrium-python.models.transaction import Transaction  # noqa: E501
-from atrium-python.rest import ApiException
+import atrium
+from atrium.models.transaction import Transaction  # noqa: E501
+from atrium.rest import ApiException
 
 
 class TestTransaction(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestTransaction(unittest.TestCase):
     def testTransaction(self):
         """Test Transaction"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atrium-python.models.transaction.Transaction()  # noqa: E501
+        # model = atrium.models.transaction.Transaction()  # noqa: E501
         pass
 
 
