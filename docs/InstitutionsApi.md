@@ -22,19 +22,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.InstitutionsApi(atrium.ApiClient(configuration))
+api_instance = atrium.InstitutionsApi()
 name = 'name_example' # str | This will list only institutions in which the appended string appears. (optional)
 page = 12 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
@@ -76,19 +73,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.InstitutionsApi(atrium.ApiClient(configuration))
+api_instance = atrium.InstitutionsApi()
 institution_code = 'institution_code_example' # str | The institution_code of the institution.
 
 try:
@@ -126,19 +120,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.InstitutionsApi(atrium.ApiClient(configuration))
+api_instance = atrium.InstitutionsApi()
 institution_code = 'institution_code_example' # str | The institution_code of the institution.
 
 try:

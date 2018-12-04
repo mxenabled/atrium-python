@@ -31,19 +31,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -83,19 +80,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 body = atrium.MemberCreateRequestBody() # MemberCreateRequestBody | Member object to be created with optional parameters (identifier and metadata) and required parameters (credentials and institution_code)
 
@@ -135,19 +129,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -186,19 +177,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 page = 12 # int | Specify current page. (optional)
@@ -242,19 +230,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -294,19 +279,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -346,19 +328,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 from_date = 'from_date_example' # str | Filter transactions from this date. (optional)
@@ -406,19 +385,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 page = 12 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
@@ -460,19 +436,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -512,19 +485,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -564,19 +534,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 body = atrium.MemberResumeRequestBody() # MemberResumeRequestBody | Member object with MFA challenge answers
@@ -618,19 +585,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.MembersApi(atrium.ApiClient(configuration))
+api_instance = atrium.MembersApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 body = atrium.MemberUpdateRequestBody() # MemberUpdateRequestBody | Member object to be updated with optional parameters (credentials, identifier, metadata) (optional)

@@ -21,19 +21,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.IdentityApi(atrium.ApiClient(configuration))
+api_instance = atrium.IdentityApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
@@ -73,19 +70,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apiKey
+# Configure API Key authorization
 configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-API-Key'] = 'Bearer'
-# Configure API key authorization: clientID
+
+# Configure Client ID authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-Client-ID'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['MX-Client-ID'] = 'Bearer'
+configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
-api_instance = atrium.IdentityApi(atrium.ApiClient(configuration))
+api_instance = atrium.IdentityApi()
 member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
 user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
 
