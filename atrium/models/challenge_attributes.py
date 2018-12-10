@@ -30,7 +30,8 @@ class ChallengeAttributes(object):
         'guid': 'str',
         'image_data': 'str',
         'label': 'str',
-        'options': 'list[ChallengeOptionAttributes]'
+        'options': 'list[ChallengeOptionAttributes]',
+        'type': 'str'
     }
 
     attribute_map = {
@@ -38,16 +39,18 @@ class ChallengeAttributes(object):
         'guid': 'guid',
         'image_data': 'image_data',
         'label': 'label',
-        'options': 'options'
+        'options': 'options',
+        'type': 'type'
     }
 
-    def __init__(self, field_name=None, guid=None, image_data=None, label=None, options=None):  # noqa: E501
+    def __init__(self, field_name=None, guid=None, image_data=None, label=None, options=None, type=None):  # noqa: E501
 
         self._field_name = None
         self._guid = None
         self._image_data = None
         self._label = None
         self._options = None
+        self._type = None
         self.discriminator = None
 
         if field_name is not None:
@@ -60,6 +63,8 @@ class ChallengeAttributes(object):
             self.label = label
         if options is not None:
             self.options = options
+        if type is not None:
+            self.type = type
 
     @property
     def field_name(self):
@@ -165,6 +170,27 @@ class ChallengeAttributes(object):
         """
 
         self._options = options
+
+    @property
+    def type(self):
+        """Gets the type of this ChallengeAttributes.  # noqa: E501
+
+
+        :return: The type of this ChallengeAttributes.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this ChallengeAttributes.
+
+
+        :param type: The type of this ChallengeAttributes.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

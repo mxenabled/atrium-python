@@ -36,7 +36,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
@@ -85,7 +84,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
@@ -134,7 +132,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
@@ -182,7 +179,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
@@ -235,7 +231,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
@@ -284,7 +279,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
@@ -333,7 +327,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
@@ -390,7 +383,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
@@ -441,7 +433,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
@@ -490,7 +481,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
@@ -539,7 +529,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
@@ -590,7 +579,6 @@ configuration = atrium.Configuration()
 configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration = atrium.Configuration()
 configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class

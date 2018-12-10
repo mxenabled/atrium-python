@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **image_data** | **str** |  | [optional] 
 **label** | **str** |  | [optional] 
 **options** | [**list[ChallengeOptionAttributes]**](ChallengeOptionAttributes.md) |  | [optional] 
+**type** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
