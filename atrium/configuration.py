@@ -43,7 +43,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
 
         # Authentication Settings
         # dict to store API key(s)
-        self.api_key = {}
+        self.headers = {}
         # dict to store API prefix (e.g. Bearer)
         self.api_key_prefix = {}
         # Username for HTTP basic authentication
@@ -193,11 +193,11 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         :param identifier: The identifier of apiKey.
         :return: The token for api key authentication.
         """
-        if (self.api_key.get(identifier) and
+        if (self.headers.get(identifier) and
                 self.api_key_prefix.get(identifier)):
-            return self.api_key_prefix[identifier] + ' ' + self.api_key[identifier]  # noqa: E501
-        elif self.api_key.get(identifier):
-            return self.api_key[identifier]
+            return self.api_key_prefix[identifier] + ' ' + self.headers[identifier]  # noqa: E501
+        elif self.headers.get(identifier):
+            return self.headers[identifier]
 
     def get_basic_auth_token(self):
         """Gets HTTP basic authentication header (string).
@@ -216,14 +216,14 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         return {
             'apiKey':
                 {
-                    'type': 'api_key',
+                    'type': 'headers',
                     'in': 'header',
                     'key': 'MX-API-Key',
                     'value': self.get_api_key_with_prefix('MX-API-Key')
                 },
             'clientID':
                 {
-                    'type': 'api_key',
+                    'type': 'headers',
                     'in': 'header',
                     'key': 'MX-Client-ID',
                     'value': self.get_api_key_with_prefix('MX-Client-ID')

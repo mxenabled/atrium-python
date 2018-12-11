@@ -23,10 +23,10 @@ from pprint import pprint
 
 # Configure API Key authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
+configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
+configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
 api_instance = atrium.IdentityApi()
@@ -71,10 +71,10 @@ from pprint import pprint
 
 # Configure API Key authorization
 configuration = atrium.Configuration()
-configuration.api_key['MX-API-Key'] = 'YOUR_API_KEY'
+configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
 
 # Configure Client ID authorization
-configuration.api_key['MX-Client-ID'] = 'YOUR_CLIENT_ID'
+configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
 
 # create an instance of the API class
 api_instance = atrium.IdentityApi()
