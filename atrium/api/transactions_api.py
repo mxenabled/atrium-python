@@ -34,7 +34,7 @@ class TransactionsApi(object):
 
         :param async_req bool
         :param TransactionsCleanseAndCategorizeRequestBody body: User object to be created with optional parameters (amount, type) amd required parameters (description, identifier) (required)
-        :return: TransactionsCleanseAndCategorize
+        :return: TransactionsCleanseAndCategorizeResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -56,7 +56,7 @@ class TransactionsApi(object):
 
         :param async_req bool
         :param TransactionsCleanseAndCategorizeRequestBody body: User object to be created with optional parameters (amount, type) amd required parameters (description, identifier) (required)
-        :return: TransactionsCleanseAndCategorize
+        :return: TransactionsCleanseAndCategorizeResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -114,7 +114,7 @@ class TransactionsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='TransactionsCleanseAndCategorize',  # noqa: E501
+            response_type='TransactionsCleanseAndCategorizeResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -137,7 +137,7 @@ class TransactionsApi(object):
         :param str from_date: Filter transactions from this date.
         :param int records_per_page: Specify records per page.
         :param str to_date: Filter transactions to this date.
-        :return: Transactions
+        :return: TransactionsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -163,7 +163,7 @@ class TransactionsApi(object):
         :param str from_date: Filter transactions from this date.
         :param int records_per_page: Specify records per page.
         :param str to_date: Filter transactions to this date.
-        :return: Transactions
+        :return: TransactionsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -225,7 +225,7 @@ class TransactionsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Transactions',  # noqa: E501
+            response_type='TransactionsResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -245,7 +245,7 @@ class TransactionsApi(object):
         :param async_req bool
         :param str transaction_guid: The unique identifier for a `transaction`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Transaction
+        :return: TransactionResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -268,7 +268,7 @@ class TransactionsApi(object):
         :param async_req bool
         :param str transaction_guid: The unique identifier for a `transaction`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Transaction
+        :return: TransactionResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -328,7 +328,7 @@ class TransactionsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Transaction',  # noqa: E501
+            response_type='TransactionResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

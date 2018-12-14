@@ -39,7 +39,7 @@ class AccountsApi(object):
         :param str to_date: Filter transactions to this date.
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Transactions
+        :return: TransactionsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -66,7 +66,7 @@ class AccountsApi(object):
         :param str to_date: Filter transactions to this date.
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Transactions
+        :return: TransactionsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -134,7 +134,7 @@ class AccountsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Transactions',  # noqa: E501
+            response_type='TransactionsResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -155,7 +155,7 @@ class AccountsApi(object):
         :param str user_guid: The unique identifier for a `user`. (required)
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Accounts
+        :return: AccountsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -179,7 +179,7 @@ class AccountsApi(object):
         :param str user_guid: The unique identifier for a `user`. (required)
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Accounts
+        :return: AccountsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -237,7 +237,7 @@ class AccountsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Accounts',  # noqa: E501
+            response_type='AccountsResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -257,7 +257,7 @@ class AccountsApi(object):
         :param async_req bool
         :param str account_guid: The unique identifier for an `account`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Account
+        :return: AccountResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -280,7 +280,7 @@ class AccountsApi(object):
         :param async_req bool
         :param str account_guid: The unique identifier for an `account`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Account
+        :return: AccountResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -340,7 +340,7 @@ class AccountsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Account',  # noqa: E501
+            response_type='AccountResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -361,7 +361,7 @@ class AccountsApi(object):
         :param str account_guid: The unique identifier for an `account`. (required)
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Account
+        :return: AccountResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -385,7 +385,7 @@ class AccountsApi(object):
         :param str account_guid: The unique identifier for an `account`. (required)
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Account
+        :return: AccountResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -451,7 +451,7 @@ class AccountsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Account',  # noqa: E501
+            response_type='AccountResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

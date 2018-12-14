@@ -12,7 +12,7 @@ import re  # noqa: F401
 
 import six
 
-from atrium.models.user_attributes import UserAttributes  # noqa: F401,E501
+from atrium.models.user import User  # noqa: F401,E501
 
 
 class UserCreateRequestBody(object):
@@ -26,7 +26,7 @@ class UserCreateRequestBody(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'user': 'UserAttributes'
+        'user': 'User'
     }
 
     attribute_map = {
@@ -47,7 +47,7 @@ class UserCreateRequestBody(object):
 
 
         :return: The user of this UserCreateRequestBody.  # noqa: E501
-        :rtype: UserAttributes
+        :rtype: User
         """
         return self._user
 
@@ -57,7 +57,7 @@ class UserCreateRequestBody(object):
 
 
         :param user: The user of this UserCreateRequestBody.  # noqa: E501
-        :type: UserAttributes
+        :type: User
         """
 
         self._user = user

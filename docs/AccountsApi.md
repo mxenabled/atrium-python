@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **list_account_transactions**
-> Transactions list_account_transactions(account_guid, user_guid, from_date=from_date, to_date=to_date, page=page, records_per_page=records_per_page)
+> TransactionsResponseBody list_account_transactions(account_guid, user_guid, from_date=from_date, to_date=to_date, page=page, records_per_page=records_per_page)
 
 List account transactions
 
@@ -60,12 +60,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Transactions**](Transactions.md)
+[**TransactionsResponseBody**](TransactionsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_user_accounts**
-> Accounts list_user_accounts(user_guid, page=page, records_per_page=records_per_page)
+> AccountsResponseBody list_user_accounts(user_guid, page=page, records_per_page=records_per_page)
 
 List accounts for a user
 
@@ -110,12 +110,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Accounts**](Accounts.md)
+[**AccountsResponseBody**](AccountsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **read_account**
-> Account read_account(account_guid, user_guid)
+> AccountResponseBody read_account(account_guid, user_guid)
 
 Read an account
 
@@ -158,12 +158,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Account**](Account.md)
+[**AccountResponseBody**](AccountResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **read_account_by_member_guid**
-> Account read_account_by_member_guid(account_guid, member_guid, user_guid)
+> AccountResponseBody read_account_by_member_guid(account_guid, member_guid, user_guid)
 
 Read an account
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Account**](Account.md)
+[**AccountResponseBody**](AccountResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

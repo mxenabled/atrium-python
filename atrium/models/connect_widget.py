@@ -12,8 +12,6 @@ import re  # noqa: F401
 
 import six
 
-from atrium.models.connect_widget_attributes import ConnectWidgetAttributes  # noqa: F401,E501
-
 
 class ConnectWidget(object):
 
@@ -26,41 +24,67 @@ class ConnectWidget(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'user': 'ConnectWidgetAttributes'
+        'connect_widget_url': 'str',
+        'guid': 'str'
     }
 
     attribute_map = {
-        'user': 'user'
+        'connect_widget_url': 'connect_widget_url',
+        'guid': 'guid'
     }
 
-    def __init__(self, user=None):  # noqa: E501
+    def __init__(self, connect_widget_url=None, guid=None):  # noqa: E501
 
-        self._user = None
+        self._connect_widget_url = None
+        self._guid = None
         self.discriminator = None
 
-        if user is not None:
-            self.user = user
+        if connect_widget_url is not None:
+            self.connect_widget_url = connect_widget_url
+        if guid is not None:
+            self.guid = guid
 
     @property
-    def user(self):
-        """Gets the user of this ConnectWidget.  # noqa: E501
+    def connect_widget_url(self):
+        """Gets the connect_widget_url of this ConnectWidget.  # noqa: E501
 
 
-        :return: The user of this ConnectWidget.  # noqa: E501
-        :rtype: ConnectWidgetAttributes
+        :return: The connect_widget_url of this ConnectWidget.  # noqa: E501
+        :rtype: str
         """
-        return self._user
+        return self._connect_widget_url
 
-    @user.setter
-    def user(self, user):
-        """Sets the user of this ConnectWidget.
+    @connect_widget_url.setter
+    def connect_widget_url(self, connect_widget_url):
+        """Sets the connect_widget_url of this ConnectWidget.
 
 
-        :param user: The user of this ConnectWidget.  # noqa: E501
-        :type: ConnectWidgetAttributes
+        :param connect_widget_url: The connect_widget_url of this ConnectWidget.  # noqa: E501
+        :type: str
         """
 
-        self._user = user
+        self._connect_widget_url = connect_widget_url
+
+    @property
+    def guid(self):
+        """Gets the guid of this ConnectWidget.  # noqa: E501
+
+
+        :return: The guid of this ConnectWidget.  # noqa: E501
+        :rtype: str
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid):
+        """Sets the guid of this ConnectWidget.
+
+
+        :param guid: The guid of this ConnectWidget.  # noqa: E501
+        :type: str
+        """
+
+        self._guid = guid
 
     def to_dict(self):
         """Returns the model properties as a dict"""

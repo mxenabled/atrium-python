@@ -12,7 +12,7 @@ import re  # noqa: F401
 
 import six
 
-from atrium.models.member_create_request_body_attributes import MemberCreateRequestBodyAttributes  # noqa: F401,E501
+from atrium.models.member_create_request import MemberCreateRequest  # noqa: F401,E501
 
 
 class MemberCreateRequestBody(object):
@@ -26,7 +26,7 @@ class MemberCreateRequestBody(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'member': 'MemberCreateRequestBodyAttributes'
+        'member': 'MemberCreateRequest'
     }
 
     attribute_map = {
@@ -47,7 +47,7 @@ class MemberCreateRequestBody(object):
 
 
         :return: The member of this MemberCreateRequestBody.  # noqa: E501
-        :rtype: MemberCreateRequestBodyAttributes
+        :rtype: MemberCreateRequest
         """
         return self._member
 
@@ -57,7 +57,7 @@ class MemberCreateRequestBody(object):
 
 
         :param member: The member of this MemberCreateRequestBody.  # noqa: E501
-        :type: MemberCreateRequestBodyAttributes
+        :type: MemberCreateRequest
         """
 
         self._member = member

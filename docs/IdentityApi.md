@@ -7,7 +7,7 @@ Method | HTTP request | Description
 
 
 # **identify_member**
-> Member identify_member(member_guid, user_guid)
+> MemberResponseBody identify_member(member_guid, user_guid)
 
 Identify
 
@@ -50,12 +50,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Member**](Member.md)
+[**MemberResponseBody**](MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_account_owners**
-> AccountOwners list_account_owners(member_guid, user_guid)
+> AccountOwnersResponseBody list_account_owners(member_guid, user_guid)
 
 List member account owners
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountOwners**](AccountOwners.md)
+[**AccountOwnersResponseBody**](AccountOwnersResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

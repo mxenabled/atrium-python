@@ -3,7 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**member** | [**MemberAttributes**](MemberAttributes.md) |  | [optional] 
+**aggregated_at** | **str** |  | [optional] 
+**connection_status** | **str** |  | [optional] 
+**guid** | **bool** |  | [optional] 
+**identifier** | **str** |  | [optional] 
+**institution_code** | **str** |  | [optional] 
+**is_being_aggregated** | **bool** |  | [optional] 
+**metadata** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**successfully_aggregated_at** | **str** |  | [optional] 
+**user_guid** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -35,7 +35,7 @@ class ConnectWidgetApi(object):
         :param async_req bool
         :param str user_guid: The unique identifier for a `user`. (required)
         :param ConnectWidgetRequestBody body: Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials) (required)
-        :return: ConnectWidget
+        :return: ConnectWidgetResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -58,7 +58,7 @@ class ConnectWidgetApi(object):
         :param async_req bool
         :param str user_guid: The unique identifier for a `user`. (required)
         :param ConnectWidgetRequestBody body: Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials) (required)
-        :return: ConnectWidget
+        :return: ConnectWidgetResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -122,7 +122,7 @@ class ConnectWidgetApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ConnectWidget',  # noqa: E501
+            response_type='ConnectWidgetResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

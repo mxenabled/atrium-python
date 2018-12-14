@@ -12,8 +12,6 @@ import re  # noqa: F401
 
 import six
 
-from atrium.models.institution_attributes import InstitutionAttributes  # noqa: F401,E501
-
 
 class Institution(object):
 
@@ -26,41 +24,197 @@ class Institution(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'institution': 'InstitutionAttributes'
+        'code': 'str',
+        'medium_logo_url': 'str',
+        'name': 'str',
+        'small_logo_url': 'str',
+        'supports_account_identification': 'bool',
+        'supports_account_verification': 'bool',
+        'url': 'str'
     }
 
     attribute_map = {
-        'institution': 'institution'
+        'code': 'code',
+        'medium_logo_url': 'medium_logo_url',
+        'name': 'name',
+        'small_logo_url': 'small_logo_url',
+        'supports_account_identification': 'supports_account_identification',
+        'supports_account_verification': 'supports_account_verification',
+        'url': 'url'
     }
 
-    def __init__(self, institution=None):  # noqa: E501
+    def __init__(self, code=None, medium_logo_url=None, name=None, small_logo_url=None, supports_account_identification=None, supports_account_verification=None, url=None):  # noqa: E501
 
-        self._institution = None
+        self._code = None
+        self._medium_logo_url = None
+        self._name = None
+        self._small_logo_url = None
+        self._supports_account_identification = None
+        self._supports_account_verification = None
+        self._url = None
         self.discriminator = None
 
-        if institution is not None:
-            self.institution = institution
+        if code is not None:
+            self.code = code
+        if medium_logo_url is not None:
+            self.medium_logo_url = medium_logo_url
+        if name is not None:
+            self.name = name
+        if small_logo_url is not None:
+            self.small_logo_url = small_logo_url
+        if supports_account_identification is not None:
+            self.supports_account_identification = supports_account_identification
+        if supports_account_verification is not None:
+            self.supports_account_verification = supports_account_verification
+        if url is not None:
+            self.url = url
 
     @property
-    def institution(self):
-        """Gets the institution of this Institution.  # noqa: E501
+    def code(self):
+        """Gets the code of this Institution.  # noqa: E501
 
 
-        :return: The institution of this Institution.  # noqa: E501
-        :rtype: InstitutionAttributes
+        :return: The code of this Institution.  # noqa: E501
+        :rtype: str
         """
-        return self._institution
+        return self._code
 
-    @institution.setter
-    def institution(self, institution):
-        """Sets the institution of this Institution.
+    @code.setter
+    def code(self, code):
+        """Sets the code of this Institution.
 
 
-        :param institution: The institution of this Institution.  # noqa: E501
-        :type: InstitutionAttributes
+        :param code: The code of this Institution.  # noqa: E501
+        :type: str
         """
 
-        self._institution = institution
+        self._code = code
+
+    @property
+    def medium_logo_url(self):
+        """Gets the medium_logo_url of this Institution.  # noqa: E501
+
+
+        :return: The medium_logo_url of this Institution.  # noqa: E501
+        :rtype: str
+        """
+        return self._medium_logo_url
+
+    @medium_logo_url.setter
+    def medium_logo_url(self, medium_logo_url):
+        """Sets the medium_logo_url of this Institution.
+
+
+        :param medium_logo_url: The medium_logo_url of this Institution.  # noqa: E501
+        :type: str
+        """
+
+        self._medium_logo_url = medium_logo_url
+
+    @property
+    def name(self):
+        """Gets the name of this Institution.  # noqa: E501
+
+
+        :return: The name of this Institution.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Institution.
+
+
+        :param name: The name of this Institution.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def small_logo_url(self):
+        """Gets the small_logo_url of this Institution.  # noqa: E501
+
+
+        :return: The small_logo_url of this Institution.  # noqa: E501
+        :rtype: str
+        """
+        return self._small_logo_url
+
+    @small_logo_url.setter
+    def small_logo_url(self, small_logo_url):
+        """Sets the small_logo_url of this Institution.
+
+
+        :param small_logo_url: The small_logo_url of this Institution.  # noqa: E501
+        :type: str
+        """
+
+        self._small_logo_url = small_logo_url
+
+    @property
+    def supports_account_identification(self):
+        """Gets the supports_account_identification of this Institution.  # noqa: E501
+
+
+        :return: The supports_account_identification of this Institution.  # noqa: E501
+        :rtype: bool
+        """
+        return self._supports_account_identification
+
+    @supports_account_identification.setter
+    def supports_account_identification(self, supports_account_identification):
+        """Sets the supports_account_identification of this Institution.
+
+
+        :param supports_account_identification: The supports_account_identification of this Institution.  # noqa: E501
+        :type: bool
+        """
+
+        self._supports_account_identification = supports_account_identification
+
+    @property
+    def supports_account_verification(self):
+        """Gets the supports_account_verification of this Institution.  # noqa: E501
+
+
+        :return: The supports_account_verification of this Institution.  # noqa: E501
+        :rtype: bool
+        """
+        return self._supports_account_verification
+
+    @supports_account_verification.setter
+    def supports_account_verification(self, supports_account_verification):
+        """Sets the supports_account_verification of this Institution.
+
+
+        :param supports_account_verification: The supports_account_verification of this Institution.  # noqa: E501
+        :type: bool
+        """
+
+        self._supports_account_verification = supports_account_verification
+
+    @property
+    def url(self):
+        """Gets the url of this Institution.  # noqa: E501
+
+
+        :return: The url of this Institution.  # noqa: E501
+        :rtype: str
+        """
+        return self._url
+
+    @url.setter
+    def url(self, url):
+        """Sets the url of this Institution.
+
+
+        :param url: The url of this Institution.  # noqa: E501
+        :type: str
+        """
+
+        self._url = url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

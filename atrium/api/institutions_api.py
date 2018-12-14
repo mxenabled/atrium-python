@@ -36,7 +36,7 @@ class InstitutionsApi(object):
         :param str name: This will list only institutions in which the appended string appears.
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Institutions
+        :return: InstitutionsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -60,7 +60,7 @@ class InstitutionsApi(object):
         :param str name: This will list only institutions in which the appended string appears.
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Institutions
+        :return: InstitutionsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -114,7 +114,7 @@ class InstitutionsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Institutions',  # noqa: E501
+            response_type='InstitutionsResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -133,7 +133,7 @@ class InstitutionsApi(object):
 
         :param async_req bool
         :param str institution_code: The institution_code of the institution. (required)
-        :return: Institution
+        :return: InstitutionResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -155,7 +155,7 @@ class InstitutionsApi(object):
 
         :param async_req bool
         :param str institution_code: The institution_code of the institution. (required)
-        :return: Institution
+        :return: InstitutionResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -209,7 +209,7 @@ class InstitutionsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Institution',  # noqa: E501
+            response_type='InstitutionResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -228,7 +228,7 @@ class InstitutionsApi(object):
 
         :param async_req bool
         :param str institution_code: The institution_code of the institution. (required)
-        :return: Credentials
+        :return: CredentialsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -250,7 +250,7 @@ class InstitutionsApi(object):
 
         :param async_req bool
         :param str institution_code: The institution_code of the institution. (required)
-        :return: Credentials
+        :return: CredentialsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -304,7 +304,7 @@ class InstitutionsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Credentials',  # noqa: E501
+            response_type='CredentialsResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

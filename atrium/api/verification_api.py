@@ -35,7 +35,7 @@ class VerificationApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: AccountNumbers
+        :return: AccountNumbersResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -58,7 +58,7 @@ class VerificationApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: AccountNumbers
+        :return: AccountNumbersResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -118,7 +118,7 @@ class VerificationApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AccountNumbers',  # noqa: E501
+            response_type='AccountNumbersResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -138,7 +138,7 @@ class VerificationApi(object):
         :param async_req bool
         :param str account_guid: The unique identifier for an `account`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: AccountNumbers
+        :return: AccountNumbersResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -161,7 +161,7 @@ class VerificationApi(object):
         :param async_req bool
         :param str account_guid: The unique identifier for an `account`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: AccountNumbers
+        :return: AccountNumbersResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -221,7 +221,7 @@ class VerificationApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AccountNumbers',  # noqa: E501
+            response_type='AccountNumbersResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -241,7 +241,7 @@ class VerificationApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -264,7 +264,7 @@ class VerificationApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -328,7 +328,7 @@ class VerificationApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Member',  # noqa: E501
+            response_type='MemberResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

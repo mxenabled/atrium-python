@@ -6,7 +6,7 @@ Method | HTTP request | Description
 
 
 # **get_connect_widget**
-> ConnectWidget get_connect_widget(user_guid, body)
+> ConnectWidgetResponseBody get_connect_widget(user_guid, body)
 
 Embedding in a website
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConnectWidget**](ConnectWidget.md)
+[**ConnectWidgetResponseBody**](ConnectWidgetResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

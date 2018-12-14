@@ -34,7 +34,7 @@ class UsersApi(object):
 
         :param async_req bool
         :param UserCreateRequestBody body: User object to be created with optional parameters (identifier, is_disabled, metadata) (required)
-        :return: User
+        :return: UserResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -56,7 +56,7 @@ class UsersApi(object):
 
         :param async_req bool
         :param UserCreateRequestBody body: User object to be created with optional parameters (identifier, is_disabled, metadata) (required)
-        :return: User
+        :return: UserResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -114,7 +114,7 @@ class UsersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='User',  # noqa: E501
+            response_type='UserResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -229,7 +229,7 @@ class UsersApi(object):
         :param async_req bool
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Users
+        :return: UsersResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -252,7 +252,7 @@ class UsersApi(object):
         :param async_req bool
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Users
+        :return: UsersResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -304,7 +304,7 @@ class UsersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Users',  # noqa: E501
+            response_type='UsersResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -323,7 +323,7 @@ class UsersApi(object):
 
         :param async_req bool
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: User
+        :return: UserResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -345,7 +345,7 @@ class UsersApi(object):
 
         :param async_req bool
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: User
+        :return: UserResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -399,7 +399,7 @@ class UsersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='User',  # noqa: E501
+            response_type='UserResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -419,7 +419,7 @@ class UsersApi(object):
         :param async_req bool
         :param str user_guid: The unique identifier for a `user`. (required)
         :param UserUpdateRequestBody body: User object to be updated with optional parameters (identifier, is_disabled, metadata)
-        :return: User
+        :return: UserResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -442,7 +442,7 @@ class UsersApi(object):
         :param async_req bool
         :param str user_guid: The unique identifier for a `user`. (required)
         :param UserUpdateRequestBody body: User object to be updated with optional parameters (identifier, is_disabled, metadata)
-        :return: User
+        :return: UserResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -502,7 +502,7 @@ class UsersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='User',  # noqa: E501
+            response_type='UserResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

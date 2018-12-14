@@ -12,8 +12,6 @@ import re  # noqa: F401
 
 import six
 
-from atrium.models.user_attributes import UserAttributes  # noqa: F401,E501
-
 
 class User(object):
 
@@ -26,41 +24,119 @@ class User(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'user': 'UserAttributes'
+        'guid': 'str',
+        'identifier': 'str',
+        'is_disabled': 'bool',
+        'metadata': 'str'
     }
 
     attribute_map = {
-        'user': 'user'
+        'guid': 'guid',
+        'identifier': 'identifier',
+        'is_disabled': 'is_disabled',
+        'metadata': 'metadata'
     }
 
-    def __init__(self, user=None):  # noqa: E501
+    def __init__(self, guid=None, identifier=None, is_disabled=None, metadata=None):  # noqa: E501
 
-        self._user = None
+        self._guid = None
+        self._identifier = None
+        self._is_disabled = None
+        self._metadata = None
         self.discriminator = None
 
-        if user is not None:
-            self.user = user
+        if guid is not None:
+            self.guid = guid
+        if identifier is not None:
+            self.identifier = identifier
+        if is_disabled is not None:
+            self.is_disabled = is_disabled
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
-    def user(self):
-        """Gets the user of this User.  # noqa: E501
+    def guid(self):
+        """Gets the guid of this User.  # noqa: E501
 
 
-        :return: The user of this User.  # noqa: E501
-        :rtype: UserAttributes
+        :return: The guid of this User.  # noqa: E501
+        :rtype: str
         """
-        return self._user
+        return self._guid
 
-    @user.setter
-    def user(self, user):
-        """Sets the user of this User.
+    @guid.setter
+    def guid(self, guid):
+        """Sets the guid of this User.
 
 
-        :param user: The user of this User.  # noqa: E501
-        :type: UserAttributes
+        :param guid: The guid of this User.  # noqa: E501
+        :type: str
         """
 
-        self._user = user
+        self._guid = guid
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this User.  # noqa: E501
+
+
+        :return: The identifier of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this User.
+
+
+        :param identifier: The identifier of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._identifier = identifier
+
+    @property
+    def is_disabled(self):
+        """Gets the is_disabled of this User.  # noqa: E501
+
+
+        :return: The is_disabled of this User.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_disabled
+
+    @is_disabled.setter
+    def is_disabled(self, is_disabled):
+        """Sets the is_disabled of this User.
+
+
+        :param is_disabled: The is_disabled of this User.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_disabled = is_disabled
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this User.  # noqa: E501
+
+
+        :return: The metadata of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this User.
+
+
+        :param metadata: The metadata of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -35,7 +35,7 @@ class MembersApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -58,7 +58,7 @@ class MembersApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -118,7 +118,7 @@ class MembersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Member',  # noqa: E501
+            response_type='MemberResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -138,7 +138,7 @@ class MembersApi(object):
         :param async_req bool
         :param str user_guid: The unique identifier for a `user`. (required)
         :param MemberCreateRequestBody body: Member object to be created with optional parameters (identifier and metadata) and required parameters (credentials and institution_code) (required)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -161,7 +161,7 @@ class MembersApi(object):
         :param async_req bool
         :param str user_guid: The unique identifier for a `user`. (required)
         :param MemberCreateRequestBody body: Member object to be created with optional parameters (identifier and metadata) and required parameters (credentials and institution_code) (required)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -225,7 +225,7 @@ class MembersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Member',  # noqa: E501
+            response_type='MemberResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -350,7 +350,7 @@ class MembersApi(object):
         :param str user_guid: The unique identifier for a `user`. (required)
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Accounts
+        :return: AccountsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -375,7 +375,7 @@ class MembersApi(object):
         :param str user_guid: The unique identifier for a `user`. (required)
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Accounts
+        :return: AccountsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -439,7 +439,7 @@ class MembersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Accounts',  # noqa: E501
+            response_type='AccountsResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -459,7 +459,7 @@ class MembersApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Credentials
+        :return: CredentialsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -482,7 +482,7 @@ class MembersApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Credentials
+        :return: CredentialsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -542,7 +542,7 @@ class MembersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Credentials',  # noqa: E501
+            response_type='CredentialsResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -562,7 +562,7 @@ class MembersApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Challenges
+        :return: ChallengesResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -585,7 +585,7 @@ class MembersApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Challenges
+        :return: ChallengesResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -645,7 +645,7 @@ class MembersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Challenges',  # noqa: E501
+            response_type='ChallengesResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -669,7 +669,7 @@ class MembersApi(object):
         :param str to_date: Filter transactions to this date.
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Transactions
+        :return: TransactionsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -696,7 +696,7 @@ class MembersApi(object):
         :param str to_date: Filter transactions to this date.
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Transactions
+        :return: TransactionsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -764,7 +764,7 @@ class MembersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Transactions',  # noqa: E501
+            response_type='TransactionsResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -785,7 +785,7 @@ class MembersApi(object):
         :param str user_guid: The unique identifier for a `user`. (required)
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Members
+        :return: MembersResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -809,7 +809,7 @@ class MembersApi(object):
         :param str user_guid: The unique identifier for a `user`. (required)
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
-        :return: Members
+        :return: MembersResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -867,7 +867,7 @@ class MembersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Members',  # noqa: E501
+            response_type='MembersResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -887,7 +887,7 @@ class MembersApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -910,7 +910,7 @@ class MembersApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -970,7 +970,7 @@ class MembersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Member',  # noqa: E501
+            response_type='MemberResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -990,7 +990,7 @@ class MembersApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: MemberConnectionStatus
+        :return: MemberConnectionStatusResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1013,7 +1013,7 @@ class MembersApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
-        :return: MemberConnectionStatus
+        :return: MemberConnectionStatusResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1073,7 +1073,7 @@ class MembersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='MemberConnectionStatus',  # noqa: E501
+            response_type='MemberConnectionStatusResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1094,7 +1094,7 @@ class MembersApi(object):
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
         :param MemberResumeRequestBody body: Member object with MFA challenge answers (required)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1118,7 +1118,7 @@ class MembersApi(object):
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
         :param MemberResumeRequestBody body: Member object with MFA challenge answers (required)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1188,7 +1188,7 @@ class MembersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Member',  # noqa: E501
+            response_type='MemberResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1209,7 +1209,7 @@ class MembersApi(object):
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
         :param MemberUpdateRequestBody body: Member object to be updated with optional parameters (credentials, identifier, metadata)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1233,7 +1233,7 @@ class MembersApi(object):
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
         :param MemberUpdateRequestBody body: Member object to be updated with optional parameters (credentials, identifier, metadata)
-        :return: Member
+        :return: MemberResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1299,7 +1299,7 @@ class MembersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Member',  # noqa: E501
+            response_type='MemberResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

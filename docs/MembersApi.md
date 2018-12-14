@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **aggregate_member**
-> Member aggregate_member(member_guid, user_guid)
+> MemberResponseBody aggregate_member(member_guid, user_guid)
 
 Aggregate member
 
@@ -60,12 +60,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Member**](Member.md)
+[**MemberResponseBody**](MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_member**
-> Member create_member(user_guid, body)
+> MemberResponseBody create_member(user_guid, body)
 
 Create member
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Member**](Member.md)
+[**MemberResponseBody**](MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -160,7 +160,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_member_accounts**
-> Accounts list_member_accounts(member_guid, user_guid, page=page, records_per_page=records_per_page)
+> AccountsResponseBody list_member_accounts(member_guid, user_guid, page=page, records_per_page=records_per_page)
 
 List member accounts
 
@@ -207,12 +207,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Accounts**](Accounts.md)
+[**AccountsResponseBody**](AccountsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_member_credentials**
-> Credentials list_member_credentials(member_guid, user_guid)
+> CredentialsResponseBody list_member_credentials(member_guid, user_guid)
 
 List member credentials
 
@@ -255,12 +255,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Credentials**](Credentials.md)
+[**CredentialsResponseBody**](CredentialsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_member_mfa_challenges**
-> Challenges list_member_mfa_challenges(member_guid, user_guid)
+> ChallengesResponseBody list_member_mfa_challenges(member_guid, user_guid)
 
 List member MFA challenges
 
@@ -303,12 +303,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Challenges**](Challenges.md)
+[**ChallengesResponseBody**](ChallengesResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_member_transactions**
-> Transactions list_member_transactions(member_guid, user_guid, from_date=from_date, to_date=to_date, page=page, records_per_page=records_per_page)
+> TransactionsResponseBody list_member_transactions(member_guid, user_guid, from_date=from_date, to_date=to_date, page=page, records_per_page=records_per_page)
 
 List member transactions
 
@@ -359,12 +359,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Transactions**](Transactions.md)
+[**TransactionsResponseBody**](TransactionsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_members**
-> Members list_members(user_guid, page=page, records_per_page=records_per_page)
+> MembersResponseBody list_members(user_guid, page=page, records_per_page=records_per_page)
 
 List members
 
@@ -409,12 +409,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Members**](Members.md)
+[**MembersResponseBody**](MembersResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **read_member**
-> Member read_member(member_guid, user_guid)
+> MemberResponseBody read_member(member_guid, user_guid)
 
 Read member
 
@@ -457,12 +457,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Member**](Member.md)
+[**MemberResponseBody**](MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **read_member_status**
-> MemberConnectionStatus read_member_status(member_guid, user_guid)
+> MemberConnectionStatusResponseBody read_member_status(member_guid, user_guid)
 
 Read member connection status
 
@@ -505,12 +505,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MemberConnectionStatus**](MemberConnectionStatus.md)
+[**MemberConnectionStatusResponseBody**](MemberConnectionStatusResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resume_member**
-> Member resume_member(member_guid, user_guid, body)
+> MemberResponseBody resume_member(member_guid, user_guid, body)
 
 Resume aggregation from MFA
 
@@ -555,12 +555,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Member**](Member.md)
+[**MemberResponseBody**](MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_member**
-> Member update_member(member_guid, user_guid, body=body)
+> MemberResponseBody update_member(member_guid, user_guid, body=body)
 
 Update member
 
@@ -605,7 +605,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Member**](Member.md)
+[**MemberResponseBody**](MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
