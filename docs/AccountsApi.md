@@ -23,26 +23,20 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.AccountsApi()
-account_guid = 'account_guid_example' # str | The unique identifier for an `account`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
-from_date = 'from_date_example' # str | Filter transactions from this date. (optional)
-to_date = 'to_date_example' # str | Filter transactions to this date. (optional)
-page = 12 # int | Specify current page. (optional)
+account_guid = "ACT-123" # str | The unique identifier for an `account`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
+from_date = "2016-09-20" # str | Filter transactions from this date. (optional)
+to_date = "2016-10-20" # str | Filter transactions to this date. (optional)
+page = 1 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List account transactions
-    api_response = api_instance.list_account_transactions(account_guid, user_guid, from_date=from_date, to_date=to_date, page=page, records_per_page=records_per_page)
-    pprint(api_response)
+    response = client.accounts.list_account_transactions(account_guid, user_guid, from_date=from_date, to_date=to_date, page=page, records_per_page=records_per_page)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling AccountsApi->list_account_transactions: %s\n" % e)
 ```
@@ -79,23 +73,17 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.AccountsApi()
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
-page = 12 # int | Specify current page. (optional)
+user_guid = "USR-123" # str | The unique identifier for a `user`.
+page = 1 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List accounts for a user
-    api_response = api_instance.list_user_accounts(user_guid, page=page, records_per_page=records_per_page)
-    pprint(api_response)
+    response = client.accounts.list_user_accounts(user_guid, page=page, records_per_page=records_per_page)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling AccountsApi->list_user_accounts: %s\n" % e)
 ```
@@ -129,22 +117,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.AccountsApi()
-account_guid = 'account_guid_example' # str | The unique identifier for an `account`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+account_guid = "ACT-123" # str | The unique identifier for an `account`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Read an account
-    api_response = api_instance.read_account(account_guid, user_guid)
-    pprint(api_response)
+    response = client.accounts.read_account(account_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling AccountsApi->read_account: %s\n" % e)
 ```
@@ -177,23 +159,17 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.AccountsApi()
-account_guid = 'account_guid_example' # str | The unique identifier for an `account`.
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+account_guid = "ACT-123" # str | The unique identifier for an `account`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Read an account
-    api_response = api_instance.read_account_by_member_guid(account_guid, member_guid, user_guid)
-    pprint(api_response)
+    response = client.accounts.read_account_by_member_guid(account_guid, member_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling AccountsApi->read_account_by_member_guid: %s\n" % e)
 ```

@@ -22,21 +22,15 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.TransactionsApi()
 body = atrium.TransactionsCleanseAndCategorizeRequestBody() # TransactionsCleanseAndCategorizeRequestBody | User object to be created with optional parameters (amount, type) amd required parameters (description, identifier)
 
 try:
     # Categorize transactions
-    api_response = api_instance.cleanse_and_categorize_transactions(body)
-    pprint(api_response)
+    response = client.transactions.cleanse_and_categorize_transactions(body)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling TransactionsApi->cleanse_and_categorize_transactions: %s\n" % e)
 ```
@@ -68,25 +62,19 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.TransactionsApi()
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
-page = 12 # int | Specify current page. (optional)
-from_date = 'from_date_example' # str | Filter transactions from this date. (optional)
+user_guid = "USR-123" # str | The unique identifier for a `user`.
+page = 1 # int | Specify current page. (optional)
+from_date = "2016-09-20" # str | Filter transactions from this date. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
-to_date = 'to_date_example' # str | Filter transactions to this date. (optional)
+to_date = "2016-10-20" # str | Filter transactions to this date. (optional)
 
 try:
     # List transactions for a user
-    api_response = api_instance.list_user_transactions(user_guid, page=page, from_date=from_date, records_per_page=records_per_page, to_date=to_date)
-    pprint(api_response)
+    response = client.transactions.list_user_transactions(user_guid, page=page, from_date=from_date, records_per_page=records_per_page, to_date=to_date)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling TransactionsApi->list_user_transactions: %s\n" % e)
 ```
@@ -122,22 +110,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.TransactionsApi()
-transaction_guid = 'transaction_guid_example' # str | The unique identifier for a `transaction`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+transaction_guid = "TRN-123" # str | The unique identifier for a `transaction`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Read a transaction
-    api_response = api_instance.read_transaction(transaction_guid, user_guid)
-    pprint(api_response)
+    response = client.transactions.read_transaction(transaction_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling TransactionsApi->read_transaction: %s\n" % e)
 ```

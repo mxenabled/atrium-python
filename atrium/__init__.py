@@ -12,6 +12,7 @@
 from __future__ import absolute_import
 
 # import apis into sdk package
+from atrium.api.atrium_client import AtriumClient
 from atrium.api.accounts_api import AccountsApi
 from atrium.api.connect_widget_api import ConnectWidgetApi
 from atrium.api.identity_api import IdentityApi
@@ -69,3 +70,4 @@ from atrium.models.user_create_request_body import UserCreateRequestBody
 from atrium.models.user_response_body import UserResponseBody
 from atrium.models.user_update_request_body import UserUpdateRequestBody
 from atrium.models.users_response_body import UsersResponseBody
+

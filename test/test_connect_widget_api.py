@@ -12,7 +12,7 @@ from __future__ import absolute_import
 import unittest
 
 import atrium
-from atrium.api.connect_widget_api import ConnectWidgetApi  # noqa: E501
+from atrium.api.connect_widget import ConnectWidgetApi  # noqa: E501
 from atrium.rest import ApiException
 
 
@@ -20,7 +20,7 @@ class TestConnectWidgetApi(unittest.TestCase):
     """ConnectWidgetApi unit test stubs"""
 
     def setUp(self):
-        self.api = atrium.api.connect_widget_api.ConnectWidgetApi()  # noqa: E501
+        self.api = atrium.api.connect_widget.ConnectWidgetApi()  # noqa: E501
 
     def tearDown(self):
         pass

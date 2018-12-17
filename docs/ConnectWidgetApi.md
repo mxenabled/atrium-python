@@ -20,22 +20,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.ConnectWidgetApi()
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 body = atrium.ConnectWidgetRequestBody() # ConnectWidgetRequestBody | Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials)
 
 try:
     # Embedding in a website
-    api_response = api_instance.get_connect_widget(user_guid, body)
-    pprint(api_response)
+    response = client.connect_widget.get_connect_widget(user_guid, body)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling ConnectWidgetApi->get_connect_widget: %s\n" % e)
 ```

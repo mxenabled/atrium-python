@@ -12,7 +12,7 @@ from __future__ import absolute_import
 import unittest
 
 import atrium
-from atrium.api.verification_api import VerificationApi  # noqa: E501
+from atrium.api.verification import VerificationApi  # noqa: E501
 from atrium.rest import ApiException
 
 
@@ -20,7 +20,7 @@ class TestVerificationApi(unittest.TestCase):
     """VerificationApi unit test stubs"""
 
     def setUp(self):
-        self.api = atrium.api.verification_api.VerificationApi()  # noqa: E501
+        self.api = atrium.api.verification.VerificationApi()  # noqa: E501
 
     def tearDown(self):
         pass

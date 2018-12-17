@@ -21,22 +21,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.IdentityApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Identify
-    api_response = api_instance.identify_member(member_guid, user_guid)
-    pprint(api_response)
+    response = client.identity.identify_member(member_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling IdentityApi->identify_member: %s\n" % e)
 ```
@@ -69,22 +63,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.IdentityApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # List member account owners
-    api_response = api_instance.list_account_owners(member_guid, user_guid)
-    pprint(api_response)
+    response = client.identity.list_account_owners(member_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling IdentityApi->list_account_owners: %s\n" % e)
 ```

@@ -12,7 +12,7 @@ from __future__ import absolute_import
 import unittest
 
 import atrium
-from atrium.api.transactions_api import TransactionsApi  # noqa: E501
+from atrium.api.transactions import TransactionsApi  # noqa: E501
 from atrium.rest import ApiException
 
 
@@ -20,7 +20,7 @@ class TestTransactionsApi(unittest.TestCase):
     """TransactionsApi unit test stubs"""
 
     def setUp(self):
-        self.api = atrium.api.transactions_api.TransactionsApi()  # noqa: E501
+        self.api = atrium.api.transactions.TransactionsApi()  # noqa: E501
 
     def tearDown(self):
         pass

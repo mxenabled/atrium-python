@@ -22,22 +22,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.VerificationApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Read account numbers
-    api_response = api_instance.list_account_numbers(member_guid, user_guid)
-    pprint(api_response)
+    response = client.verification.list_account_numbers(member_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling VerificationApi->list_account_numbers: %s\n" % e)
 ```
@@ -70,22 +64,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.VerificationApi()
-account_guid = 'account_guid_example' # str | The unique identifier for an `account`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+account_guid = "ACT-123" # str | The unique identifier for an `account`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Read account numbers by account GUID
-    api_response = api_instance.list_account_numbers_by_account(account_guid, user_guid)
-    pprint(api_response)
+    response = client.verification.list_account_numbers_by_account(account_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling VerificationApi->list_account_numbers_by_account: %s\n" % e)
 ```
@@ -118,22 +106,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.VerificationApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Verify
-    api_response = api_instance.verify_member(member_guid, user_guid)
-    pprint(api_response)
+    response = client.verification.verify_member(member_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling VerificationApi->verify_member: %s\n" % e)
 ```

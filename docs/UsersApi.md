@@ -24,21 +24,15 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.UsersApi()
 body = atrium.UserCreateRequestBody() # UserCreateRequestBody | User object to be created with optional parameters (identifier, is_disabled, metadata)
 
 try:
     # Create user
-    api_response = api_instance.create_user(body)
-    pprint(api_response)
+    response = client.users.create_user(body)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling UsersApi->create_user: %s\n" % e)
 ```
@@ -70,20 +64,14 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.UsersApi()
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Delete user
-    api_instance.delete_user(user_guid)
+    client.users.delete_user(user_guid)
 except ApiException as e:
     print("Exception when calling UsersApi->delete_user: %s\n" % e)
 ```
@@ -115,22 +103,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.UsersApi()
-page = 12 # int | Specify current page. (optional)
+page = 1 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List users
-    api_response = api_instance.list_users(page=page, records_per_page=records_per_page)
-    pprint(api_response)
+    response = client.users.list_users(page=page, records_per_page=records_per_page)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling UsersApi->list_users: %s\n" % e)
 ```
@@ -163,21 +145,15 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.UsersApi()
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Read user
-    api_response = api_instance.read_user(user_guid)
-    pprint(api_response)
+    response = client.users.read_user(user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling UsersApi->read_user: %s\n" % e)
 ```
@@ -209,22 +185,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.UsersApi()
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 body = atrium.UserUpdateRequestBody() # UserUpdateRequestBody | User object to be updated with optional parameters (identifier, is_disabled, metadata) (optional)
 
 try:
     # Update user
-    api_response = api_instance.update_user(user_guid, body=body)
-    pprint(api_response)
+    response = client.users.update_user(user_guid, body=body)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling UsersApi->update_user: %s\n" % e)
 ```

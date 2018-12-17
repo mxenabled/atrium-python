@@ -22,23 +22,17 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.InstitutionsApi()
-name = 'name_example' # str | This will list only institutions in which the appended string appears. (optional)
-page = 12 # int | Specify current page. (optional)
+name = name_example # str | This will list only institutions in which the appended string appears. (optional)
+page = 1 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List institutions
-    api_response = api_instance.list_institutions(name=name, page=page, records_per_page=records_per_page)
-    pprint(api_response)
+    response = client.institutions.list_institutions(name=name, page=page, records_per_page=records_per_page)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling InstitutionsApi->list_institutions: %s\n" % e)
 ```
@@ -72,21 +66,15 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.InstitutionsApi()
-institution_code = 'institution_code_example' # str | The institution_code of the institution.
+institution_code = "example_institution_code" # str | The institution_code of the institution.
 
 try:
     # Read institution
-    api_response = api_instance.read_institution(institution_code)
-    pprint(api_response)
+    response = client.institutions.read_institution(institution_code)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling InstitutionsApi->read_institution: %s\n" % e)
 ```
@@ -118,21 +106,15 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.InstitutionsApi()
-institution_code = 'institution_code_example' # str | The institution_code of the institution.
+institution_code = "example_institution_code" # str | The institution_code of the institution.
 
 try:
     # Read institution credentials
-    api_response = api_instance.read_institution_credentials(institution_code)
-    pprint(api_response)
+    response = client.institutions.read_institution_credentials(institution_code)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling InstitutionsApi->read_institution_credentials: %s\n" % e)
 ```

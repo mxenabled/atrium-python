@@ -12,7 +12,7 @@ from __future__ import absolute_import
 import unittest
 
 import atrium
-from atrium.api.members_api import MembersApi  # noqa: E501
+from atrium.api.members import MembersApi  # noqa: E501
 from atrium.rest import ApiException
 
 
@@ -20,7 +20,7 @@ class TestMembersApi(unittest.TestCase):
     """MembersApi unit test stubs"""
 
     def setUp(self):
-        self.api = atrium.api.members_api.MembersApi()  # noqa: E501
+        self.api = atrium.api.members.MembersApi()  # noqa: E501
 
     def tearDown(self):
         pass

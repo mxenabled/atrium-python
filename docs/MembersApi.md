@@ -31,22 +31,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Aggregate member
-    api_response = api_instance.aggregate_member(member_guid, user_guid)
-    pprint(api_response)
+    response = client.members.aggregate_member(member_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->aggregate_member: %s\n" % e)
 ```
@@ -79,22 +73,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 body = atrium.MemberCreateRequestBody() # MemberCreateRequestBody | Member object to be created with optional parameters (identifier and metadata) and required parameters (credentials and institution_code)
 
 try:
     # Create member
-    api_response = api_instance.create_member(user_guid, body)
-    pprint(api_response)
+    response = client.members.create_member(user_guid, body)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->create_member: %s\n" % e)
 ```
@@ -127,21 +115,15 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Delete member
-    api_instance.delete_member(member_guid, user_guid)
+    client.members.delete_member(member_guid, user_guid)
 except ApiException as e:
     print("Exception when calling MembersApi->delete_member: %s\n" % e)
 ```
@@ -174,24 +156,18 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
-page = 12 # int | Specify current page. (optional)
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
+page = 1 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List member accounts
-    api_response = api_instance.list_member_accounts(member_guid, user_guid, page=page, records_per_page=records_per_page)
-    pprint(api_response)
+    response = client.members.list_member_accounts(member_guid, user_guid, page=page, records_per_page=records_per_page)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->list_member_accounts: %s\n" % e)
 ```
@@ -226,22 +202,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # List member credentials
-    api_response = api_instance.list_member_credentials(member_guid, user_guid)
-    pprint(api_response)
+    response = client.members.list_member_credentials(member_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->list_member_credentials: %s\n" % e)
 ```
@@ -274,22 +244,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # List member MFA challenges
-    api_response = api_instance.list_member_mfa_challenges(member_guid, user_guid)
-    pprint(api_response)
+    response = client.members.list_member_mfa_challenges(member_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->list_member_mfa_challenges: %s\n" % e)
 ```
@@ -322,26 +286,20 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
-from_date = 'from_date_example' # str | Filter transactions from this date. (optional)
-to_date = 'to_date_example' # str | Filter transactions to this date. (optional)
-page = 12 # int | Specify current page. (optional)
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
+from_date = "2016-09-20" # str | Filter transactions from this date. (optional)
+to_date = "2016-10-20" # str | Filter transactions to this date. (optional)
+page = 1 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List member transactions
-    api_response = api_instance.list_member_transactions(member_guid, user_guid, from_date=from_date, to_date=to_date, page=page, records_per_page=records_per_page)
-    pprint(api_response)
+    response = client.members.list_member_transactions(member_guid, user_guid, from_date=from_date, to_date=to_date, page=page, records_per_page=records_per_page)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->list_member_transactions: %s\n" % e)
 ```
@@ -378,23 +336,17 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
-page = 12 # int | Specify current page. (optional)
+user_guid = "USR-123" # str | The unique identifier for a `user`.
+page = 1 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List members
-    api_response = api_instance.list_members(user_guid, page=page, records_per_page=records_per_page)
-    pprint(api_response)
+    response = client.members.list_members(user_guid, page=page, records_per_page=records_per_page)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->list_members: %s\n" % e)
 ```
@@ -428,22 +380,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Read member
-    api_response = api_instance.read_member(member_guid, user_guid)
-    pprint(api_response)
+    response = client.members.read_member(member_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->read_member: %s\n" % e)
 ```
@@ -476,22 +422,16 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 
 try:
     # Read member connection status
-    api_response = api_instance.read_member_status(member_guid, user_guid)
-    pprint(api_response)
+    response = client.members.read_member_status(member_guid, user_guid)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->read_member_status: %s\n" % e)
 ```
@@ -524,23 +464,17 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 body = atrium.MemberResumeRequestBody() # MemberResumeRequestBody | Member object with MFA challenge answers
 
 try:
     # Resume aggregation from MFA
-    api_response = api_instance.resume_member(member_guid, user_guid, body)
-    pprint(api_response)
+    response = client.members.resume_member(member_guid, user_guid, body)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->resume_member: %s\n" % e)
 ```
@@ -574,23 +508,17 @@ import atrium
 from atrium.rest import ApiException
 from pprint import pprint
 
-# Configure API Key authorization
-configuration = atrium.Configuration()
-configuration.headers['MX-API-Key'] = 'YOUR_API_KEY'
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 
-# Configure Client ID authorization
-configuration.headers['MX-Client-ID'] = 'YOUR_CLIENT_ID'
-
-# create an instance of the API class
-api_instance = atrium.MembersApi()
-member_guid = 'member_guid_example' # str | The unique identifier for a `member`.
-user_guid = 'user_guid_example' # str | The unique identifier for a `user`.
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
 body = atrium.MemberUpdateRequestBody() # MemberUpdateRequestBody | Member object to be updated with optional parameters (credentials, identifier, metadata) (optional)
 
 try:
     # Update member
-    api_response = api_instance.update_member(member_guid, user_guid, body=body)
-    pprint(api_response)
+    response = client.members.update_member(member_guid, user_guid, body=body)
+    pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->update_member: %s\n" % e)
 ```
