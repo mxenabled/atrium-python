@@ -15,6 +15,7 @@ from __future__ import absolute_import
 from atrium.api.atrium_client import AtriumClient
 from atrium.api.accounts_api import AccountsApi
 from atrium.api.connect_widget_api import ConnectWidgetApi
+from atrium.api.holdings_api import HoldingsApi
 from atrium.api.identity_api import IdentityApi
 from atrium.api.institutions_api import InstitutionsApi
 from atrium.api.members_api import MembersApi
@@ -44,6 +45,9 @@ from atrium.models.credential_option import CredentialOption
 from atrium.models.credential_request import CredentialRequest
 from atrium.models.credential_response import CredentialResponse
 from atrium.models.credentials_response_body import CredentialsResponseBody
+from atrium.models.holding import Holding
+from atrium.models.holding_response_body import HoldingResponseBody
+from atrium.models.holdings_response_body import HoldingsResponseBody
 from atrium.models.institution import Institution
 from atrium.models.institution_response_body import InstitutionResponseBody
 from atrium.models.institutions_response_body import InstitutionsResponseBody

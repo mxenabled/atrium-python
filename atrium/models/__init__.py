@@ -28,6 +28,9 @@ from atrium.models.credential_option import CredentialOption
 from atrium.models.credential_request import CredentialRequest
 from atrium.models.credential_response import CredentialResponse
 from atrium.models.credentials_response_body import CredentialsResponseBody
+from atrium.models.holding import Holding
+from atrium.models.holding_response_body import HoldingResponseBody
+from atrium.models.holdings_response_body import HoldingsResponseBody
 from atrium.models.institution import Institution
 from atrium.models.institution_response_body import InstitutionResponseBody
 from atrium.models.institutions_response_body import InstitutionsResponseBody
