@@ -15,9 +15,11 @@ from __future__ import absolute_import
 from atrium.api.atrium_client import AtriumClient
 from atrium.api.accounts_api import AccountsApi
 from atrium.api.connect_widget_api import ConnectWidgetApi
+from atrium.api.holdings_api import HoldingsApi
 from atrium.api.identity_api import IdentityApi
 from atrium.api.institutions_api import InstitutionsApi
 from atrium.api.members_api import MembersApi
+from atrium.api.merchants_api import MerchantsApi
 from atrium.api.transactions_api import TransactionsApi
 from atrium.api.users_api import UsersApi
 from atrium.api.verification_api import VerificationApi
@@ -43,6 +45,9 @@ from atrium.models.credential_option import CredentialOption
 from atrium.models.credential_request import CredentialRequest
 from atrium.models.credential_response import CredentialResponse
 from atrium.models.credentials_response_body import CredentialsResponseBody
+from atrium.models.holding import Holding
+from atrium.models.holding_response_body import HoldingResponseBody
+from atrium.models.holdings_response_body import HoldingsResponseBody
 from atrium.models.institution import Institution
 from atrium.models.institution_response_body import InstitutionResponseBody
 from atrium.models.institutions_response_body import InstitutionsResponseBody
@@ -57,6 +62,8 @@ from atrium.models.member_resume_request_body import MemberResumeRequestBody
 from atrium.models.member_update_request import MemberUpdateRequest
 from atrium.models.member_update_request_body import MemberUpdateRequestBody
 from atrium.models.members_response_body import MembersResponseBody
+from atrium.models.merchant import Merchant
+from atrium.models.merchant_response_body import MerchantResponseBody
 from atrium.models.pagination import Pagination
 from atrium.models.transaction import Transaction
 from atrium.models.transaction_cleanse_and_categorize_request import TransactionCleanseAndCategorizeRequest

@@ -15,9 +15,11 @@ class AtriumClient(object):
         
         self.accounts = atrium.AccountsApi()
         self.connect_widget = atrium.ConnectWidgetApi()
+        self.holdings = atrium.HoldingsApi()
         self.identity = atrium.IdentityApi()
         self.institutions = atrium.InstitutionsApi()
         self.members = atrium.MembersApi()
+        self.merchants = atrium.MerchantsApi()
         self.transactions = atrium.TransactionsApi()
         self.users = atrium.UsersApi()
         self.verification = atrium.VerificationApi()
