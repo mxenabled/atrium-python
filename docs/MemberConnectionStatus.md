@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **aggregated_at** | **str** |  | [optional] 
 **challenges** | [**list[Challenge]**](Challenge.md) |  | [optional] 
 **connection_status** | **str** |  | [optional] 
-**guid** | **bool** |  | [optional] 
+**guid** | **str** |  | [optional] 
 **has_processed_accounts** | **bool** |  | [optional] 
 **has_processed_transactions** | **bool** |  | [optional] 
 **is_being_aggregated** | **bool** |  | [optional] 

@@ -26,7 +26,7 @@ class Member(object):
     mx_types = {
         'aggregated_at': 'str',
         'connection_status': 'str',
-        'guid': 'bool',
+        'guid': 'str',
         'identifier': 'str',
         'institution_code': 'str',
         'is_being_aggregated': 'bool',
@@ -137,7 +137,7 @@ class Member(object):
 
 
         :return: The guid of this Member.  # noqa: E501
-        :rtype: bool
+        :rtype: str
         """
         return self._guid
 
@@ -147,7 +147,7 @@ class Member(object):
 
 
         :param guid: The guid of this Member.  # noqa: E501
-        :type: bool
+        :type: str
         """
 
         self._guid = guid

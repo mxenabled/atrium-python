@@ -29,7 +29,7 @@ class MemberConnectionStatus(object):
         'aggregated_at': 'str',
         'challenges': 'list[Challenge]',
         'connection_status': 'str',
-        'guid': 'bool',
+        'guid': 'str',
         'has_processed_accounts': 'bool',
         'has_processed_transactions': 'bool',
         'is_being_aggregated': 'bool',
@@ -150,7 +150,7 @@ class MemberConnectionStatus(object):
 
 
         :return: The guid of this MemberConnectionStatus.  # noqa: E501
-        :rtype: bool
+        :rtype: str
         """
         return self._guid
 
@@ -160,7 +160,7 @@ class MemberConnectionStatus(object):
 
 
         :param guid: The guid of this MemberConnectionStatus.  # noqa: E501
-        :type: bool
+        :type: str
         """
 
         self._guid = guid
