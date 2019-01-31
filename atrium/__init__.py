@@ -65,6 +65,8 @@ from atrium.models.members_response_body import MembersResponseBody
 from atrium.models.merchant import Merchant
 from atrium.models.merchant_response_body import MerchantResponseBody
 from atrium.models.pagination import Pagination
+from atrium.models.statement import Statement
+from atrium.models.statements_response_body import StatementsResponseBody
 from atrium.models.transaction import Transaction
 from atrium.models.transaction_cleanse_and_categorize_request import TransactionCleanseAndCategorizeRequest
 from atrium.models.transaction_cleanse_and_categorize_response import TransactionCleanseAndCategorizeResponse

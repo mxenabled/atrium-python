@@ -67,6 +67,13 @@ class TestMembersApi(unittest.TestCase):
         """
         pass
 
+    def test_list_member_statements(self):
+        """Test case for list_member_statements
+
+        List member statements  # noqa: E501
+        """
+        pass
+
     def test_list_member_transactions(self):
         """Test case for list_member_transactions
 

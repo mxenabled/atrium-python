@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **list_institutions**
-> InstitutionsResponseBody list_institutions(name=name, page=page, records_per_page=records_per_page)
+> InstitutionsResponseBody list_institutions(name=name, page=page, records_per_page=records_per_page, supports_account_identification=supports_account_identification, supports_account_statement=supports_account_statement, supports_account_verification=supports_account_verification, supports_transaction_history=supports_transaction_history)
 
 List institutions
 
@@ -28,10 +28,14 @@ client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
 name = name_example # str | This will list only institutions in which the appended string appears. (optional)
 page = 1 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
+supports_account_identification = true # bool | Filter only institutions which support account identification. (optional)
+supports_account_statement = true # bool | Filter only institutions which support account statements. (optional)
+supports_account_verification = true # bool | Filter only institutions which support account verification. (optional)
+supports_transaction_history = true # bool | Filter only institutions which support extended transaction history. (optional)
 
 try:
     # List institutions
-    response = client.institutions.list_institutions(name=name, page=page, records_per_page=records_per_page)
+    response = client.institutions.list_institutions(name=name, page=page, records_per_page=records_per_page, supports_account_identification=supports_account_identification, supports_account_statement=supports_account_statement, supports_account_verification=supports_account_verification, supports_transaction_history=supports_transaction_history)
     pprint(response)
 except ApiException as e:
     print("Exception when calling InstitutionsApi->list_institutions: %s\n" % e)
@@ -44,6 +48,10 @@ Name | Type | Description  | Notes
  **name** | **str**| This will list only institutions in which the appended string appears. | [optional] 
  **page** | **int**| Specify current page. | [optional] 
  **records_per_page** | **int**| Specify records per page. | [optional] 
+ **supports_account_identification** | **bool**| Filter only institutions which support account identification. | [optional] 
+ **supports_account_statement** | **bool**| Filter only institutions which support account statements. | [optional] 
+ **supports_account_verification** | **bool**| Filter only institutions which support account verification. | [optional] 
+ **supports_transaction_history** | **bool**| Filter only institutions which support extended transaction history. | [optional] 
 
 ### Return type
 

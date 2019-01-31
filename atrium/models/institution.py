@@ -29,7 +29,9 @@ class Institution(object):
         'name': 'str',
         'small_logo_url': 'str',
         'supports_account_identification': 'bool',
+        'supports_account_statement': 'bool',
         'supports_account_verification': 'bool',
+        'supports_transaction_history': 'bool',
         'url': 'str'
     }
 
@@ -39,18 +41,22 @@ class Institution(object):
         'name': 'name',
         'small_logo_url': 'small_logo_url',
         'supports_account_identification': 'supports_account_identification',
+        'supports_account_statement': 'supports_account_statement',
         'supports_account_verification': 'supports_account_verification',
+        'supports_transaction_history': 'supports_transaction_history',
         'url': 'url'
     }
 
-    def __init__(self, code=None, medium_logo_url=None, name=None, small_logo_url=None, supports_account_identification=None, supports_account_verification=None, url=None):  # noqa: E501
+    def __init__(self, code=None, medium_logo_url=None, name=None, small_logo_url=None, supports_account_identification=None, supports_account_statement=None, supports_account_verification=None, supports_transaction_history=None, url=None):  # noqa: E501
 
         self._code = None
         self._medium_logo_url = None
         self._name = None
         self._small_logo_url = None
         self._supports_account_identification = None
+        self._supports_account_statement = None
         self._supports_account_verification = None
+        self._supports_transaction_history = None
         self._url = None
         self.discriminator = None
 
@@ -64,8 +70,12 @@ class Institution(object):
             self.small_logo_url = small_logo_url
         if supports_account_identification is not None:
             self.supports_account_identification = supports_account_identification
+        if supports_account_statement is not None:
+            self.supports_account_statement = supports_account_statement
         if supports_account_verification is not None:
             self.supports_account_verification = supports_account_verification
+        if supports_transaction_history is not None:
+            self.supports_transaction_history = supports_transaction_history
         if url is not None:
             self.url = url
 
@@ -175,6 +185,27 @@ class Institution(object):
         self._supports_account_identification = supports_account_identification
 
     @property
+    def supports_account_statement(self):
+        """Gets the supports_account_statement of this Institution.  # noqa: E501
+
+
+        :return: The supports_account_statement of this Institution.  # noqa: E501
+        :rtype: bool
+        """
+        return self._supports_account_statement
+
+    @supports_account_statement.setter
+    def supports_account_statement(self, supports_account_statement):
+        """Sets the supports_account_statement of this Institution.
+
+
+        :param supports_account_statement: The supports_account_statement of this Institution.  # noqa: E501
+        :type: bool
+        """
+
+        self._supports_account_statement = supports_account_statement
+
+    @property
     def supports_account_verification(self):
         """Gets the supports_account_verification of this Institution.  # noqa: E501
 
@@ -194,6 +225,27 @@ class Institution(object):
         """
 
         self._supports_account_verification = supports_account_verification
+
+    @property
+    def supports_transaction_history(self):
+        """Gets the supports_transaction_history of this Institution.  # noqa: E501
+
+
+        :return: The supports_transaction_history of this Institution.  # noqa: E501
+        :rtype: bool
+        """
+        return self._supports_transaction_history
+
+    @supports_transaction_history.setter
+    def supports_transaction_history(self, supports_transaction_history):
+        """Sets the supports_transaction_history of this Institution.
+
+
+        :param supports_transaction_history: The supports_transaction_history of this Institution.  # noqa: E501
+        :type: bool
+        """
+
+        self._supports_transaction_history = supports_transaction_history
 
     @property
     def url(self):

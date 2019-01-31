@@ -36,6 +36,10 @@ class InstitutionsApi(object):
         :param str name: This will list only institutions in which the appended string appears.
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
+        :param bool supports_account_identification: Filter only institutions which support account identification.
+        :param bool supports_account_statement: Filter only institutions which support account statements.
+        :param bool supports_account_verification: Filter only institutions which support account verification.
+        :param bool supports_transaction_history: Filter only institutions which support extended transaction history.
         :return: InstitutionsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
@@ -60,12 +64,16 @@ class InstitutionsApi(object):
         :param str name: This will list only institutions in which the appended string appears.
         :param int page: Specify current page.
         :param int records_per_page: Specify records per page.
+        :param bool supports_account_identification: Filter only institutions which support account identification.
+        :param bool supports_account_statement: Filter only institutions which support account statements.
+        :param bool supports_account_verification: Filter only institutions which support account verification.
+        :param bool supports_transaction_history: Filter only institutions which support extended transaction history.
         :return: InstitutionsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['name', 'page', 'records_per_page']  # noqa: E501
+        all_params = ['name', 'page', 'records_per_page', 'supports_account_identification', 'supports_account_statement', 'supports_account_verification', 'supports_transaction_history']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -92,6 +100,14 @@ class InstitutionsApi(object):
             query_params.append(('page', params['page']))  # noqa: E501
         if 'records_per_page' in params:
             query_params.append(('records_per_page', params['records_per_page']))  # noqa: E501
+        if 'supports_account_identification' in params:
+            query_params.append(('supports_account_identification', params['supports_account_identification']))  # noqa: E501
+        if 'supports_account_statement' in params:
+            query_params.append(('supports_account_statement', params['supports_account_statement']))  # noqa: E501
+        if 'supports_account_verification' in params:
+            query_params.append(('supports_account_verification', params['supports_account_verification']))  # noqa: E501
+        if 'supports_transaction_history' in params:
+            query_params.append(('supports_transaction_history', params['supports_transaction_history']))  # noqa: E501
 
         header_params = {}
 
