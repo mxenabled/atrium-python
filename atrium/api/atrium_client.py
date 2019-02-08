@@ -20,6 +20,7 @@ class AtriumClient(object):
         self.institutions = atrium.InstitutionsApi()
         self.members = atrium.MembersApi()
         self.merchants = atrium.MerchantsApi()
+        self.statements = atrium.StatementsApi()
         self.transactions = atrium.TransactionsApi()
         self.users = atrium.UsersApi()
         self.verification = atrium.VerificationApi()

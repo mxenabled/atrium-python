@@ -46,6 +46,13 @@ class TestMembersApi(unittest.TestCase):
         """
         pass
 
+    def test_extend_history(self):
+        """Test case for extend_history
+
+        Extend history  # noqa: E501
+        """
+        pass
+
     def test_list_member_accounts(self):
         """Test case for list_member_accounts
 
@@ -64,13 +71,6 @@ class TestMembersApi(unittest.TestCase):
         """Test case for list_member_mfa_challenges
 
         List member MFA challenges  # noqa: E501
-        """
-        pass
-
-    def test_list_member_statements(self):
-        """Test case for list_member_statements
-
-        List member statements  # noqa: E501
         """
         pass
 

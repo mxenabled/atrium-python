@@ -26,58 +26,48 @@ class Statement(object):
     mx_types = {
         'account_guid': 'str',
         'created_at': 'str',
-        'content_hash': 'str',
-        'deleted_at': 'str',
         'guid': 'str',
-        'is_deleted': 'bool',
-        'updated_at': 'str',
+        'member_guid': 'str',
         'uri': 'str',
-        'user_guid': 'str'
+        'user_guid': 'str',
+        'updated_at': 'str'
     }
 
     attribute_map = {
         'account_guid': 'account_guid',
         'created_at': 'created_at',
-        'content_hash': 'content_hash',
-        'deleted_at': 'deleted_at',
         'guid': 'guid',
-        'is_deleted': 'is_deleted',
-        'updated_at': 'updated_at',
+        'member_guid': 'member_guid',
         'uri': 'uri',
-        'user_guid': 'user_guid'
+        'user_guid': 'user_guid',
+        'updated_at': 'updated_at'
     }
 
-    def __init__(self, account_guid=None, created_at=None, content_hash=None, deleted_at=None, guid=None, is_deleted=None, updated_at=None, uri=None, user_guid=None):  # noqa: E501
+    def __init__(self, account_guid=None, created_at=None, guid=None, member_guid=None, uri=None, user_guid=None, updated_at=None):  # noqa: E501
 
         self._account_guid = None
         self._created_at = None
-        self._content_hash = None
-        self._deleted_at = None
         self._guid = None
-        self._is_deleted = None
-        self._updated_at = None
+        self._member_guid = None
         self._uri = None
         self._user_guid = None
+        self._updated_at = None
         self.discriminator = None
 
         if account_guid is not None:
             self.account_guid = account_guid
         if created_at is not None:
             self.created_at = created_at
-        if content_hash is not None:
-            self.content_hash = content_hash
-        if deleted_at is not None:
-            self.deleted_at = deleted_at
         if guid is not None:
             self.guid = guid
-        if is_deleted is not None:
-            self.is_deleted = is_deleted
-        if updated_at is not None:
-            self.updated_at = updated_at
+        if member_guid is not None:
+            self.member_guid = member_guid
         if uri is not None:
             self.uri = uri
         if user_guid is not None:
             self.user_guid = user_guid
+        if updated_at is not None:
+            self.updated_at = updated_at
 
     @property
     def account_guid(self):
@@ -126,52 +116,6 @@ class Statement(object):
         self._created_at = created_at
 
     @property
-    def content_hash(self):
-        """Gets the content_hash of this Statement.  # noqa: E501
-
-        An SHA-256 hash value of the statement's byte payload, used as a unique identifier.  # noqa: E501
-
-        :return: The content_hash of this Statement.  # noqa: E501
-        :rtype: str
-        """
-        return self._content_hash
-
-    @content_hash.setter
-    def content_hash(self, content_hash):
-        """Sets the content_hash of this Statement.
-
-        An SHA-256 hash value of the statement's byte payload, used as a unique identifier.  # noqa: E501
-
-        :param content_hash: The content_hash of this Statement.  # noqa: E501
-        :type: str
-        """
-
-        self._content_hash = content_hash
-
-    @property
-    def deleted_at(self):
-        """Gets the deleted_at of this Statement.  # noqa: E501
-
-        The date and time the `statement` was deleted. Statements are automatically deleted when an `account` is deleted.  # noqa: E501
-
-        :return: The deleted_at of this Statement.  # noqa: E501
-        :rtype: str
-        """
-        return self._deleted_at
-
-    @deleted_at.setter
-    def deleted_at(self, deleted_at):
-        """Sets the deleted_at of this Statement.
-
-        The date and time the `statement` was deleted. Statements are automatically deleted when an `account` is deleted.  # noqa: E501
-
-        :param deleted_at: The deleted_at of this Statement.  # noqa: E501
-        :type: str
-        """
-
-        self._deleted_at = deleted_at
-
-    @property
     def guid(self):
         """Gets the guid of this Statement.  # noqa: E501
 
@@ -195,50 +139,27 @@ class Statement(object):
         self._guid = guid
 
     @property
-    def is_deleted(self):
-        """Gets the is_deleted of this Statement.  # noqa: E501
+    def member_guid(self):
+        """Gets the member_guid of this Statement.  # noqa: E501
 
-        This indicates whether the `statement` has been deleted. Statements are automatically deleted when an `account` is deleted.  # noqa: E501
+        The unique identifier for the `member` associated with the `statement`.  Defined by MX.  # noqa: E501
 
-        :return: The is_deleted of this Statement.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_deleted
-
-    @is_deleted.setter
-    def is_deleted(self, is_deleted):
-        """Sets the is_deleted of this Statement.
-
-        This indicates whether the `statement` has been deleted. Statements are automatically deleted when an `account` is deleted.  # noqa: E501
-
-        :param is_deleted: The is_deleted of this Statement.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_deleted = is_deleted
-
-    @property
-    def updated_at(self):
-        """Gets the updated_at of this Statement.  # noqa: E501
-
-        The date and time at which the `statement` was last updated.  # noqa: E501
-
-        :return: The updated_at of this Statement.  # noqa: E501
+        :return: The member_guid of this Statement.  # noqa: E501
         :rtype: str
         """
-        return self._updated_at
+        return self._member_guid
 
-    @updated_at.setter
-    def updated_at(self, updated_at):
-        """Sets the updated_at of this Statement.
+    @member_guid.setter
+    def member_guid(self, member_guid):
+        """Sets the member_guid of this Statement.
 
-        The date and time at which the `statement` was last updated.  # noqa: E501
+        The unique identifier for the `member` associated with the `statement`.  Defined by MX.  # noqa: E501
 
-        :param updated_at: The updated_at of this Statement.  # noqa: E501
+        :param member_guid: The member_guid of this Statement.  # noqa: E501
         :type: str
         """
 
-        self._updated_at = updated_at
+        self._member_guid = member_guid
 
     @property
     def uri(self):
@@ -285,6 +206,29 @@ class Statement(object):
         """
 
         self._user_guid = user_guid
+
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this Statement.  # noqa: E501
+
+        The date and time at which the `statement` was last updated.  # noqa: E501
+
+        :return: The updated_at of this Statement.  # noqa: E501
+        :rtype: str
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this Statement.
+
+        The date and time at which the `statement` was last updated.  # noqa: E501
+
+        :param updated_at: The updated_at of this Statement.  # noqa: E501
+        :type: str
+        """
+
+        self._updated_at = updated_at
 
     def to_dict(self):
         """Returns the model properties as a dict"""
