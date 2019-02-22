@@ -23,6 +23,117 @@ class StatementsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def download_statement_pdf(self, member_guid, user_guid, statement_guid, **kwargs):  # noqa: E501
+        """Download statement PDF  # noqa: E501
+
+        Use this endpoint to download a specified statement. The endpoint URL is the same as the URI given in each `statement` object.   # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.download_statement_pdf(member_guid, user_guid, statement_guid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str member_guid: The unique identifier for a `member`. (required)
+        :param str user_guid: The unique identifier for a `user`. (required)
+        :param str statement_guid: The unique identifier for an `statement`. (required)
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.download_statement_pdf_with_http_info(member_guid, user_guid, statement_guid, **kwargs)  # noqa: E501
+        else:
+            (data) = self.download_statement_pdf_with_http_info(member_guid, user_guid, statement_guid, **kwargs)  # noqa: E501
+            return data
+
+    def download_statement_pdf_with_http_info(self, member_guid, user_guid, statement_guid, **kwargs):  # noqa: E501
+        """Download statement PDF  # noqa: E501
+
+        Use this endpoint to download a specified statement. The endpoint URL is the same as the URI given in each `statement` object.   # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.download_statement_pdf_with_http_info(member_guid, user_guid, statement_guid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str member_guid: The unique identifier for a `member`. (required)
+        :param str user_guid: The unique identifier for a `user`. (required)
+        :param str statement_guid: The unique identifier for an `statement`. (required)
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['member_guid', 'user_guid', 'statement_guid']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method download_statement_pdf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'member_guid' is set
+        if ('member_guid' not in params or
+                params['member_guid'] is None):
+            raise ValueError("Missing the required parameter `member_guid` when calling `download_statement_pdf`")  # noqa: E501
+        # verify the required parameter 'user_guid' is set
+        if ('user_guid' not in params or
+                params['user_guid'] is None):
+            raise ValueError("Missing the required parameter `user_guid` when calling `download_statement_pdf`")  # noqa: E501
+        # verify the required parameter 'statement_guid' is set
+        if ('statement_guid' not in params or
+                params['statement_guid'] is None):
+            raise ValueError("Missing the required parameter `statement_guid` when calling `download_statement_pdf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'member_guid' in params:
+            path_params['member_guid'] = params['member_guid']  # noqa: E501
+        if 'user_guid' in params:
+            path_params['user_guid'] = params['user_guid']  # noqa: E501
+        if 'statement_guid' in params:
+            path_params['statement_guid'] = params['statement_guid']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/vnd.mx.atrium.v1+pdf'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKey', 'clientID']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/users/{user_guid}/members/{member_guid}/statements/{statement_guid}.pdf', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def fetch_statements(self, member_guid, user_guid, **kwargs):  # noqa: E501
         """Fetch statements  # noqa: E501
 
@@ -234,6 +345,117 @@ class StatementsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='StatementsResponseBody',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def read_member_statement(self, member_guid, user_guid, statement_guid, **kwargs):  # noqa: E501
+        """Read statement JSON  # noqa: E501
+
+        Use this endpoint to download a specified statement. The endpoint URL is the same as the URI given in each `statement` object.   # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.read_member_statement(member_guid, user_guid, statement_guid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str member_guid: The unique identifier for a `member`. (required)
+        :param str user_guid: The unique identifier for a `user`. (required)
+        :param str statement_guid: The unique identifier for an `statement`. (required)
+        :return: StatementResponseBody
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.read_member_statement_with_http_info(member_guid, user_guid, statement_guid, **kwargs)  # noqa: E501
+        else:
+            (data) = self.read_member_statement_with_http_info(member_guid, user_guid, statement_guid, **kwargs)  # noqa: E501
+            return data
+
+    def read_member_statement_with_http_info(self, member_guid, user_guid, statement_guid, **kwargs):  # noqa: E501
+        """Read statement JSON  # noqa: E501
+
+        Use this endpoint to download a specified statement. The endpoint URL is the same as the URI given in each `statement` object.   # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.read_member_statement_with_http_info(member_guid, user_guid, statement_guid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str member_guid: The unique identifier for a `member`. (required)
+        :param str user_guid: The unique identifier for a `user`. (required)
+        :param str statement_guid: The unique identifier for an `statement`. (required)
+        :return: StatementResponseBody
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['member_guid', 'user_guid', 'statement_guid']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method read_member_statement" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'member_guid' is set
+        if ('member_guid' not in params or
+                params['member_guid'] is None):
+            raise ValueError("Missing the required parameter `member_guid` when calling `read_member_statement`")  # noqa: E501
+        # verify the required parameter 'user_guid' is set
+        if ('user_guid' not in params or
+                params['user_guid'] is None):
+            raise ValueError("Missing the required parameter `user_guid` when calling `read_member_statement`")  # noqa: E501
+        # verify the required parameter 'statement_guid' is set
+        if ('statement_guid' not in params or
+                params['statement_guid'] is None):
+            raise ValueError("Missing the required parameter `statement_guid` when calling `read_member_statement`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'member_guid' in params:
+            path_params['member_guid'] = params['member_guid']  # noqa: E501
+        if 'user_guid' in params:
+            path_params['user_guid'] = params['user_guid']  # noqa: E501
+        if 'statement_guid' in params:
+            path_params['statement_guid'] = params['statement_guid']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/vnd.mx.atrium.v1+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKey', 'clientID']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/users/{user_guid}/members/{member_guid}/statements/{statement_guid}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='StatementResponseBody',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -25,6 +25,7 @@ class Statement(object):
     """
     mx_types = {
         'account_guid': 'str',
+        'content_hash': 'str',
         'created_at': 'str',
         'guid': 'str',
         'member_guid': 'str',
@@ -35,6 +36,7 @@ class Statement(object):
 
     attribute_map = {
         'account_guid': 'account_guid',
+        'content_hash': 'content_hash',
         'created_at': 'created_at',
         'guid': 'guid',
         'member_guid': 'member_guid',
@@ -43,9 +45,10 @@ class Statement(object):
         'updated_at': 'updated_at'
     }
 
-    def __init__(self, account_guid=None, created_at=None, guid=None, member_guid=None, uri=None, user_guid=None, updated_at=None):  # noqa: E501
+    def __init__(self, account_guid=None, content_hash=None, created_at=None, guid=None, member_guid=None, uri=None, user_guid=None, updated_at=None):  # noqa: E501
 
         self._account_guid = None
+        self._content_hash = None
         self._created_at = None
         self._guid = None
         self._member_guid = None
@@ -56,6 +59,8 @@ class Statement(object):
 
         if account_guid is not None:
             self.account_guid = account_guid
+        if content_hash is not None:
+            self.content_hash = content_hash
         if created_at is not None:
             self.created_at = created_at
         if guid is not None:
@@ -91,6 +96,29 @@ class Statement(object):
         """
 
         self._account_guid = account_guid
+
+    @property
+    def content_hash(self):
+        """Gets the content_hash of this Statement.  # noqa: E501
+
+        SHA256 digest of the pdf payload  # noqa: E501
+
+        :return: The content_hash of this Statement.  # noqa: E501
+        :rtype: str
+        """
+        return self._content_hash
+
+    @content_hash.setter
+    def content_hash(self, content_hash):
+        """Sets the content_hash of this Statement.
+
+        SHA256 digest of the pdf payload  # noqa: E501
+
+        :param content_hash: The content_hash of this Statement.  # noqa: E501
+        :type: str
+        """
+
+        self._content_hash = content_hash
 
     @property
     def created_at(self):

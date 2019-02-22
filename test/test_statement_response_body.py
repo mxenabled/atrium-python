@@ -12,45 +12,23 @@ from __future__ import absolute_import
 import unittest
 
 import atrium
-from atrium.api.statements import StatementsApi  # noqa: E501
+from atrium.models.statement_response_body import StatementResponseBody  # noqa: E501
 from atrium.rest import ApiException
 
 
-class TestStatementsApi(unittest.TestCase):
-    """StatementsApi unit test stubs"""
+class TestStatementResponseBody(unittest.TestCase):
+    """StatementResponseBody unit test stubs"""
 
     def setUp(self):
-        self.api = atrium.api.statements.StatementsApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_download_statement_pdf(self):
-        """Test case for download_statement_pdf
-
-        Download statement PDF  # noqa: E501
-        """
-        pass
-
-    def test_fetch_statements(self):
-        """Test case for fetch_statements
-
-        Fetch statements  # noqa: E501
-        """
-        pass
-
-    def test_list_member_statements(self):
-        """Test case for list_member_statements
-
-        List member statements  # noqa: E501
-        """
-        pass
-
-    def test_read_member_statement(self):
-        """Test case for read_member_statement
-
-        Read statement JSON  # noqa: E501
-        """
+    def testStatementResponseBody(self):
+        """Test StatementResponseBody"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = atrium.models.statement_response_body.StatementResponseBody()  # noqa: E501
         pass
 
 
