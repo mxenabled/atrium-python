@@ -107,7 +107,7 @@ class TransactionsApi(object):
         auth_settings = ['apiKey', 'clientID']  # noqa: E501
 
         return self.api_client.call_api(
-            'transactions/cleanse_and_categorize', 'POST',
+            '/transactions/cleanse_and_categorize', 'POST',
             path_params,
             query_params,
             header_params,
