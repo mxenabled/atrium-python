@@ -47,6 +47,7 @@ class Transaction(object):
         'member_guid': 'str',
         'memo': 'str',
         'merchant_category_code': 'int',
+        'merchant_guid': 'str',
         'original_description': 'str',
         'posted_at': 'str',
         'status': 'str',
@@ -81,6 +82,7 @@ class Transaction(object):
         'member_guid': 'member_guid',
         'memo': 'memo',
         'merchant_category_code': 'merchant_category_code',
+        'merchant_guid': 'merchant_guid',
         'original_description': 'original_description',
         'posted_at': 'posted_at',
         'status': 'status',
@@ -91,7 +93,7 @@ class Transaction(object):
         'user_guid': 'user_guid'
     }
 
-    def __init__(self, account_guid=None, amount=None, category=None, check_number=None, check_number_string=None, created_at=None, currency_code=None, _date=None, description=None, guid=None, is_bill_pay=None, is_direct_deposit=None, is_expense=None, is_fee=None, is_income=None, is_international=None, is_overdraft_fee=None, is_payroll_advance=None, latitude=None, longitude=None, member_guid=None, memo=None, merchant_category_code=None, original_description=None, posted_at=None, status=None, top_level_category=None, transacted_at=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
+    def __init__(self, account_guid=None, amount=None, category=None, check_number=None, check_number_string=None, created_at=None, currency_code=None, _date=None, description=None, guid=None, is_bill_pay=None, is_direct_deposit=None, is_expense=None, is_fee=None, is_income=None, is_international=None, is_overdraft_fee=None, is_payroll_advance=None, latitude=None, longitude=None, member_guid=None, memo=None, merchant_category_code=None, merchant_guid=None, original_description=None, posted_at=None, status=None, top_level_category=None, transacted_at=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
 
         self._account_guid = None
         self._amount = None
@@ -116,6 +118,7 @@ class Transaction(object):
         self._member_guid = None
         self._memo = None
         self._merchant_category_code = None
+        self._merchant_guid = None
         self._original_description = None
         self._posted_at = None
         self._status = None
@@ -172,6 +175,8 @@ class Transaction(object):
             self.memo = memo
         if merchant_category_code is not None:
             self.merchant_category_code = merchant_category_code
+        if merchant_guid is not None:
+            self.merchant_guid = merchant_guid
         if original_description is not None:
             self.original_description = original_description
         if posted_at is not None:
@@ -671,6 +676,27 @@ class Transaction(object):
         """
 
         self._merchant_category_code = merchant_category_code
+
+    @property
+    def merchant_guid(self):
+        """Gets the merchant_guid of this Transaction.  # noqa: E501
+
+
+        :return: The merchant_guid of this Transaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._merchant_guid
+
+    @merchant_guid.setter
+    def merchant_guid(self, merchant_guid):
+        """Sets the merchant_guid of this Transaction.
+
+
+        :param merchant_guid: The merchant_guid of this Transaction.  # noqa: E501
+        :type: str
+        """
+
+        self._merchant_guid = merchant_guid
 
     @property
     def original_description(self):

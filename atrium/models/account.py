@@ -29,15 +29,20 @@ class Account(object):
         'available_balance': 'float',
         'available_credit': 'float',
         'balance': 'float',
+        'cash_balance': 'float',
+        'cash_surrender_value': 'float',
         'created_at': 'str',
         'credit_limit': 'float',
         'currency_code': 'str',
         'day_payment_is_due': 'int',
+        'death_benefit': 'float',
         'guid': 'str',
+        'holdings_value': 'float',
         'institution_code': 'str',
         'interest_rate': 'float',
         'is_closed': 'bool',
         'last_payment': 'float',
+        'loan_amount': 'float',
         'matures_on': 'str',
         'member_guid': 'str',
         'minimum_balance': 'float',
@@ -60,15 +65,20 @@ class Account(object):
         'available_balance': 'available_balance',
         'available_credit': 'available_credit',
         'balance': 'balance',
+        'cash_balance': 'cash_balance',
+        'cash_surrender_value': 'cash_surrender_value',
         'created_at': 'created_at',
         'credit_limit': 'credit_limit',
         'currency_code': 'currency_code',
         'day_payment_is_due': 'day_payment_is_due',
+        'death_benefit': 'death_benefit',
         'guid': 'guid',
+        'holdings_value': 'holdings_value',
         'institution_code': 'institution_code',
         'interest_rate': 'interest_rate',
         'is_closed': 'is_closed',
         'last_payment': 'last_payment',
+        'loan_amount': 'loan_amount',
         'matures_on': 'matures_on',
         'member_guid': 'member_guid',
         'minimum_balance': 'minimum_balance',
@@ -85,22 +95,27 @@ class Account(object):
         'user_guid': 'user_guid'
     }
 
-    def __init__(self, apr=None, apy=None, available_balance=None, available_credit=None, balance=None, created_at=None, credit_limit=None, currency_code=None, day_payment_is_due=None, guid=None, institution_code=None, interest_rate=None, is_closed=None, last_payment=None, matures_on=None, member_guid=None, minimum_balance=None, minimum_payment=None, name=None, original_balance=None, payment_due_at=None, payoff_balance=None, started_on=None, subtype=None, total_account_value=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
+    def __init__(self, apr=None, apy=None, available_balance=None, available_credit=None, balance=None, cash_balance=None, cash_surrender_value=None, created_at=None, credit_limit=None, currency_code=None, day_payment_is_due=None, death_benefit=None, guid=None, holdings_value=None, institution_code=None, interest_rate=None, is_closed=None, last_payment=None, loan_amount=None, matures_on=None, member_guid=None, minimum_balance=None, minimum_payment=None, name=None, original_balance=None, payment_due_at=None, payoff_balance=None, started_on=None, subtype=None, total_account_value=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
 
         self._apr = None
         self._apy = None
         self._available_balance = None
         self._available_credit = None
         self._balance = None
+        self._cash_balance = None
+        self._cash_surrender_value = None
         self._created_at = None
         self._credit_limit = None
         self._currency_code = None
         self._day_payment_is_due = None
+        self._death_benefit = None
         self._guid = None
+        self._holdings_value = None
         self._institution_code = None
         self._interest_rate = None
         self._is_closed = None
         self._last_payment = None
+        self._loan_amount = None
         self._matures_on = None
         self._member_guid = None
         self._minimum_balance = None
@@ -127,6 +142,10 @@ class Account(object):
             self.available_credit = available_credit
         if balance is not None:
             self.balance = balance
+        if cash_balance is not None:
+            self.cash_balance = cash_balance
+        if cash_surrender_value is not None:
+            self.cash_surrender_value = cash_surrender_value
         if created_at is not None:
             self.created_at = created_at
         if credit_limit is not None:
@@ -135,8 +154,12 @@ class Account(object):
             self.currency_code = currency_code
         if day_payment_is_due is not None:
             self.day_payment_is_due = day_payment_is_due
+        if death_benefit is not None:
+            self.death_benefit = death_benefit
         if guid is not None:
             self.guid = guid
+        if holdings_value is not None:
+            self.holdings_value = holdings_value
         if institution_code is not None:
             self.institution_code = institution_code
         if interest_rate is not None:
@@ -145,6 +168,8 @@ class Account(object):
             self.is_closed = is_closed
         if last_payment is not None:
             self.last_payment = last_payment
+        if loan_amount is not None:
+            self.loan_amount = loan_amount
         if matures_on is not None:
             self.matures_on = matures_on
         if member_guid is not None:
@@ -280,6 +305,48 @@ class Account(object):
         self._balance = balance
 
     @property
+    def cash_balance(self):
+        """Gets the cash_balance of this Account.  # noqa: E501
+
+
+        :return: The cash_balance of this Account.  # noqa: E501
+        :rtype: float
+        """
+        return self._cash_balance
+
+    @cash_balance.setter
+    def cash_balance(self, cash_balance):
+        """Sets the cash_balance of this Account.
+
+
+        :param cash_balance: The cash_balance of this Account.  # noqa: E501
+        :type: float
+        """
+
+        self._cash_balance = cash_balance
+
+    @property
+    def cash_surrender_value(self):
+        """Gets the cash_surrender_value of this Account.  # noqa: E501
+
+
+        :return: The cash_surrender_value of this Account.  # noqa: E501
+        :rtype: float
+        """
+        return self._cash_surrender_value
+
+    @cash_surrender_value.setter
+    def cash_surrender_value(self, cash_surrender_value):
+        """Sets the cash_surrender_value of this Account.
+
+
+        :param cash_surrender_value: The cash_surrender_value of this Account.  # noqa: E501
+        :type: float
+        """
+
+        self._cash_surrender_value = cash_surrender_value
+
+    @property
     def created_at(self):
         """Gets the created_at of this Account.  # noqa: E501
 
@@ -364,6 +431,27 @@ class Account(object):
         self._day_payment_is_due = day_payment_is_due
 
     @property
+    def death_benefit(self):
+        """Gets the death_benefit of this Account.  # noqa: E501
+
+
+        :return: The death_benefit of this Account.  # noqa: E501
+        :rtype: float
+        """
+        return self._death_benefit
+
+    @death_benefit.setter
+    def death_benefit(self, death_benefit):
+        """Sets the death_benefit of this Account.
+
+
+        :param death_benefit: The death_benefit of this Account.  # noqa: E501
+        :type: float
+        """
+
+        self._death_benefit = death_benefit
+
+    @property
     def guid(self):
         """Gets the guid of this Account.  # noqa: E501
 
@@ -383,6 +471,27 @@ class Account(object):
         """
 
         self._guid = guid
+
+    @property
+    def holdings_value(self):
+        """Gets the holdings_value of this Account.  # noqa: E501
+
+
+        :return: The holdings_value of this Account.  # noqa: E501
+        :rtype: float
+        """
+        return self._holdings_value
+
+    @holdings_value.setter
+    def holdings_value(self, holdings_value):
+        """Sets the holdings_value of this Account.
+
+
+        :param holdings_value: The holdings_value of this Account.  # noqa: E501
+        :type: float
+        """
+
+        self._holdings_value = holdings_value
 
     @property
     def institution_code(self):
@@ -467,6 +576,27 @@ class Account(object):
         """
 
         self._last_payment = last_payment
+
+    @property
+    def loan_amount(self):
+        """Gets the loan_amount of this Account.  # noqa: E501
+
+
+        :return: The loan_amount of this Account.  # noqa: E501
+        :rtype: float
+        """
+        return self._loan_amount
+
+    @loan_amount.setter
+    def loan_amount(self, loan_amount):
+        """Sets the loan_amount of this Account.
+
+
+        :param loan_amount: The loan_amount of this Account.  # noqa: E501
+        :type: float
+        """
+
+        self._loan_amount = loan_amount
 
     @property
     def matures_on(self):
