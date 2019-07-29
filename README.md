@@ -9,23 +9,8 @@ Python 2.7 and 3.4+
 ### pip install
 
 ```sh
-pip install git+https://github.com/mxenabled/atrium-python.git
+pip install atrium
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/mxenabled/atrium-python.git`)
-
-Then import the package:
-```python
-import atrium
-```
-
-### Setuptools
-
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
-
-```sh
-python setup.py install --user
-```
-(or `sudo python setup.py install` to install the package for all users)
 
 Then import the package:
 ```python
