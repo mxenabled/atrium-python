@@ -29,22 +29,25 @@ class MemberCreateRequest(object):
         'credentials': 'list[CredentialRequest]',
         'identifier': 'str',
         'institution_code': 'str',
-        'metadata': 'str'
+        'metadata': 'str',
+        'skip_aggregation': 'bool'
     }
 
     attribute_map = {
         'credentials': 'credentials',
         'identifier': 'identifier',
         'institution_code': 'institution_code',
-        'metadata': 'metadata'
+        'metadata': 'metadata',
+        'skip_aggregation': 'skip_aggregation'
     }
 
-    def __init__(self, credentials=None, identifier=None, institution_code=None, metadata=None):  # noqa: E501
+    def __init__(self, credentials=None, identifier=None, institution_code=None, metadata=None, skip_aggregation=None):  # noqa: E501
 
         self._credentials = None
         self._identifier = None
         self._institution_code = None
         self._metadata = None
+        self._skip_aggregation = None
         self.discriminator = None
 
         self.credentials = credentials
@@ -53,6 +56,8 @@ class MemberCreateRequest(object):
         self.institution_code = institution_code
         if metadata is not None:
             self.metadata = metadata
+        if skip_aggregation is not None:
+            self.skip_aggregation = skip_aggregation
 
     @property
     def credentials(self):
@@ -141,6 +146,27 @@ class MemberCreateRequest(object):
         """
 
         self._metadata = metadata
+
+    @property
+    def skip_aggregation(self):
+        """Gets the skip_aggregation of this MemberCreateRequest.  # noqa: E501
+
+
+        :return: The skip_aggregation of this MemberCreateRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_aggregation
+
+    @skip_aggregation.setter
+    def skip_aggregation(self, skip_aggregation):
+        """Sets the skip_aggregation of this MemberCreateRequest.
+
+
+        :param skip_aggregation: The skip_aggregation of this MemberCreateRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_aggregation = skip_aggregation
 
     def to_dict(self):
         """Returns the model properties as a dict"""
