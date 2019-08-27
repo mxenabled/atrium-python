@@ -24,7 +24,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 member_guid = "MBR-123" # str | The unique identifier for a `member`.
 user_guid = "USR-123" # str | The unique identifier for a `user`.
@@ -68,7 +68,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 member_guid = "MBR-123" # str | The unique identifier for a `member`.
 user_guid = "USR-123" # str | The unique identifier for a `user`.
@@ -110,7 +110,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 member_guid = "MBR-123" # str | The unique identifier for a `member`.
 user_guid = "USR-123" # str | The unique identifier for a `user`.
@@ -156,7 +156,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 member_guid = "MBR-123" # str | The unique identifier for a `member`.
 user_guid = "USR-123" # str | The unique identifier for a `user`.

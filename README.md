@@ -29,7 +29,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 account_guid = "ACT-123" # str | The unique identifier for an `account`.
 user_guid = "USR-123" # str | The unique identifier for a `user`.
