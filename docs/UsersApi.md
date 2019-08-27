@@ -25,7 +25,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 body = atrium.UserCreateRequestBody() # UserCreateRequestBody | User object to be created with optional parameters (identifier, is_disabled, metadata)
 
@@ -65,7 +65,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 user_guid = "USR-123" # str | The unique identifier for a `user`.
 
@@ -104,7 +104,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 page = 1 # int | Specify current page. (optional)
 records_per_page = 12 # int | Specify records per page. (optional)
@@ -146,7 +146,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 user_guid = "USR-123" # str | The unique identifier for a `user`.
 
@@ -186,7 +186,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 user_guid = "USR-123" # str | The unique identifier for a `user`.
 body = atrium.UserUpdateRequestBody() # UserUpdateRequestBody | User object to be updated with optional parameters (identifier, is_disabled, metadata) (optional)

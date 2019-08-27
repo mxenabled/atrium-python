@@ -23,7 +23,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 name = name_example # str | This will list only institutions in which the appended string appears. (optional)
 page = 1 # int | Specify current page. (optional)
@@ -75,7 +75,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 institution_code = "example_institution_code" # str | The institution_code of the institution.
 
@@ -115,7 +115,7 @@ from atrium.rest import ApiException
 from pprint import pprint
 
 # create an instance of the AtriumClient
-client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID")
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 institution_code = "example_institution_code" # str | The institution_code of the institution.
 
