@@ -3,6 +3,7 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**aggregate_member**](MembersApi.md#aggregate_member) | **POST** /users/{user_guid}/members/{member_guid}/aggregate | Aggregate member
+[**aggregate_member_balances**](MembersApi.md#aggregate_member_balances) | **POST** /users/{user_guid}/members/{member_guid}/balance | Aggregate member account balances
 [**create_member**](MembersApi.md#create_member) | **POST** /users/{user_guid}/members | Create member
 [**delete_member**](MembersApi.md#delete_member) | **DELETE** /users/{user_guid}/members/{member_guid} | Delete member
 [**extend_history**](MembersApi.md#extend_history) | **POST** /users/{user_guid}/members/{member_guid}/extend_history | Extend history
@@ -44,6 +45,48 @@ try:
     pprint(response)
 except ApiException as e:
     print("Exception when calling MembersApi->aggregate_member: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **member_guid** | **str**| The unique identifier for a &#x60;member&#x60;. | 
+ **user_guid** | **str**| The unique identifier for a &#x60;user&#x60;. | 
+
+### Return type
+
+[**MemberResponseBody**](MemberResponseBody.md)
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aggregate_member_balances**
+> MemberResponseBody aggregate_member_balances(member_guid, user_guid)
+
+Aggregate member account balances
+
+This endpoint operates much like the _aggregate member_ endpoint except that it gathers only account balance information; it does not gather any transaction data at all.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import atrium
+from atrium.rest import ApiException
+from pprint import pprint
+
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
+
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
+
+try:
+    # Aggregate member account balances
+    response = client.members.aggregate_member_balances(member_guid, user_guid)
+    pprint(response)
+except ApiException as e:
+    print("Exception when calling MembersApi->aggregate_member_balances: %s\n" % e)
 ```
 
 ### Parameters
