@@ -32,6 +32,13 @@ class TestMembersApi(unittest.TestCase):
         """
         pass
 
+    def test_aggregate_member_balances(self):
+        """Test case for aggregate_member_balances
+
+        Aggregate member account balances  # noqa: E501
+        """
+        pass
+
     def test_create_member(self):
         """Test case for create_member
 

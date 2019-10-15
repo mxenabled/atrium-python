@@ -130,6 +130,109 @@ class MembersApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def aggregate_member_balances(self, member_guid, user_guid, **kwargs):  # noqa: E501
+        """Aggregate member account balances  # noqa: E501
+
+        This endpoint operates much like the _aggregate member_ endpoint except that it gathers only account balance information; it does not gather any transaction data at all.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.aggregate_member_balances(member_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str member_guid: The unique identifier for a `member`. (required)
+        :param str user_guid: The unique identifier for a `user`. (required)
+        :return: MemberResponseBody
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.aggregate_member_balances_with_http_info(member_guid, user_guid, **kwargs)  # noqa: E501
+        else:
+            (data) = self.aggregate_member_balances_with_http_info(member_guid, user_guid, **kwargs)  # noqa: E501
+            return data
+
+    def aggregate_member_balances_with_http_info(self, member_guid, user_guid, **kwargs):  # noqa: E501
+        """Aggregate member account balances  # noqa: E501
+
+        This endpoint operates much like the _aggregate member_ endpoint except that it gathers only account balance information; it does not gather any transaction data at all.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.aggregate_member_balances_with_http_info(member_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str member_guid: The unique identifier for a `member`. (required)
+        :param str user_guid: The unique identifier for a `user`. (required)
+        :return: MemberResponseBody
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['member_guid', 'user_guid']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method aggregate_member_balances" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'member_guid' is set
+        if ('member_guid' not in params or
+                params['member_guid'] is None):
+            raise ValueError("Missing the required parameter `member_guid` when calling `aggregate_member_balances`")  # noqa: E501
+        # verify the required parameter 'user_guid' is set
+        if ('user_guid' not in params or
+                params['user_guid'] is None):
+            raise ValueError("Missing the required parameter `user_guid` when calling `aggregate_member_balances`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'member_guid' in params:
+            path_params['member_guid'] = params['member_guid']  # noqa: E501
+        if 'user_guid' in params:
+            path_params['user_guid'] = params['user_guid']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/vnd.mx.atrium.v1+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKey', 'clientID']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/users/{user_guid}/members/{member_guid}/balance', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='MemberResponseBody',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def create_member(self, user_guid, body, **kwargs):  # noqa: E501
         """Create member  # noqa: E501
 

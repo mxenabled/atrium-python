@@ -27,6 +27,7 @@ class ConnectWidgetRequestBody(object):
         'is_mobile_webview': 'bool',
         'current_institution_code': 'str',
         'current_member_guid': 'str',
+        'ui_message_version': 'float',
         'update_credentials': 'bool'
     }
 
@@ -34,14 +35,16 @@ class ConnectWidgetRequestBody(object):
         'is_mobile_webview': 'is_mobile_webview',
         'current_institution_code': 'current_institution_code',
         'current_member_guid': 'current_member_guid',
+        'ui_message_version': 'ui_message_version',
         'update_credentials': 'update_credentials'
     }
 
-    def __init__(self, is_mobile_webview=None, current_institution_code=None, current_member_guid=None, update_credentials=None):  # noqa: E501
+    def __init__(self, is_mobile_webview=None, current_institution_code=None, current_member_guid=None, ui_message_version=None, update_credentials=None):  # noqa: E501
 
         self._is_mobile_webview = None
         self._current_institution_code = None
         self._current_member_guid = None
+        self._ui_message_version = None
         self._update_credentials = None
         self.discriminator = None
 
@@ -51,6 +54,8 @@ class ConnectWidgetRequestBody(object):
             self.current_institution_code = current_institution_code
         if current_member_guid is not None:
             self.current_member_guid = current_member_guid
+        if ui_message_version is not None:
+            self.ui_message_version = ui_message_version
         if update_credentials is not None:
             self.update_credentials = update_credentials
 
@@ -116,6 +121,27 @@ class ConnectWidgetRequestBody(object):
         """
 
         self._current_member_guid = current_member_guid
+
+    @property
+    def ui_message_version(self):
+        """Gets the ui_message_version of this ConnectWidgetRequestBody.  # noqa: E501
+
+
+        :return: The ui_message_version of this ConnectWidgetRequestBody.  # noqa: E501
+        :rtype: float
+        """
+        return self._ui_message_version
+
+    @ui_message_version.setter
+    def ui_message_version(self, ui_message_version):
+        """Sets the ui_message_version of this ConnectWidgetRequestBody.
+
+
+        :param ui_message_version: The ui_message_version of this ConnectWidgetRequestBody.  # noqa: E501
+        :type: float
+        """
+
+        self._ui_message_version = ui_message_version
 
     @property
     def update_credentials(self):
