@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **guid** | **str** |  | [optional] 
 **has_processed_accounts** | **bool** |  | [optional] 
 **has_processed_transactions** | **bool** |  | [optional] 
+**is_authenticated** | **bool** |  | [optional] 
 **is_being_aggregated** | **bool** |  | [optional] 
 **status** | **str** |  | [optional] 
 **successfully_aggregated_at** | **str** |  | [optional] 
