@@ -32,6 +32,7 @@ class MemberConnectionStatus(object):
         'guid': 'str',
         'has_processed_accounts': 'bool',
         'has_processed_transactions': 'bool',
+        'is_authenticated': 'bool',
         'is_being_aggregated': 'bool',
         'status': 'str',
         'successfully_aggregated_at': 'str'
@@ -44,12 +45,13 @@ class MemberConnectionStatus(object):
         'guid': 'guid',
         'has_processed_accounts': 'has_processed_accounts',
         'has_processed_transactions': 'has_processed_transactions',
+        'is_authenticated': 'is_authenticated',
         'is_being_aggregated': 'is_being_aggregated',
         'status': 'status',
         'successfully_aggregated_at': 'successfully_aggregated_at'
     }
 
-    def __init__(self, aggregated_at=None, challenges=None, connection_status=None, guid=None, has_processed_accounts=None, has_processed_transactions=None, is_being_aggregated=None, status=None, successfully_aggregated_at=None):  # noqa: E501
+    def __init__(self, aggregated_at=None, challenges=None, connection_status=None, guid=None, has_processed_accounts=None, has_processed_transactions=None, is_authenticated=None, is_being_aggregated=None, status=None, successfully_aggregated_at=None):  # noqa: E501
 
         self._aggregated_at = None
         self._challenges = None
@@ -57,6 +59,7 @@ class MemberConnectionStatus(object):
         self._guid = None
         self._has_processed_accounts = None
         self._has_processed_transactions = None
+        self._is_authenticated = None
         self._is_being_aggregated = None
         self._status = None
         self._successfully_aggregated_at = None
@@ -74,6 +77,8 @@ class MemberConnectionStatus(object):
             self.has_processed_accounts = has_processed_accounts
         if has_processed_transactions is not None:
             self.has_processed_transactions = has_processed_transactions
+        if is_authenticated is not None:
+            self.is_authenticated = is_authenticated
         if is_being_aggregated is not None:
             self.is_being_aggregated = is_being_aggregated
         if status is not None:
@@ -206,6 +211,27 @@ class MemberConnectionStatus(object):
         """
 
         self._has_processed_transactions = has_processed_transactions
+
+    @property
+    def is_authenticated(self):
+        """Gets the is_authenticated of this MemberConnectionStatus.  # noqa: E501
+
+
+        :return: The is_authenticated of this MemberConnectionStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_authenticated
+
+    @is_authenticated.setter
+    def is_authenticated(self, is_authenticated):
+        """Sets the is_authenticated of this MemberConnectionStatus.
+
+
+        :param is_authenticated: The is_authenticated of this MemberConnectionStatus.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_authenticated = is_authenticated
 
     @property
     def is_being_aggregated(self):
