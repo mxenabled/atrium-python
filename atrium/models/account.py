@@ -24,6 +24,7 @@ class Account(object):
                             and the value is json key in definition.
     """
     mx_types = {
+        'account_number': 'str',
         'apr': 'float',
         'apy': 'float',
         'available_balance': 'float',
@@ -60,6 +61,7 @@ class Account(object):
     }
 
     attribute_map = {
+        'account_number': 'account_number',
         'apr': 'apr',
         'apy': 'apy',
         'available_balance': 'available_balance',
@@ -95,8 +97,9 @@ class Account(object):
         'user_guid': 'user_guid'
     }
 
-    def __init__(self, apr=None, apy=None, available_balance=None, available_credit=None, balance=None, cash_balance=None, cash_surrender_value=None, created_at=None, credit_limit=None, currency_code=None, day_payment_is_due=None, death_benefit=None, guid=None, holdings_value=None, institution_code=None, interest_rate=None, is_closed=None, last_payment=None, loan_amount=None, matures_on=None, member_guid=None, minimum_balance=None, minimum_payment=None, name=None, original_balance=None, payment_due_at=None, payoff_balance=None, started_on=None, subtype=None, total_account_value=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
+    def __init__(self, account_number=None, apr=None, apy=None, available_balance=None, available_credit=None, balance=None, cash_balance=None, cash_surrender_value=None, created_at=None, credit_limit=None, currency_code=None, day_payment_is_due=None, death_benefit=None, guid=None, holdings_value=None, institution_code=None, interest_rate=None, is_closed=None, last_payment=None, loan_amount=None, matures_on=None, member_guid=None, minimum_balance=None, minimum_payment=None, name=None, original_balance=None, payment_due_at=None, payoff_balance=None, started_on=None, subtype=None, total_account_value=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
 
+        self._account_number = None
         self._apr = None
         self._apy = None
         self._available_balance = None
@@ -132,6 +135,8 @@ class Account(object):
         self._user_guid = None
         self.discriminator = None
 
+        if account_number is not None:
+            self.account_number = account_number
         if apr is not None:
             self.apr = apr
         if apy is not None:
@@ -198,6 +203,27 @@ class Account(object):
             self.updated_at = updated_at
         if user_guid is not None:
             self.user_guid = user_guid
+
+    @property
+    def account_number(self):
+        """Gets the account_number of this Account.  # noqa: E501
+
+
+        :return: The account_number of this Account.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_number
+
+    @account_number.setter
+    def account_number(self, account_number):
+        """Sets the account_number of this Account.
+
+
+        :param account_number: The account_number of this Account.  # noqa: E501
+        :type: str
+        """
+
+        self._account_number = account_number
 
     @property
     def apr(self):
