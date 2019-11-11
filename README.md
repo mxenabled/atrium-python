@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
  - [AccountResponseBody](docs/AccountResponseBody.md)
  - [AccountsResponseBody](docs/AccountsResponseBody.md)
  - [Challenge](docs/Challenge.md)
+ - [ChallengeImageOption](docs/ChallengeImageOption.md)
  - [ChallengeOption](docs/ChallengeOption.md)
  - [ChallengesResponseBody](docs/ChallengesResponseBody.md)
  - [ConnectWidget](docs/ConnectWidget.md)

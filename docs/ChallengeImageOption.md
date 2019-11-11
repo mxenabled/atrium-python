@@ -1,8 +1,9 @@
-# ChallengeOption
+# ChallengeImageOption
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**data_uri** | **str** |  | [optional] 
 **label** | **str** |  | [optional] 
 **value** | **str** |  | [optional] 
 
