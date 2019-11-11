@@ -13,7 +13,7 @@ import re  # noqa: F401
 import six
 
 
-class ChallengeOption(object):
+class ChallengeImageOption(object):
 
 
     """
@@ -24,42 +24,68 @@ class ChallengeOption(object):
                             and the value is json key in definition.
     """
     mx_types = {
+        'data_uri': 'str',
         'label': 'str',
         'value': 'str'
     }
 
     attribute_map = {
+        'data_uri': 'data_uri',
         'label': 'label',
         'value': 'value'
     }
 
-    def __init__(self, label=None, value=None):  # noqa: E501
+    def __init__(self, data_uri=None, label=None, value=None):  # noqa: E501
 
+        self._data_uri = None
         self._label = None
         self._value = None
         self.discriminator = None
 
+        if data_uri is not None:
+            self.data_uri = data_uri
         if label is not None:
             self.label = label
         if value is not None:
             self.value = value
 
     @property
+    def data_uri(self):
+        """Gets the data_uri of this ChallengeImageOption.  # noqa: E501
+
+
+        :return: The data_uri of this ChallengeImageOption.  # noqa: E501
+        :rtype: str
+        """
+        return self._data_uri
+
+    @data_uri.setter
+    def data_uri(self, data_uri):
+        """Sets the data_uri of this ChallengeImageOption.
+
+
+        :param data_uri: The data_uri of this ChallengeImageOption.  # noqa: E501
+        :type: str
+        """
+
+        self._data_uri = data_uri
+
+    @property
     def label(self):
-        """Gets the label of this ChallengeOption.  # noqa: E501
+        """Gets the label of this ChallengeImageOption.  # noqa: E501
 
 
-        :return: The label of this ChallengeOption.  # noqa: E501
+        :return: The label of this ChallengeImageOption.  # noqa: E501
         :rtype: str
         """
         return self._label
 
     @label.setter
     def label(self, label):
-        """Sets the label of this ChallengeOption.
+        """Sets the label of this ChallengeImageOption.
 
 
-        :param label: The label of this ChallengeOption.  # noqa: E501
+        :param label: The label of this ChallengeImageOption.  # noqa: E501
         :type: str
         """
 
@@ -67,20 +93,20 @@ class ChallengeOption(object):
 
     @property
     def value(self):
-        """Gets the value of this ChallengeOption.  # noqa: E501
+        """Gets the value of this ChallengeImageOption.  # noqa: E501
 
 
-        :return: The value of this ChallengeOption.  # noqa: E501
+        :return: The value of this ChallengeImageOption.  # noqa: E501
         :rtype: str
         """
         return self._value
 
     @value.setter
     def value(self, value):
-        """Sets the value of this ChallengeOption.
+        """Sets the value of this ChallengeImageOption.
 
 
-        :param value: The value of this ChallengeOption.  # noqa: E501
+        :param value: The value of this ChallengeImageOption.  # noqa: E501
         :type: str
         """
 
@@ -107,7 +133,7 @@ class ChallengeOption(object):
                 ))
             else:
                 result[attr] = value
-        if issubclass(ChallengeOption, dict):
+        if issubclass(ChallengeImageOption, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -123,7 +149,7 @@ class ChallengeOption(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ChallengeOption):
+        if not isinstance(other, ChallengeImageOption):
             return False
 
         return self.__dict__ == other.__dict__

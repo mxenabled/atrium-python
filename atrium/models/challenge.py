@@ -12,6 +12,7 @@ import re  # noqa: F401
 
 import six
 
+from atrium.models.challenge_image_option import ChallengeImageOption  # noqa: F401,E501
 from atrium.models.challenge_option import ChallengeOption  # noqa: F401,E501
 
 
@@ -29,6 +30,7 @@ class Challenge(object):
         'field_name': 'str',
         'guid': 'str',
         'image_data': 'str',
+        'image_options': 'list[ChallengeImageOption]',
         'label': 'str',
         'options': 'list[ChallengeOption]',
         'type': 'str'
@@ -38,16 +40,18 @@ class Challenge(object):
         'field_name': 'field_name',
         'guid': 'guid',
         'image_data': 'image_data',
+        'image_options': 'image_options',
         'label': 'label',
         'options': 'options',
         'type': 'type'
     }
 
-    def __init__(self, field_name=None, guid=None, image_data=None, label=None, options=None, type=None):  # noqa: E501
+    def __init__(self, field_name=None, guid=None, image_data=None, image_options=None, label=None, options=None, type=None):  # noqa: E501
 
         self._field_name = None
         self._guid = None
         self._image_data = None
+        self._image_options = None
         self._label = None
         self._options = None
         self._type = None
@@ -59,6 +63,8 @@ class Challenge(object):
             self.guid = guid
         if image_data is not None:
             self.image_data = image_data
+        if image_options is not None:
+            self.image_options = image_options
         if label is not None:
             self.label = label
         if options is not None:
@@ -128,6 +134,27 @@ class Challenge(object):
         """
 
         self._image_data = image_data
+
+    @property
+    def image_options(self):
+        """Gets the image_options of this Challenge.  # noqa: E501
+
+
+        :return: The image_options of this Challenge.  # noqa: E501
+        :rtype: list[ChallengeImageOption]
+        """
+        return self._image_options
+
+    @image_options.setter
+    def image_options(self, image_options):
+        """Sets the image_options of this Challenge.
+
+
+        :param image_options: The image_options of this Challenge.  # noqa: E501
+        :type: list[ChallengeImageOption]
+        """
+
+        self._image_options = image_options
 
     @property
     def label(self):

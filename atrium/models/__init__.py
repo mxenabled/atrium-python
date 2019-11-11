@@ -19,6 +19,7 @@ from atrium.models.account_owners_response_body import AccountOwnersResponseBody
 from atrium.models.account_response_body import AccountResponseBody
 from atrium.models.accounts_response_body import AccountsResponseBody
 from atrium.models.challenge import Challenge
+from atrium.models.challenge_image_option import ChallengeImageOption
 from atrium.models.challenge_option import ChallengeOption
 from atrium.models.challenges_response_body import ChallengesResponseBody
 from atrium.models.connect_widget import ConnectWidget
