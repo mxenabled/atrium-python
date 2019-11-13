@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 **is_mobile_webview** | **bool** |  | [optional] 
 **current_institution_code** | **str** |  | [optional] 
 **current_member_guid** | **str** |  | [optional] 
+**disable_institution_search** | **bool** |  | [optional] 
+**mode** | **str** |  | [optional] 
 **ui_message_version** | **float** |  | [optional] 
 **update_credentials** | **bool** |  | [optional] 
 

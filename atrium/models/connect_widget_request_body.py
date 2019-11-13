@@ -27,6 +27,8 @@ class ConnectWidgetRequestBody(object):
         'is_mobile_webview': 'bool',
         'current_institution_code': 'str',
         'current_member_guid': 'str',
+        'disable_institution_search': 'bool',
+        'mode': 'str',
         'ui_message_version': 'float',
         'update_credentials': 'bool'
     }
@@ -35,15 +37,19 @@ class ConnectWidgetRequestBody(object):
         'is_mobile_webview': 'is_mobile_webview',
         'current_institution_code': 'current_institution_code',
         'current_member_guid': 'current_member_guid',
+        'disable_institution_search': 'disable_institution_search',
+        'mode': 'mode',
         'ui_message_version': 'ui_message_version',
         'update_credentials': 'update_credentials'
     }
 
-    def __init__(self, is_mobile_webview=None, current_institution_code=None, current_member_guid=None, ui_message_version=None, update_credentials=None):  # noqa: E501
+    def __init__(self, is_mobile_webview=None, current_institution_code=None, current_member_guid=None, disable_institution_search=None, mode=None, ui_message_version=None, update_credentials=None):  # noqa: E501
 
         self._is_mobile_webview = None
         self._current_institution_code = None
         self._current_member_guid = None
+        self._disable_institution_search = None
+        self._mode = None
         self._ui_message_version = None
         self._update_credentials = None
         self.discriminator = None
@@ -54,6 +60,10 @@ class ConnectWidgetRequestBody(object):
             self.current_institution_code = current_institution_code
         if current_member_guid is not None:
             self.current_member_guid = current_member_guid
+        if disable_institution_search is not None:
+            self.disable_institution_search = disable_institution_search
+        if mode is not None:
+            self.mode = mode
         if ui_message_version is not None:
             self.ui_message_version = ui_message_version
         if update_credentials is not None:
@@ -121,6 +131,48 @@ class ConnectWidgetRequestBody(object):
         """
 
         self._current_member_guid = current_member_guid
+
+    @property
+    def disable_institution_search(self):
+        """Gets the disable_institution_search of this ConnectWidgetRequestBody.  # noqa: E501
+
+
+        :return: The disable_institution_search of this ConnectWidgetRequestBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disable_institution_search
+
+    @disable_institution_search.setter
+    def disable_institution_search(self, disable_institution_search):
+        """Sets the disable_institution_search of this ConnectWidgetRequestBody.
+
+
+        :param disable_institution_search: The disable_institution_search of this ConnectWidgetRequestBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._disable_institution_search = disable_institution_search
+
+    @property
+    def mode(self):
+        """Gets the mode of this ConnectWidgetRequestBody.  # noqa: E501
+
+
+        :return: The mode of this ConnectWidgetRequestBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode):
+        """Sets the mode of this ConnectWidgetRequestBody.
+
+
+        :param mode: The mode of this ConnectWidgetRequestBody.  # noqa: E501
+        :type: str
+        """
+
+        self._mode = mode
 
     @property
     def ui_message_version(self):
