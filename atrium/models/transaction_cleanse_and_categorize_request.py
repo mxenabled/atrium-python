@@ -27,6 +27,7 @@ class TransactionCleanseAndCategorizeRequest(object):
         'amount': 'float',
         'description': 'str',
         'identifier': 'str',
+        'merchant_category_code': 'float',
         'type': 'str'
     }
 
@@ -34,14 +35,16 @@ class TransactionCleanseAndCategorizeRequest(object):
         'amount': 'amount',
         'description': 'description',
         'identifier': 'identifier',
+        'merchant_category_code': 'merchant_category_code',
         'type': 'type'
     }
 
-    def __init__(self, amount=None, description=None, identifier=None, type=None):  # noqa: E501
+    def __init__(self, amount=None, description=None, identifier=None, merchant_category_code=None, type=None):  # noqa: E501
 
         self._amount = None
         self._description = None
         self._identifier = None
+        self._merchant_category_code = None
         self._type = None
         self.discriminator = None
 
@@ -51,6 +54,8 @@ class TransactionCleanseAndCategorizeRequest(object):
             self.description = description
         if identifier is not None:
             self.identifier = identifier
+        if merchant_category_code is not None:
+            self.merchant_category_code = merchant_category_code
         if type is not None:
             self.type = type
 
@@ -116,6 +121,27 @@ class TransactionCleanseAndCategorizeRequest(object):
         """
 
         self._identifier = identifier
+
+    @property
+    def merchant_category_code(self):
+        """Gets the merchant_category_code of this TransactionCleanseAndCategorizeRequest.  # noqa: E501
+
+
+        :return: The merchant_category_code of this TransactionCleanseAndCategorizeRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._merchant_category_code
+
+    @merchant_category_code.setter
+    def merchant_category_code(self, merchant_category_code):
+        """Sets the merchant_category_code of this TransactionCleanseAndCategorizeRequest.
+
+
+        :param merchant_category_code: The merchant_category_code of this TransactionCleanseAndCategorizeRequest.  # noqa: E501
+        :type: float
+        """
+
+        self._merchant_category_code = merchant_category_code
 
     @property
     def type(self):

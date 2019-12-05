@@ -36,7 +36,10 @@ class TransactionCleanseAndCategorizeResponse(object):
         'is_income': 'bool',
         'is_international': 'bool',
         'is_overdraft_fee': 'bool',
-        'is_payroll_advance': 'bool'
+        'is_payroll_advance': 'bool',
+        'merchant_category_code': 'float',
+        'merchant_guid': 'str',
+        'original_description': 'str'
     }
 
     attribute_map = {
@@ -52,10 +55,13 @@ class TransactionCleanseAndCategorizeResponse(object):
         'is_income': 'is_income',
         'is_international': 'is_international',
         'is_overdraft_fee': 'is_overdraft_fee',
-        'is_payroll_advance': 'is_payroll_advance'
+        'is_payroll_advance': 'is_payroll_advance',
+        'merchant_category_code': 'merchant_category_code',
+        'merchant_guid': 'merchant_guid',
+        'original_description': 'original_description'
     }
 
-    def __init__(self, amount=None, category=None, description=None, identifier=None, type=None, is_bill_pay=None, is_direct_deposit=None, is_expense=None, is_fee=None, is_income=None, is_international=None, is_overdraft_fee=None, is_payroll_advance=None):  # noqa: E501
+    def __init__(self, amount=None, category=None, description=None, identifier=None, type=None, is_bill_pay=None, is_direct_deposit=None, is_expense=None, is_fee=None, is_income=None, is_international=None, is_overdraft_fee=None, is_payroll_advance=None, merchant_category_code=None, merchant_guid=None, original_description=None):  # noqa: E501
 
         self._amount = None
         self._category = None
@@ -70,6 +76,9 @@ class TransactionCleanseAndCategorizeResponse(object):
         self._is_international = None
         self._is_overdraft_fee = None
         self._is_payroll_advance = None
+        self._merchant_category_code = None
+        self._merchant_guid = None
+        self._original_description = None
         self.discriminator = None
 
         if amount is not None:
@@ -98,6 +107,12 @@ class TransactionCleanseAndCategorizeResponse(object):
             self.is_overdraft_fee = is_overdraft_fee
         if is_payroll_advance is not None:
             self.is_payroll_advance = is_payroll_advance
+        if merchant_category_code is not None:
+            self.merchant_category_code = merchant_category_code
+        if merchant_guid is not None:
+            self.merchant_guid = merchant_guid
+        if original_description is not None:
+            self.original_description = original_description
 
     @property
     def amount(self):
@@ -371,6 +386,69 @@ class TransactionCleanseAndCategorizeResponse(object):
         """
 
         self._is_payroll_advance = is_payroll_advance
+
+    @property
+    def merchant_category_code(self):
+        """Gets the merchant_category_code of this TransactionCleanseAndCategorizeResponse.  # noqa: E501
+
+
+        :return: The merchant_category_code of this TransactionCleanseAndCategorizeResponse.  # noqa: E501
+        :rtype: float
+        """
+        return self._merchant_category_code
+
+    @merchant_category_code.setter
+    def merchant_category_code(self, merchant_category_code):
+        """Sets the merchant_category_code of this TransactionCleanseAndCategorizeResponse.
+
+
+        :param merchant_category_code: The merchant_category_code of this TransactionCleanseAndCategorizeResponse.  # noqa: E501
+        :type: float
+        """
+
+        self._merchant_category_code = merchant_category_code
+
+    @property
+    def merchant_guid(self):
+        """Gets the merchant_guid of this TransactionCleanseAndCategorizeResponse.  # noqa: E501
+
+
+        :return: The merchant_guid of this TransactionCleanseAndCategorizeResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._merchant_guid
+
+    @merchant_guid.setter
+    def merchant_guid(self, merchant_guid):
+        """Sets the merchant_guid of this TransactionCleanseAndCategorizeResponse.
+
+
+        :param merchant_guid: The merchant_guid of this TransactionCleanseAndCategorizeResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._merchant_guid = merchant_guid
+
+    @property
+    def original_description(self):
+        """Gets the original_description of this TransactionCleanseAndCategorizeResponse.  # noqa: E501
+
+
+        :return: The original_description of this TransactionCleanseAndCategorizeResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._original_description
+
+    @original_description.setter
+    def original_description(self, original_description):
+        """Sets the original_description of this TransactionCleanseAndCategorizeResponse.
+
+
+        :param original_description: The original_description of this TransactionCleanseAndCategorizeResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._original_description = original_description
 
     def to_dict(self):
         """Returns the model properties as a dict"""
