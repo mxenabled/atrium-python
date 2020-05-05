@@ -8,12 +8,25 @@ import six
 import atrium
 
 class AtriumClient(object):
-    def __init__(self, api_key, client_id, environment = "https://vestibule.mx.com"):
+    def __init__(
+        self,
+        api_key,
+        client_id,
+        environment="https://vestibule.mx.com",
+        proxy=None,
+        proxy_user=None,
+        proxy_pass=None,
+        proxy_headers=None
+    ):
         configuration = atrium.Configuration()
         configuration.headers['MX-API-Key'] = api_key
         configuration.headers['MX-Client-ID'] = client_id
         configuration.host = environment
-        
+        configuration.proxy = proxy
+        configuration.proxy_user = proxy_user
+        configuration.proxy_pass = proxy_pass
+        configuration.proxy_headers = proxy_headers
+
         self.accounts = atrium.AccountsApi(atrium.ApiClient(configuration))
         self.connect_widget = atrium.ConnectWidgetApi(atrium.ApiClient(configuration))
         self.holdings = atrium.HoldingsApi(atrium.ApiClient(configuration))
