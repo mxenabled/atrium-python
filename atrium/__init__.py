@@ -65,7 +65,11 @@ from atrium.models.member_update_request import MemberUpdateRequest
 from atrium.models.member_update_request_body import MemberUpdateRequestBody
 from atrium.models.members_response_body import MembersResponseBody
 from atrium.models.merchant import Merchant
+from atrium.models.merchant_location import MerchantLocation
+from atrium.models.merchant_location_response_body import MerchantLocationResponseBody
+from atrium.models.merchant_locations_response_body import MerchantLocationsResponseBody
 from atrium.models.merchant_response_body import MerchantResponseBody
+from atrium.models.merchants_response_body import MerchantsResponseBody
 from atrium.models.pagination import Pagination
 from atrium.models.statement import Statement
 from atrium.models.statement_response_body import StatementResponseBody

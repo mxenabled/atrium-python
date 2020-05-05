@@ -26,25 +26,31 @@ class AccountNumber(object):
     mx_types = {
         'account_guid': 'str',
         'account_number': 'str',
+        'institution_number': 'str',
         'member_guid': 'str',
         'routing_number': 'str',
+        'transit_number': 'str',
         'user_guid': 'str'
     }
 
     attribute_map = {
         'account_guid': 'account_guid',
         'account_number': 'account_number',
+        'institution_number': 'institution_number',
         'member_guid': 'member_guid',
         'routing_number': 'routing_number',
+        'transit_number': 'transit_number',
         'user_guid': 'user_guid'
     }
 
-    def __init__(self, account_guid=None, account_number=None, member_guid=None, routing_number=None, user_guid=None):  # noqa: E501
+    def __init__(self, account_guid=None, account_number=None, institution_number=None, member_guid=None, routing_number=None, transit_number=None, user_guid=None):  # noqa: E501
 
         self._account_guid = None
         self._account_number = None
+        self._institution_number = None
         self._member_guid = None
         self._routing_number = None
+        self._transit_number = None
         self._user_guid = None
         self.discriminator = None
 
@@ -52,10 +58,14 @@ class AccountNumber(object):
             self.account_guid = account_guid
         if account_number is not None:
             self.account_number = account_number
+        if institution_number is not None:
+            self.institution_number = institution_number
         if member_guid is not None:
             self.member_guid = member_guid
         if routing_number is not None:
             self.routing_number = routing_number
+        if transit_number is not None:
+            self.transit_number = transit_number
         if user_guid is not None:
             self.user_guid = user_guid
 
@@ -102,6 +112,27 @@ class AccountNumber(object):
         self._account_number = account_number
 
     @property
+    def institution_number(self):
+        """Gets the institution_number of this AccountNumber.  # noqa: E501
+
+
+        :return: The institution_number of this AccountNumber.  # noqa: E501
+        :rtype: str
+        """
+        return self._institution_number
+
+    @institution_number.setter
+    def institution_number(self, institution_number):
+        """Sets the institution_number of this AccountNumber.
+
+
+        :param institution_number: The institution_number of this AccountNumber.  # noqa: E501
+        :type: str
+        """
+
+        self._institution_number = institution_number
+
+    @property
     def member_guid(self):
         """Gets the member_guid of this AccountNumber.  # noqa: E501
 
@@ -142,6 +173,27 @@ class AccountNumber(object):
         """
 
         self._routing_number = routing_number
+
+    @property
+    def transit_number(self):
+        """Gets the transit_number of this AccountNumber.  # noqa: E501
+
+
+        :return: The transit_number of this AccountNumber.  # noqa: E501
+        :rtype: str
+        """
+        return self._transit_number
+
+    @transit_number.setter
+    def transit_number(self, transit_number):
+        """Sets the transit_number of this AccountNumber.
+
+
+        :param transit_number: The transit_number of this AccountNumber.  # noqa: E501
+        :type: str
+        """
+
+        self._transit_number = transit_number
 
     @property
     def user_guid(self):
