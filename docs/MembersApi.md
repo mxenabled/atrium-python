@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**list_members**](MembersApi.md#list_members) | **GET** /users/{user_guid}/members | List members
 [**read_member**](MembersApi.md#read_member) | **GET** /users/{user_guid}/members/{member_guid} | Read member
 [**read_member_status**](MembersApi.md#read_member_status) | **GET** /users/{user_guid}/members/{member_guid}/status | Read member connection status
+[**read_o_auth_window_uri**](MembersApi.md#read_o_auth_window_uri) | **GET** /users/{user_guid}/members/{member_guid}/oauth_window_uri | Read OAuth Window URI
 [**resume_member**](MembersApi.md#resume_member) | **PUT** /users/{user_guid}/members/{member_guid}/resume | Resume aggregation from MFA
 [**update_member**](MembersApi.md#update_member) | **PUT** /users/{user_guid}/members/{member_guid} | Update member
 
@@ -532,6 +533,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MemberConnectionStatusResponseBody**](MemberConnectionStatusResponseBody.md)
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **read_o_auth_window_uri**
+> MemberResponseBody read_o_auth_window_uri(member_guid, user_guid, referral_source=referral_source, ui_message_webview_url_scheme=ui_message_webview_url_scheme)
+
+Read OAuth Window URI
+
+This endpoint will generate an `oauth_window_uri` for the specified `member`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import atrium
+from atrium.rest import ApiException
+from pprint import pprint
+
+# create an instance of the AtriumClient
+client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
+
+member_guid = "MBR-123" # str | The unique identifier for a `member`.
+user_guid = "USR-123" # str | The unique identifier for a `user`.
+referral_source = "BROWSER" # str | Should be either BROWSER or APP depending on the implementation. (optional)
+ui_message_webview_url_scheme = "ui_message_webview_url_scheme_example" # str | A scheme for routing the user back to the application state they were previously in. (optional)
+
+try:
+    # Read OAuth Window URI
+    response = client.members.read_o_auth_window_uri(member_guid, user_guid, referral_source=referral_source, ui_message_webview_url_scheme=ui_message_webview_url_scheme)
+    pprint(response)
+except ApiException as e:
+    print("Exception when calling MembersApi->read_o_auth_window_uri: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **member_guid** | **str**| The unique identifier for a &#x60;member&#x60;. | 
+ **user_guid** | **str**| The unique identifier for a &#x60;user&#x60;. | 
+ **referral_source** | **str**| Should be either BROWSER or APP depending on the implementation. | [optional] 
+ **ui_message_webview_url_scheme** | **str**| A scheme for routing the user back to the application state they were previously in. | [optional] 
+
+### Return type
+
+[**MemberResponseBody**](MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

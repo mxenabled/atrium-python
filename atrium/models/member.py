@@ -32,6 +32,7 @@ class Member(object):
         'is_being_aggregated': 'bool',
         'metadata': 'str',
         'name': 'str',
+        'oauth_window_uri': 'str',
         'status': 'str',
         'successfully_aggregated_at': 'str',
         'user_guid': 'str'
@@ -46,12 +47,13 @@ class Member(object):
         'is_being_aggregated': 'is_being_aggregated',
         'metadata': 'metadata',
         'name': 'name',
+        'oauth_window_uri': 'oauth_window_uri',
         'status': 'status',
         'successfully_aggregated_at': 'successfully_aggregated_at',
         'user_guid': 'user_guid'
     }
 
-    def __init__(self, aggregated_at=None, connection_status=None, guid=None, identifier=None, institution_code=None, is_being_aggregated=None, metadata=None, name=None, status=None, successfully_aggregated_at=None, user_guid=None):  # noqa: E501
+    def __init__(self, aggregated_at=None, connection_status=None, guid=None, identifier=None, institution_code=None, is_being_aggregated=None, metadata=None, name=None, oauth_window_uri=None, status=None, successfully_aggregated_at=None, user_guid=None):  # noqa: E501
 
         self._aggregated_at = None
         self._connection_status = None
@@ -61,6 +63,7 @@ class Member(object):
         self._is_being_aggregated = None
         self._metadata = None
         self._name = None
+        self._oauth_window_uri = None
         self._status = None
         self._successfully_aggregated_at = None
         self._user_guid = None
@@ -82,6 +85,8 @@ class Member(object):
             self.metadata = metadata
         if name is not None:
             self.name = name
+        if oauth_window_uri is not None:
+            self.oauth_window_uri = oauth_window_uri
         if status is not None:
             self.status = status
         if successfully_aggregated_at is not None:
@@ -256,6 +261,27 @@ class Member(object):
         """
 
         self._name = name
+
+    @property
+    def oauth_window_uri(self):
+        """Gets the oauth_window_uri of this Member.  # noqa: E501
+
+
+        :return: The oauth_window_uri of this Member.  # noqa: E501
+        :rtype: str
+        """
+        return self._oauth_window_uri
+
+    @oauth_window_uri.setter
+    def oauth_window_uri(self, oauth_window_uri):
+        """Sets the oauth_window_uri of this Member.
+
+
+        :param oauth_window_uri: The oauth_window_uri of this Member.  # noqa: E501
+        :type: str
+        """
+
+        self._oauth_window_uri = oauth_window_uri
 
     @property
     def status(self):

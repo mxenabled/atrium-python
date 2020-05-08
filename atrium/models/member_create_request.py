@@ -28,36 +28,52 @@ class MemberCreateRequest(object):
     mx_types = {
         'credentials': 'list[CredentialRequest]',
         'identifier': 'str',
+        'is_oauth': 'bool',
         'institution_code': 'str',
         'metadata': 'str',
-        'skip_aggregation': 'bool'
+        'referral_source': 'str',
+        'skip_aggregation': 'bool',
+        'ui_message_webview_url_scheme': 'str'
     }
 
     attribute_map = {
         'credentials': 'credentials',
         'identifier': 'identifier',
+        'is_oauth': 'is_oauth',
         'institution_code': 'institution_code',
         'metadata': 'metadata',
-        'skip_aggregation': 'skip_aggregation'
+        'referral_source': 'referral_source',
+        'skip_aggregation': 'skip_aggregation',
+        'ui_message_webview_url_scheme': 'ui_message_webview_url_scheme'
     }
 
-    def __init__(self, credentials=None, identifier=None, institution_code=None, metadata=None, skip_aggregation=None):  # noqa: E501
+    def __init__(self, credentials=None, identifier=None, is_oauth=None, institution_code=None, metadata=None, referral_source=None, skip_aggregation=None, ui_message_webview_url_scheme=None):  # noqa: E501
 
         self._credentials = None
         self._identifier = None
+        self._is_oauth = None
         self._institution_code = None
         self._metadata = None
+        self._referral_source = None
         self._skip_aggregation = None
+        self._ui_message_webview_url_scheme = None
         self.discriminator = None
 
-        self.credentials = credentials
+        if credentials is not None:
+            self.credentials = credentials
         if identifier is not None:
             self.identifier = identifier
+        if is_oauth is not None:
+            self.is_oauth = is_oauth
         self.institution_code = institution_code
         if metadata is not None:
             self.metadata = metadata
+        if referral_source is not None:
+            self.referral_source = referral_source
         if skip_aggregation is not None:
             self.skip_aggregation = skip_aggregation
+        if ui_message_webview_url_scheme is not None:
+            self.ui_message_webview_url_scheme = ui_message_webview_url_scheme
 
     @property
     def credentials(self):
@@ -77,8 +93,6 @@ class MemberCreateRequest(object):
         :param credentials: The credentials of this MemberCreateRequest.  # noqa: E501
         :type: list[CredentialRequest]
         """
-        if credentials is None:
-            raise ValueError("Invalid value for `credentials`, must not be `None`")  # noqa: E501
 
         self._credentials = credentials
 
@@ -102,6 +116,27 @@ class MemberCreateRequest(object):
         """
 
         self._identifier = identifier
+
+    @property
+    def is_oauth(self):
+        """Gets the is_oauth of this MemberCreateRequest.  # noqa: E501
+
+
+        :return: The is_oauth of this MemberCreateRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_oauth
+
+    @is_oauth.setter
+    def is_oauth(self, is_oauth):
+        """Sets the is_oauth of this MemberCreateRequest.
+
+
+        :param is_oauth: The is_oauth of this MemberCreateRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_oauth = is_oauth
 
     @property
     def institution_code(self):
@@ -148,6 +183,27 @@ class MemberCreateRequest(object):
         self._metadata = metadata
 
     @property
+    def referral_source(self):
+        """Gets the referral_source of this MemberCreateRequest.  # noqa: E501
+
+
+        :return: The referral_source of this MemberCreateRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._referral_source
+
+    @referral_source.setter
+    def referral_source(self, referral_source):
+        """Sets the referral_source of this MemberCreateRequest.
+
+
+        :param referral_source: The referral_source of this MemberCreateRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._referral_source = referral_source
+
+    @property
     def skip_aggregation(self):
         """Gets the skip_aggregation of this MemberCreateRequest.  # noqa: E501
 
@@ -167,6 +223,27 @@ class MemberCreateRequest(object):
         """
 
         self._skip_aggregation = skip_aggregation
+
+    @property
+    def ui_message_webview_url_scheme(self):
+        """Gets the ui_message_webview_url_scheme of this MemberCreateRequest.  # noqa: E501
+
+
+        :return: The ui_message_webview_url_scheme of this MemberCreateRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._ui_message_webview_url_scheme
+
+    @ui_message_webview_url_scheme.setter
+    def ui_message_webview_url_scheme(self, ui_message_webview_url_scheme):
+        """Sets the ui_message_webview_url_scheme of this MemberCreateRequest.
+
+
+        :param ui_message_webview_url_scheme: The ui_message_webview_url_scheme of this MemberCreateRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._ui_message_webview_url_scheme = ui_message_webview_url_scheme
 
     def to_dict(self):
         """Returns the model properties as a dict"""

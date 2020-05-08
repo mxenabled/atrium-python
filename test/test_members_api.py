@@ -109,6 +109,13 @@ class TestMembersApi(unittest.TestCase):
         """
         pass
 
+    def test_read_o_auth_window_uri(self):
+        """Test case for read_o_auth_window_uri
+
+        Read OAuth Window URI  # noqa: E501
+        """
+        pass
+
     def test_resume_member(self):
         """Test case for resume_member
 
