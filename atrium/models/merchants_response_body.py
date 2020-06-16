@@ -27,46 +27,46 @@ class MerchantsResponseBody(object):
                             and the value is json key in definition.
     """
     mx_types = {
-        'merchant': 'list[Merchant]',
+        'merchants': 'list[Merchant]',
         'pagination': 'Pagination'
     }
 
     attribute_map = {
-        'merchant': 'merchant',
+        'merchants': 'merchants',
         'pagination': 'pagination'
     }
 
-    def __init__(self, merchant=None, pagination=None):  # noqa: E501
+    def __init__(self, merchants=None, pagination=None):  # noqa: E501
 
-        self._merchant = None
+        self._merchants = None
         self._pagination = None
         self.discriminator = None
 
-        if merchant is not None:
-            self.merchant = merchant
+        if merchants is not None:
+            self.merchants = merchants
         if pagination is not None:
             self.pagination = pagination
 
     @property
-    def merchant(self):
-        """Gets the merchant of this MerchantsResponseBody.  # noqa: E501
+    def merchants(self):
+        """Gets the merchants of this MerchantsResponseBody.  # noqa: E501
 
 
-        :return: The merchant of this MerchantsResponseBody.  # noqa: E501
+        :return: The merchants of this MerchantsResponseBody.  # noqa: E501
         :rtype: list[Merchant]
         """
-        return self._merchant
+        return self._merchants
 
-    @merchant.setter
-    def merchant(self, merchant):
-        """Sets the merchant of this MerchantsResponseBody.
+    @merchants.setter
+    def merchants(self, merchants):
+        """Sets the merchants of this MerchantsResponseBody.
 
 
-        :param merchant: The merchant of this MerchantsResponseBody.  # noqa: E501
+        :param merchants: The merchants of this MerchantsResponseBody.  # noqa: E501
         :type: list[Merchant]
         """
 
-        self._merchant = merchant
+        self._merchants = merchants
 
     @property
     def pagination(self):
