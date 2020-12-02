@@ -42,6 +42,7 @@ class Transaction(object):
         'is_international': 'bool',
         'is_overdraft_fee': 'bool',
         'is_payroll_advance': 'bool',
+        'is_subscription': 'bool',
         'latitude': 'float',
         'longitude': 'float',
         'member_guid': 'str',
@@ -77,6 +78,7 @@ class Transaction(object):
         'is_international': 'is_international',
         'is_overdraft_fee': 'is_overdraft_fee',
         'is_payroll_advance': 'is_payroll_advance',
+        'is_subscription': 'is_subscription',
         'latitude': 'latitude',
         'longitude': 'longitude',
         'member_guid': 'member_guid',
@@ -93,7 +95,7 @@ class Transaction(object):
         'user_guid': 'user_guid'
     }
 
-    def __init__(self, account_guid=None, amount=None, category=None, check_number=None, check_number_string=None, created_at=None, currency_code=None, _date=None, description=None, guid=None, is_bill_pay=None, is_direct_deposit=None, is_expense=None, is_fee=None, is_income=None, is_international=None, is_overdraft_fee=None, is_payroll_advance=None, latitude=None, longitude=None, member_guid=None, memo=None, merchant_category_code=None, merchant_guid=None, original_description=None, posted_at=None, status=None, top_level_category=None, transacted_at=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
+    def __init__(self, account_guid=None, amount=None, category=None, check_number=None, check_number_string=None, created_at=None, currency_code=None, _date=None, description=None, guid=None, is_bill_pay=None, is_direct_deposit=None, is_expense=None, is_fee=None, is_income=None, is_international=None, is_overdraft_fee=None, is_payroll_advance=None, is_subscription=None, latitude=None, longitude=None, member_guid=None, memo=None, merchant_category_code=None, merchant_guid=None, original_description=None, posted_at=None, status=None, top_level_category=None, transacted_at=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
 
         self._account_guid = None
         self._amount = None
@@ -113,6 +115,7 @@ class Transaction(object):
         self._is_international = None
         self._is_overdraft_fee = None
         self._is_payroll_advance = None
+        self._is_subscription = None
         self._latitude = None
         self._longitude = None
         self._member_guid = None
@@ -165,6 +168,8 @@ class Transaction(object):
             self.is_overdraft_fee = is_overdraft_fee
         if is_payroll_advance is not None:
             self.is_payroll_advance = is_payroll_advance
+        if is_subscription is not None:
+            self.is_subscription = is_subscription
         if latitude is not None:
             self.latitude = latitude
         if longitude is not None:
@@ -571,6 +576,27 @@ class Transaction(object):
         """
 
         self._is_payroll_advance = is_payroll_advance
+
+    @property
+    def is_subscription(self):
+        """Gets the is_subscription of this Transaction.  # noqa: E501
+
+
+        :return: The is_subscription of this Transaction.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_subscription
+
+    @is_subscription.setter
+    def is_subscription(self, is_subscription):
+        """Sets the is_subscription of this Transaction.
+
+
+        :param is_subscription: The is_subscription of this Transaction.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_subscription = is_subscription
 
     @property
     def latitude(self):

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **is_international** | **bool** |  | [optional] 
 **is_overdraft_fee** | **bool** |  | [optional] 
 **is_payroll_advance** | **bool** |  | [optional] 
+**is_subscription** | **bool** |  | [optional] 
 **latitude** | **float** |  | [optional] 
 **longitude** | **float** |  | [optional] 
 **member_guid** | **str** |  | [optional] 
