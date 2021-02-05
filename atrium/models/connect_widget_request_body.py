@@ -25,46 +25,59 @@ class ConnectWidgetRequestBody(object):
     """
     mx_types = {
         'is_mobile_webview': 'bool',
+        'color_scheme': 'str',
         'current_institution_code': 'str',
         'current_member_guid': 'str',
         'disable_institution_search': 'bool',
+        'include_transactions': 'bool',
         'mode': 'str',
         'ui_message_version': 'float',
         'ui_message_webview_url_scheme': 'str',
-        'update_credentials': 'bool'
+        'update_credentials': 'bool',
+        'wait_for_full_aggregation': 'bool'
     }
 
     attribute_map = {
         'is_mobile_webview': 'is_mobile_webview',
+        'color_scheme': 'color_scheme',
         'current_institution_code': 'current_institution_code',
         'current_member_guid': 'current_member_guid',
         'disable_institution_search': 'disable_institution_search',
+        'include_transactions': 'include_transactions',
         'mode': 'mode',
         'ui_message_version': 'ui_message_version',
         'ui_message_webview_url_scheme': 'ui_message_webview_url_scheme',
-        'update_credentials': 'update_credentials'
+        'update_credentials': 'update_credentials',
+        'wait_for_full_aggregation': 'wait_for_full_aggregation'
     }
 
-    def __init__(self, is_mobile_webview=None, current_institution_code=None, current_member_guid=None, disable_institution_search=None, mode=None, ui_message_version=None, ui_message_webview_url_scheme=None, update_credentials=None):  # noqa: E501
+    def __init__(self, is_mobile_webview=None, color_scheme=None, current_institution_code=None, current_member_guid=None, disable_institution_search=None, include_transactions=None, mode=None, ui_message_version=None, ui_message_webview_url_scheme=None, update_credentials=None, wait_for_full_aggregation=None):  # noqa: E501
 
         self._is_mobile_webview = None
+        self._color_scheme = None
         self._current_institution_code = None
         self._current_member_guid = None
         self._disable_institution_search = None
+        self._include_transactions = None
         self._mode = None
         self._ui_message_version = None
         self._ui_message_webview_url_scheme = None
         self._update_credentials = None
+        self._wait_for_full_aggregation = None
         self.discriminator = None
 
         if is_mobile_webview is not None:
             self.is_mobile_webview = is_mobile_webview
+        if color_scheme is not None:
+            self.color_scheme = color_scheme
         if current_institution_code is not None:
             self.current_institution_code = current_institution_code
         if current_member_guid is not None:
             self.current_member_guid = current_member_guid
         if disable_institution_search is not None:
             self.disable_institution_search = disable_institution_search
+        if include_transactions is not None:
+            self.include_transactions = include_transactions
         if mode is not None:
             self.mode = mode
         if ui_message_version is not None:
@@ -73,6 +86,8 @@ class ConnectWidgetRequestBody(object):
             self.ui_message_webview_url_scheme = ui_message_webview_url_scheme
         if update_credentials is not None:
             self.update_credentials = update_credentials
+        if wait_for_full_aggregation is not None:
+            self.wait_for_full_aggregation = wait_for_full_aggregation
 
     @property
     def is_mobile_webview(self):
@@ -94,6 +109,27 @@ class ConnectWidgetRequestBody(object):
         """
 
         self._is_mobile_webview = is_mobile_webview
+
+    @property
+    def color_scheme(self):
+        """Gets the color_scheme of this ConnectWidgetRequestBody.  # noqa: E501
+
+
+        :return: The color_scheme of this ConnectWidgetRequestBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._color_scheme
+
+    @color_scheme.setter
+    def color_scheme(self, color_scheme):
+        """Sets the color_scheme of this ConnectWidgetRequestBody.
+
+
+        :param color_scheme: The color_scheme of this ConnectWidgetRequestBody.  # noqa: E501
+        :type: str
+        """
+
+        self._color_scheme = color_scheme
 
     @property
     def current_institution_code(self):
@@ -157,6 +193,27 @@ class ConnectWidgetRequestBody(object):
         """
 
         self._disable_institution_search = disable_institution_search
+
+    @property
+    def include_transactions(self):
+        """Gets the include_transactions of this ConnectWidgetRequestBody.  # noqa: E501
+
+
+        :return: The include_transactions of this ConnectWidgetRequestBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._include_transactions
+
+    @include_transactions.setter
+    def include_transactions(self, include_transactions):
+        """Sets the include_transactions of this ConnectWidgetRequestBody.
+
+
+        :param include_transactions: The include_transactions of this ConnectWidgetRequestBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._include_transactions = include_transactions
 
     @property
     def mode(self):
@@ -241,6 +298,27 @@ class ConnectWidgetRequestBody(object):
         """
 
         self._update_credentials = update_credentials
+
+    @property
+    def wait_for_full_aggregation(self):
+        """Gets the wait_for_full_aggregation of this ConnectWidgetRequestBody.  # noqa: E501
+
+
+        :return: The wait_for_full_aggregation of this ConnectWidgetRequestBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._wait_for_full_aggregation
+
+    @wait_for_full_aggregation.setter
+    def wait_for_full_aggregation(self, wait_for_full_aggregation):
+        """Sets the wait_for_full_aggregation of this ConnectWidgetRequestBody.
+
+
+        :param wait_for_full_aggregation: The wait_for_full_aggregation of this ConnectWidgetRequestBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._wait_for_full_aggregation = wait_for_full_aggregation
 
     def to_dict(self):
         """Returns the model properties as a dict"""
