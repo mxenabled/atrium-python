@@ -39,6 +39,7 @@ class Account(object):
         'death_benefit': 'float',
         'guid': 'str',
         'holdings_value': 'float',
+        'insured_name': 'str',
         'institution_code': 'str',
         'interest_rate': 'float',
         'is_closed': 'bool',
@@ -52,6 +53,8 @@ class Account(object):
         'original_balance': 'float',
         'payment_due_at': 'str',
         'payoff_balance': 'float',
+        'pay_out_amount': 'float',
+        'premium_amount': 'float',
         'started_on': 'str',
         'subtype': 'str',
         'total_account_value': 'float',
@@ -76,6 +79,7 @@ class Account(object):
         'death_benefit': 'death_benefit',
         'guid': 'guid',
         'holdings_value': 'holdings_value',
+        'insured_name': 'insured_name',
         'institution_code': 'institution_code',
         'interest_rate': 'interest_rate',
         'is_closed': 'is_closed',
@@ -89,6 +93,8 @@ class Account(object):
         'original_balance': 'original_balance',
         'payment_due_at': 'payment_due_at',
         'payoff_balance': 'payoff_balance',
+        'pay_out_amount': 'pay_out_amount',
+        'premium_amount': 'premium_amount',
         'started_on': 'started_on',
         'subtype': 'subtype',
         'total_account_value': 'total_account_value',
@@ -97,7 +103,7 @@ class Account(object):
         'user_guid': 'user_guid'
     }
 
-    def __init__(self, account_number=None, apr=None, apy=None, available_balance=None, available_credit=None, balance=None, cash_balance=None, cash_surrender_value=None, created_at=None, credit_limit=None, currency_code=None, day_payment_is_due=None, death_benefit=None, guid=None, holdings_value=None, institution_code=None, interest_rate=None, is_closed=None, last_payment=None, loan_amount=None, matures_on=None, member_guid=None, minimum_balance=None, minimum_payment=None, name=None, original_balance=None, payment_due_at=None, payoff_balance=None, started_on=None, subtype=None, total_account_value=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
+    def __init__(self, account_number=None, apr=None, apy=None, available_balance=None, available_credit=None, balance=None, cash_balance=None, cash_surrender_value=None, created_at=None, credit_limit=None, currency_code=None, day_payment_is_due=None, death_benefit=None, guid=None, holdings_value=None, insured_name=None, institution_code=None, interest_rate=None, is_closed=None, last_payment=None, loan_amount=None, matures_on=None, member_guid=None, minimum_balance=None, minimum_payment=None, name=None, original_balance=None, payment_due_at=None, payoff_balance=None, pay_out_amount=None, premium_amount=None, started_on=None, subtype=None, total_account_value=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
 
         self._account_number = None
         self._apr = None
@@ -114,6 +120,7 @@ class Account(object):
         self._death_benefit = None
         self._guid = None
         self._holdings_value = None
+        self._insured_name = None
         self._institution_code = None
         self._interest_rate = None
         self._is_closed = None
@@ -127,6 +134,8 @@ class Account(object):
         self._original_balance = None
         self._payment_due_at = None
         self._payoff_balance = None
+        self._pay_out_amount = None
+        self._premium_amount = None
         self._started_on = None
         self._subtype = None
         self._total_account_value = None
@@ -165,6 +174,8 @@ class Account(object):
             self.guid = guid
         if holdings_value is not None:
             self.holdings_value = holdings_value
+        if insured_name is not None:
+            self.insured_name = insured_name
         if institution_code is not None:
             self.institution_code = institution_code
         if interest_rate is not None:
@@ -191,6 +202,10 @@ class Account(object):
             self.payment_due_at = payment_due_at
         if payoff_balance is not None:
             self.payoff_balance = payoff_balance
+        if pay_out_amount is not None:
+            self.pay_out_amount = pay_out_amount
+        if premium_amount is not None:
+            self.premium_amount = premium_amount
         if started_on is not None:
             self.started_on = started_on
         if subtype is not None:
@@ -520,6 +535,27 @@ class Account(object):
         self._holdings_value = holdings_value
 
     @property
+    def insured_name(self):
+        """Gets the insured_name of this Account.  # noqa: E501
+
+
+        :return: The insured_name of this Account.  # noqa: E501
+        :rtype: str
+        """
+        return self._insured_name
+
+    @insured_name.setter
+    def insured_name(self, insured_name):
+        """Sets the insured_name of this Account.
+
+
+        :param insured_name: The insured_name of this Account.  # noqa: E501
+        :type: str
+        """
+
+        self._insured_name = insured_name
+
+    @property
     def institution_code(self):
         """Gets the institution_code of this Account.  # noqa: E501
 
@@ -791,6 +827,48 @@ class Account(object):
         """
 
         self._payoff_balance = payoff_balance
+
+    @property
+    def pay_out_amount(self):
+        """Gets the pay_out_amount of this Account.  # noqa: E501
+
+
+        :return: The pay_out_amount of this Account.  # noqa: E501
+        :rtype: float
+        """
+        return self._pay_out_amount
+
+    @pay_out_amount.setter
+    def pay_out_amount(self, pay_out_amount):
+        """Sets the pay_out_amount of this Account.
+
+
+        :param pay_out_amount: The pay_out_amount of this Account.  # noqa: E501
+        :type: float
+        """
+
+        self._pay_out_amount = pay_out_amount
+
+    @property
+    def premium_amount(self):
+        """Gets the premium_amount of this Account.  # noqa: E501
+
+
+        :return: The premium_amount of this Account.  # noqa: E501
+        :rtype: float
+        """
+        return self._premium_amount
+
+    @premium_amount.setter
+    def premium_amount(self, premium_amount):
+        """Sets the premium_amount of this Account.
+
+
+        :param premium_amount: The premium_amount of this Account.  # noqa: E501
+        :type: float
+        """
+
+        self._premium_amount = premium_amount
 
     @property
     def started_on(self):
