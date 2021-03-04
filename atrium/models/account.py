@@ -44,6 +44,7 @@ class Account(object):
         'interest_rate': 'float',
         'is_closed': 'bool',
         'last_payment': 'float',
+        'last_payment_at': 'str',
         'loan_amount': 'float',
         'matures_on': 'str',
         'member_guid': 'str',
@@ -84,6 +85,7 @@ class Account(object):
         'interest_rate': 'interest_rate',
         'is_closed': 'is_closed',
         'last_payment': 'last_payment',
+        'last_payment_at': 'last_payment_at',
         'loan_amount': 'loan_amount',
         'matures_on': 'matures_on',
         'member_guid': 'member_guid',
@@ -103,7 +105,7 @@ class Account(object):
         'user_guid': 'user_guid'
     }
 
-    def __init__(self, account_number=None, apr=None, apy=None, available_balance=None, available_credit=None, balance=None, cash_balance=None, cash_surrender_value=None, created_at=None, credit_limit=None, currency_code=None, day_payment_is_due=None, death_benefit=None, guid=None, holdings_value=None, insured_name=None, institution_code=None, interest_rate=None, is_closed=None, last_payment=None, loan_amount=None, matures_on=None, member_guid=None, minimum_balance=None, minimum_payment=None, name=None, original_balance=None, payment_due_at=None, payoff_balance=None, pay_out_amount=None, premium_amount=None, started_on=None, subtype=None, total_account_value=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
+    def __init__(self, account_number=None, apr=None, apy=None, available_balance=None, available_credit=None, balance=None, cash_balance=None, cash_surrender_value=None, created_at=None, credit_limit=None, currency_code=None, day_payment_is_due=None, death_benefit=None, guid=None, holdings_value=None, insured_name=None, institution_code=None, interest_rate=None, is_closed=None, last_payment=None, last_payment_at=None, loan_amount=None, matures_on=None, member_guid=None, minimum_balance=None, minimum_payment=None, name=None, original_balance=None, payment_due_at=None, payoff_balance=None, pay_out_amount=None, premium_amount=None, started_on=None, subtype=None, total_account_value=None, type=None, updated_at=None, user_guid=None):  # noqa: E501
 
         self._account_number = None
         self._apr = None
@@ -125,6 +127,7 @@ class Account(object):
         self._interest_rate = None
         self._is_closed = None
         self._last_payment = None
+        self._last_payment_at = None
         self._loan_amount = None
         self._matures_on = None
         self._member_guid = None
@@ -184,6 +187,8 @@ class Account(object):
             self.is_closed = is_closed
         if last_payment is not None:
             self.last_payment = last_payment
+        if last_payment_at is not None:
+            self.last_payment_at = last_payment_at
         if loan_amount is not None:
             self.loan_amount = loan_amount
         if matures_on is not None:
@@ -638,6 +643,27 @@ class Account(object):
         """
 
         self._last_payment = last_payment
+
+    @property
+    def last_payment_at(self):
+        """Gets the last_payment_at of this Account.  # noqa: E501
+
+
+        :return: The last_payment_at of this Account.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_payment_at
+
+    @last_payment_at.setter
+    def last_payment_at(self, last_payment_at):
+        """Sets the last_payment_at of this Account.
+
+
+        :param last_payment_at: The last_payment_at of this Account.  # noqa: E501
+        :type: str
+        """
+
+        self._last_payment_at = last_payment_at
 
     @property
     def loan_amount(self):
