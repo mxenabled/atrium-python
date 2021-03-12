@@ -85,7 +85,7 @@ class RESTClientObject(object):
                 proxy_headers = configuration.proxy_headers
             elif (configuration.proxy_user and configuration.proxy_pass):
                 proxy_headers = urllib3.make_headers(
-                    proxy_basic_auth=f'{configuration.proxy_user}:{configuration.proxy_pass}'  # noqa: E501
+                    proxy_basic_auth='{configuration.proxy_user}:{configuration.proxy_pass}'  # noqa: E501
                 )
             else:
                 proxy_headers = None
