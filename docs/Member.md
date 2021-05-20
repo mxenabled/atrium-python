@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **identifier** | **str** |  | [optional] 
 **institution_code** | **str** |  | [optional] 
 **is_being_aggregated** | **bool** |  | [optional] 
+**is_oauth** | **bool** |  | [optional] 
 **metadata** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **oauth_window_uri** | **str** |  | [optional] 

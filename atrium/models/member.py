@@ -30,6 +30,7 @@ class Member(object):
         'identifier': 'str',
         'institution_code': 'str',
         'is_being_aggregated': 'bool',
+        'is_oauth': 'bool',
         'metadata': 'str',
         'name': 'str',
         'oauth_window_uri': 'str',
@@ -45,6 +46,7 @@ class Member(object):
         'identifier': 'identifier',
         'institution_code': 'institution_code',
         'is_being_aggregated': 'is_being_aggregated',
+        'is_oauth': 'is_oauth',
         'metadata': 'metadata',
         'name': 'name',
         'oauth_window_uri': 'oauth_window_uri',
@@ -53,7 +55,7 @@ class Member(object):
         'user_guid': 'user_guid'
     }
 
-    def __init__(self, aggregated_at=None, connection_status=None, guid=None, identifier=None, institution_code=None, is_being_aggregated=None, metadata=None, name=None, oauth_window_uri=None, status=None, successfully_aggregated_at=None, user_guid=None):  # noqa: E501
+    def __init__(self, aggregated_at=None, connection_status=None, guid=None, identifier=None, institution_code=None, is_being_aggregated=None, is_oauth=None, metadata=None, name=None, oauth_window_uri=None, status=None, successfully_aggregated_at=None, user_guid=None):  # noqa: E501
 
         self._aggregated_at = None
         self._connection_status = None
@@ -61,6 +63,7 @@ class Member(object):
         self._identifier = None
         self._institution_code = None
         self._is_being_aggregated = None
+        self._is_oauth = None
         self._metadata = None
         self._name = None
         self._oauth_window_uri = None
@@ -81,6 +84,8 @@ class Member(object):
             self.institution_code = institution_code
         if is_being_aggregated is not None:
             self.is_being_aggregated = is_being_aggregated
+        if is_oauth is not None:
+            self.is_oauth = is_oauth
         if metadata is not None:
             self.metadata = metadata
         if name is not None:
@@ -219,6 +224,27 @@ class Member(object):
         """
 
         self._is_being_aggregated = is_being_aggregated
+
+    @property
+    def is_oauth(self):
+        """Gets the is_oauth of this Member.  # noqa: E501
+
+
+        :return: The is_oauth of this Member.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_oauth
+
+    @is_oauth.setter
+    def is_oauth(self, is_oauth):
+        """Sets the is_oauth of this Member.
+
+
+        :param is_oauth: The is_oauth of this Member.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_oauth = is_oauth
 
     @property
     def metadata(self):
