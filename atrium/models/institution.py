@@ -31,6 +31,7 @@ class Institution(object):
         'supports_account_identification': 'bool',
         'supports_account_statement': 'bool',
         'supports_account_verification': 'bool',
+        'supports_oauth': 'bool',
         'supports_transaction_history': 'bool',
         'url': 'str'
     }
@@ -43,11 +44,12 @@ class Institution(object):
         'supports_account_identification': 'supports_account_identification',
         'supports_account_statement': 'supports_account_statement',
         'supports_account_verification': 'supports_account_verification',
+        'supports_oauth': 'supports_oauth',
         'supports_transaction_history': 'supports_transaction_history',
         'url': 'url'
     }
 
-    def __init__(self, code=None, medium_logo_url=None, name=None, small_logo_url=None, supports_account_identification=None, supports_account_statement=None, supports_account_verification=None, supports_transaction_history=None, url=None):  # noqa: E501
+    def __init__(self, code=None, medium_logo_url=None, name=None, small_logo_url=None, supports_account_identification=None, supports_account_statement=None, supports_account_verification=None, supports_oauth=None, supports_transaction_history=None, url=None):  # noqa: E501
 
         self._code = None
         self._medium_logo_url = None
@@ -56,6 +58,7 @@ class Institution(object):
         self._supports_account_identification = None
         self._supports_account_statement = None
         self._supports_account_verification = None
+        self._supports_oauth = None
         self._supports_transaction_history = None
         self._url = None
         self.discriminator = None
@@ -74,6 +77,8 @@ class Institution(object):
             self.supports_account_statement = supports_account_statement
         if supports_account_verification is not None:
             self.supports_account_verification = supports_account_verification
+        if supports_oauth is not None:
+            self.supports_oauth = supports_oauth
         if supports_transaction_history is not None:
             self.supports_transaction_history = supports_transaction_history
         if url is not None:
@@ -225,6 +230,27 @@ class Institution(object):
         """
 
         self._supports_account_verification = supports_account_verification
+
+    @property
+    def supports_oauth(self):
+        """Gets the supports_oauth of this Institution.  # noqa: E501
+
+
+        :return: The supports_oauth of this Institution.  # noqa: E501
+        :rtype: bool
+        """
+        return self._supports_oauth
+
+    @supports_oauth.setter
+    def supports_oauth(self, supports_oauth):
+        """Sets the supports_oauth of this Institution.
+
+
+        :param supports_oauth: The supports_oauth of this Institution.  # noqa: E501
+        :type: bool
+        """
+
+        self._supports_oauth = supports_oauth
 
     @property
     def supports_transaction_history(self):
