@@ -34,6 +34,8 @@ class HoldingsApi(object):
 
         :param async_req bool
         :param str user_guid: The unique identifier for a `user`. (required)
+        :param int page: Specify current page.
+        :param int records_per_page: Specify records per page.
         :return: HoldingsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
@@ -56,12 +58,14 @@ class HoldingsApi(object):
 
         :param async_req bool
         :param str user_guid: The unique identifier for a `user`. (required)
+        :param int page: Specify current page.
+        :param int records_per_page: Specify records per page.
         :return: HoldingsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_guid']  # noqa: E501
+        all_params = ['user_guid', 'page', 'records_per_page']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -88,6 +92,10 @@ class HoldingsApi(object):
             path_params['user_guid'] = params['user_guid']  # noqa: E501
 
         query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'records_per_page' in params:
+            query_params.append(('records_per_page', params['records_per_page']))  # noqa: E501
 
         header_params = {}
 
@@ -130,6 +138,8 @@ class HoldingsApi(object):
         :param async_req bool
         :param str account_guid: The unique identifier for an `account`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
+        :param int page: Specify current page.
+        :param int records_per_page: Specify records per page.
         :return: HoldingsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
@@ -153,12 +163,14 @@ class HoldingsApi(object):
         :param async_req bool
         :param str account_guid: The unique identifier for an `account`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
+        :param int page: Specify current page.
+        :param int records_per_page: Specify records per page.
         :return: HoldingsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['account_guid', 'user_guid']  # noqa: E501
+        all_params = ['account_guid', 'user_guid', 'page', 'records_per_page']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -191,6 +203,10 @@ class HoldingsApi(object):
             path_params['user_guid'] = params['user_guid']  # noqa: E501
 
         query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'records_per_page' in params:
+            query_params.append(('records_per_page', params['records_per_page']))  # noqa: E501
 
         header_params = {}
 
@@ -233,6 +249,8 @@ class HoldingsApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
+        :param int page: Specify current page.
+        :param int records_per_page: Specify records per page.
         :return: HoldingsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
@@ -256,12 +274,14 @@ class HoldingsApi(object):
         :param async_req bool
         :param str member_guid: The unique identifier for a `member`. (required)
         :param str user_guid: The unique identifier for a `user`. (required)
+        :param int page: Specify current page.
+        :param int records_per_page: Specify records per page.
         :return: HoldingsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['member_guid', 'user_guid']  # noqa: E501
+        all_params = ['member_guid', 'user_guid', 'page', 'records_per_page']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -294,6 +314,10 @@ class HoldingsApi(object):
             path_params['user_guid'] = params['user_guid']  # noqa: E501
 
         query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'records_per_page' in params:
+            query_params.append(('records_per_page', params['records_per_page']))  # noqa: E501
 
         header_params = {}
 

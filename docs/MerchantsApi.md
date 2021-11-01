@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **list_merchant_locations**
-> MerchantLocationsResponseBody list_merchant_locations(merchant_guid)
+> MerchantLocationsResponseBody list_merchant_locations(merchant_guid, page=page, records_per_page=records_per_page)
 
 List merchant locations
 
@@ -27,10 +27,12 @@ from pprint import pprint
 client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 merchant_guid = "MCH-123" # str | The unique identifier for a `merchant`.
+page = 1 # int | Specify current page. (optional)
+records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List merchant locations
-    response = client.merchants.list_merchant_locations(merchant_guid)
+    response = client.merchants.list_merchant_locations(merchant_guid, page=page, records_per_page=records_per_page)
     pprint(response)
 except ApiException as e:
     print("Exception when calling MerchantsApi->list_merchant_locations: %s\n" % e)
@@ -41,6 +43,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merchant_guid** | **str**| The unique identifier for a &#x60;merchant&#x60;. | 
+ **page** | **int**| Specify current page. | [optional] 
+ **records_per_page** | **int**| Specify records per page. | [optional] 
 
 ### Return type
 
@@ -49,7 +53,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_merchants**
-> MerchantsResponseBody list_merchants()
+> MerchantsResponseBody list_merchants(page=page, records_per_page=records_per_page)
 
 List merchants
 
@@ -66,17 +70,23 @@ from pprint import pprint
 # create an instance of the AtriumClient
 client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
+page = 1 # int | Specify current page. (optional)
+records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List merchants
-    response = client.merchants.list_merchants()
+    response = client.merchants.list_merchants(page=page, records_per_page=records_per_page)
     pprint(response)
 except ApiException as e:
     print("Exception when calling MerchantsApi->list_merchants: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Specify current page. | [optional] 
+ **records_per_page** | **int**| Specify records per page. | [optional] 
 
 ### Return type
 

@@ -34,6 +34,8 @@ class MerchantsApi(object):
 
         :param async_req bool
         :param str merchant_guid: The unique identifier for a `merchant`. (required)
+        :param int page: Specify current page.
+        :param int records_per_page: Specify records per page.
         :return: MerchantLocationsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
@@ -56,12 +58,14 @@ class MerchantsApi(object):
 
         :param async_req bool
         :param str merchant_guid: The unique identifier for a `merchant`. (required)
+        :param int page: Specify current page.
+        :param int records_per_page: Specify records per page.
         :return: MerchantLocationsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['merchant_guid']  # noqa: E501
+        all_params = ['merchant_guid', 'page', 'records_per_page']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -88,6 +92,10 @@ class MerchantsApi(object):
             path_params['merchant_guid'] = params['merchant_guid']  # noqa: E501
 
         query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'records_per_page' in params:
+            query_params.append(('records_per_page', params['records_per_page']))  # noqa: E501
 
         header_params = {}
 
@@ -128,6 +136,8 @@ class MerchantsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param int page: Specify current page.
+        :param int records_per_page: Specify records per page.
         :return: MerchantsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
@@ -149,12 +159,14 @@ class MerchantsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param int page: Specify current page.
+        :param int records_per_page: Specify records per page.
         :return: MerchantsResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['page', 'records_per_page']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -175,6 +187,10 @@ class MerchantsApi(object):
         path_params = {}
 
         query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'records_per_page' in params:
+            query_params.append(('records_per_page', params['records_per_page']))  # noqa: E501
 
         header_params = {}
 

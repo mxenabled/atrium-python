@@ -10,7 +10,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "atrium"
-VERSION = "2.11.6"
+VERSION = "2.11.7"
 # To install the library, run the following
 #
 # python setup.py install

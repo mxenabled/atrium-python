@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **list_holdings**
-> HoldingsResponseBody list_holdings(user_guid)
+> HoldingsResponseBody list_holdings(user_guid, page=page, records_per_page=records_per_page)
 
 List holdings
 
@@ -27,10 +27,12 @@ from pprint import pprint
 client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibule.mx.com")
 
 user_guid = "USR-123" # str | The unique identifier for a `user`.
+page = 1 # int | Specify current page. (optional)
+records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List holdings
-    response = client.holdings.list_holdings(user_guid)
+    response = client.holdings.list_holdings(user_guid, page=page, records_per_page=records_per_page)
     pprint(response)
 except ApiException as e:
     print("Exception when calling HoldingsApi->list_holdings: %s\n" % e)
@@ -41,6 +43,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_guid** | **str**| The unique identifier for a &#x60;user&#x60;. | 
+ **page** | **int**| Specify current page. | [optional] 
+ **records_per_page** | **int**| Specify records per page. | [optional] 
 
 ### Return type
 
@@ -49,7 +53,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_holdings_by_account**
-> HoldingsResponseBody list_holdings_by_account(account_guid, user_guid)
+> HoldingsResponseBody list_holdings_by_account(account_guid, user_guid, page=page, records_per_page=records_per_page)
 
 List holdings by account
 
@@ -68,10 +72,12 @@ client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibul
 
 account_guid = "ACT-123" # str | The unique identifier for an `account`.
 user_guid = "USR-123" # str | The unique identifier for a `user`.
+page = 1 # int | Specify current page. (optional)
+records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List holdings by account
-    response = client.holdings.list_holdings_by_account(account_guid, user_guid)
+    response = client.holdings.list_holdings_by_account(account_guid, user_guid, page=page, records_per_page=records_per_page)
     pprint(response)
 except ApiException as e:
     print("Exception when calling HoldingsApi->list_holdings_by_account: %s\n" % e)
@@ -83,6 +89,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_guid** | **str**| The unique identifier for an &#x60;account&#x60;. | 
  **user_guid** | **str**| The unique identifier for a &#x60;user&#x60;. | 
+ **page** | **int**| Specify current page. | [optional] 
+ **records_per_page** | **int**| Specify records per page. | [optional] 
 
 ### Return type
 
@@ -91,7 +99,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_holdings_by_member**
-> HoldingsResponseBody list_holdings_by_member(member_guid, user_guid)
+> HoldingsResponseBody list_holdings_by_member(member_guid, user_guid, page=page, records_per_page=records_per_page)
 
 List holdings by member
 
@@ -110,10 +118,12 @@ client = atrium.AtriumClient("YOUR_API_KEY", "YOUR_CLIENT_ID", "https://vestibul
 
 member_guid = "MBR-123" # str | The unique identifier for a `member`.
 user_guid = "USR-123" # str | The unique identifier for a `user`.
+page = 1 # int | Specify current page. (optional)
+records_per_page = 12 # int | Specify records per page. (optional)
 
 try:
     # List holdings by member
-    response = client.holdings.list_holdings_by_member(member_guid, user_guid)
+    response = client.holdings.list_holdings_by_member(member_guid, user_guid, page=page, records_per_page=records_per_page)
     pprint(response)
 except ApiException as e:
     print("Exception when calling HoldingsApi->list_holdings_by_member: %s\n" % e)
@@ -125,6 +135,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **member_guid** | **str**| The unique identifier for a &#x60;member&#x60;. | 
  **user_guid** | **str**| The unique identifier for a &#x60;user&#x60;. | 
+ **page** | **int**| Specify current page. | [optional] 
+ **records_per_page** | **int**| Specify records per page. | [optional] 
 
 ### Return type
 
